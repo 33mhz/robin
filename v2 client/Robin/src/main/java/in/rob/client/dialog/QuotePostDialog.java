@@ -45,7 +45,7 @@ public class QuotePostDialog extends NewPostDialog
 		{
 			if (instances.containsKey(Constants.EXTRA_POST))
 			{
-				Post post = (Post)instances.getParcelable(Constants.EXTRA_POST);
+				Post post = instances.getParcelable(Constants.EXTRA_POST);
 				tempTitle = "Quote @" + post.getPoster().getUsername();
 
 				((DraftPost)getDraft()).setPostText(" RP @" + post.getPoster().getUsername() + " " + post.getPostText().getText());

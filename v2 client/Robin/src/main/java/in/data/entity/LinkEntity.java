@@ -31,7 +31,7 @@ public class LinkEntity extends Entity
 				JsonObject linkObject = element.getAsJsonObject();
 
 				this.text = linkObject.get("text").getAsString();
-				this.url = linkObject.get("url").getAsString();
+				this.url = linkObject.get("link").getAsString();
 
 				if (linkObject.has("amended_len"))
 				{
@@ -60,7 +60,7 @@ public class LinkEntity extends Entity
 		try
 		{
 			JsonArray linksArray = element.getAsJsonArray();
-			ArrayList<LinkEntity> links = new ArrayList<LinkEntity>(linksArray.size());
+			ArrayList<LinkEntity> links = new ArrayList<>(linksArray.size());
 
 			for (JsonElement linkElement : linksArray)
 			{

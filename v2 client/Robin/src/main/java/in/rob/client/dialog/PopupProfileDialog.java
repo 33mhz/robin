@@ -68,7 +68,7 @@ public class PopupProfileDialog extends Activity
 
 	private void populateView()
 	{
-		bio.setText(getUser().getDescription());
+		bio.setText(getUser().getContent());
 		bio.setLinkMovementMethod(LinkTouchMovementMethod.getInstance());
 		username.setText(getUser().getFormattedMentionNameTitle());
 		fullName.setText(getUser().getFormattedMentionNameSubTitle());

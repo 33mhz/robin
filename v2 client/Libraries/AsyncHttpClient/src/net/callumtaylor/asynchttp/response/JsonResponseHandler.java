@@ -34,6 +34,7 @@ public abstract class JsonResponseHandler extends AsyncHttpResponseHandler
 	 */
 	@Override public void generateContent()
 	{
+        //System.out.println(stringBuffer.toString()); // for debugging
 		this.content = new JsonParser().parse(stringBuffer.toString());
 		this.stringBuffer = null;
 	}

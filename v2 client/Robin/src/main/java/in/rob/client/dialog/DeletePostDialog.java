@@ -59,7 +59,7 @@ public class DeletePostDialog extends InputPostDialog
 
 		if (args != null)
 		{
-			post = (Post)args.getParcelable(Constants.EXTRA_POST);
+			post = args.getParcelable(Constants.EXTRA_POST);
 
 			avatar.setUser(post.getPoster());
 			usernameTitle.setText(post.getPoster().getFormattedMentionNameTitle());

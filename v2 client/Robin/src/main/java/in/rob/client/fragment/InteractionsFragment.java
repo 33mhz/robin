@@ -40,7 +40,7 @@ public class InteractionsFragment extends StreamFragment
 	{
 		Interaction model = (Interaction)item;
 
-		if (model.getType() == Type.REPOST || model.getType() == Type.STAR)
+		if (model.getType() == Type.REPOST || model.getType() == Type.BOOKMARK)
 		{
 			Intent threadIntent = new Intent(getContext(), ThreadActivity.class);
 			threadIntent.putExtra(Constants.EXTRA_POST, model.getObject());

@@ -23,7 +23,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:orientation="vertical"
-		android:layout_marginLeft="8dp"
+		android:layout_marginStart="8dp"
 	>
 		<RelativeLayout
 			android:layout_width="match_parent"
@@ -34,8 +34,8 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:id="@+id/date"
-				android:layout_alignParentRight="true"
-				android:layout_marginLeft="4dp"
+				android:layout_alignParentEnd="true"
+				android:layout_marginStart="4dp"
 				style="?attr/rbn_post_date"
 			/>
 
@@ -44,7 +44,7 @@
 				android:layout_height="wrap_content"
 				android:id="@+id/post_text"
 				android:layout_marginTop="0dp"
-				android:layout_toLeftOf="@id/date"
+				android:layout_toStartOf="@id/date"
 				style="?attr/rbn_post_text"
 			/>
 		</RelativeLayout>
@@ -55,7 +55,6 @@
 			android:id="@+id/user_container"
 			android:orientation="horizontal"
 			android:layout_marginTop="12dp"
-			android:layout_toRightOf="@id/icon"
 			app:horizontalSpacing="4dp"
 			app:verticalSpacing="4dp"
 		/>

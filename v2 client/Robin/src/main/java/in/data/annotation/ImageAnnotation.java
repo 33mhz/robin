@@ -175,7 +175,7 @@ public class ImageAnnotation extends Annotation
 
 	@Override public String getAnnotationKey()
 	{
-		return "net.app.core.oembed";
+		return "io.pnut.core.oembed";
 	}
 
 	public static final Parcelable.Creator<ImageAnnotation> CREATOR = new Creator<ImageAnnotation>()

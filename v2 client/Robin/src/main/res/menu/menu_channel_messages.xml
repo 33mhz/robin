@@ -5,7 +5,7 @@
 		android:id="@+id/menu_new_message"
 		android:title="@string/new_message"
 		android:icon="?attr/rbn_action_bar_icon_new_message"
-		android:showAsAction="always"
+		android:showAsAction="ifRoom"
 	/>
 
 	<item

@@ -50,13 +50,13 @@ public class Post extends Message
 				if (super.createFrom(postObject) != null)
 				{
 					this.threadId = postObject.get("thread_id").getAsString();
-					this.replyCount = postObject.get("num_replies").getAsInt();
+					this.replyCount = postObject.get("counts").getAsJsonObject().get("replies").getAsInt();
 					this.hasReplies = replyCount > 0 || postObject.has("reply_to");
-					this.starCount = postObject.get("num_stars").getAsInt();
-					this.repostCount = postObject.get("num_reposts").getAsInt();
-					this.starred = postObject.has("you_starred") && postObject.get("you_starred").getAsBoolean();
+					this.starCount = postObject.get("counts").getAsJsonObject().get("bookmarks").getAsInt();
+					this.repostCount = postObject.get("counts").getAsJsonObject().get("reposts").getAsInt();
+					this.starred = postObject.has("you_bookmarked") && postObject.get("you_bookmarked").getAsBoolean();
 					this.reposters = new User().createListFrom(postObject.get("reposters"));
-					this.starrers = new User().createListFrom(postObject.get("starred_by"));
+					this.starrers = new User().createListFrom(postObject.get("bookmarked_by"));
 
 					if (postObject.has("reply_to"))
 					{
@@ -80,7 +80,7 @@ public class Post extends Message
 		try
 		{
 			JsonArray postArray = element.getAsJsonArray();
-			ArrayList<Post> posts = new ArrayList<Post>(postArray.size());
+			ArrayList<Post> posts = new ArrayList<>(postArray.size());
 
 			for (JsonElement postElement : postArray)
 			{
@@ -192,9 +192,9 @@ public class Post extends Message
 			return false;
 		}
 
-		if ((object == this)
+		if (object == this
 		|| (object instanceof Post
-		&& ((((Post)object).getId().equals(getId()) || ((Post)object).getOriginalId().equals(getOriginalId())))))
+		&& (((Post)object).getId().equals(getId()) || ((Post)object).getOriginalId().equals(getOriginalId()))))
 		{
 			return true;
 		}

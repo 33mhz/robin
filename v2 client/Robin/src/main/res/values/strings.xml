@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">Robin</string>
-	<string name="patter_message">Patter Message</string>
+	<string name="patter_message">Chat Room Message</string>
 	<string name="thread_show_denested">Show as thread</string>
+	<string name="new_followers_line">New Followers:</string>
 
 	<string-array name="image_choice">
 		<item>@string/using_camera</item>

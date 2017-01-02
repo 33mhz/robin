@@ -43,15 +43,19 @@ public class ProfileHeaderHolder extends Holder<User>
 
 		usernameTitle.setText(model.getFormattedMentionNameTitle());
 		usernameSubtitle.setText(model.getFormattedMentionNameSubTitle());
-		bio.setText(model.getDescription());
+		bio.setText(model.getContent());
 		bio.setLinkMovementMethod(LinkTouchMovementMethod.getInstance());
 
 		StringBuilder followCountText = new StringBuilder();
 		followCountText.append("<b>").append(model.getFollowingCount()).append("</b> following<br />");
 		followCountText.append("<b>").append(model.getFollowerCount()).append("</b> followers<br />");
-		followCountText.append("<b>").append(model.getStarredCount()).append("</b> starred<br />");
+		followCountText.append("<b>").append(model.getStarredCount()).append("</b> bookmarked<br />");
 		followCountText.append("<b>").append(model.getPostCount()).append("</b> posts");
-		followCount.setText(Html.fromHtml(followCountText.toString()));
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            followCount.setText(Html.fromHtml(followCountText.toString(), Html.FROM_HTML_MODE_LEGACY));
+        } else {
+            followCount.setText(Html.fromHtml(followCountText.toString()));
+        }
 		followsYou.setText(model.isFollower() ? R.string.follows_you : R.string.doesnt_follow_you);
 
 		if (UserManager.getInstance().getUser().equals(model))

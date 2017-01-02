@@ -86,7 +86,7 @@ public class ChannelHolder extends Holder<Channel>
 				ImageView image = (ImageView)LayoutInflater.from(avatarContainer.getContext()).inflate(R.layout.channel_avatar_stub, avatarContainer, false);
 				avatarContainer.addView(image);
 
-				ImageLoader.getInstance().displayImage(Constants.API_URL + Constants.API_STREAM + Constants.API_VERSION + "users/" + user + "/avatar?avatar=1&w=60&id=" + user, image, ImageOptionsManager.getInstance().getAvatarImageOptions());
+				ImageLoader.getInstance().displayImage(Constants.API_URL + Constants.API_VERSION + "users/" + user + "/avatar?avatar=1&w=60&id=" + user, image, ImageOptionsManager.getInstance().getAvatarImageOptions());
 
 				if (counter++ > 15) break;
 			}

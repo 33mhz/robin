@@ -43,7 +43,9 @@
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -89,7 +91,7 @@
 				android:id="@+id/checkbox"
 				android:clickable="false"
 				android:layout_centerVertical="true"
-				android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true"
 				style="?attr/rbn_settings_checkbox"
 			/>
 
@@ -98,7 +100,7 @@
 				android:layout_height="wrap_content"
 				android:id="@+id/title"
 				android:text="@string/show_non_following_title"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				style="?attr/rbn_settings_title"
 			/>
 
@@ -106,13 +108,15 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_below="@id/title"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:text="@string/show_non_following_desc"
 				style="?attr/rbn_settings_description"
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -126,7 +130,7 @@
 				android:id="@+id/checkbox"
 				android:clickable="false"
 				android:layout_centerVertical="true"
-				android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true"
 				style="?attr/rbn_settings_checkbox"
 			/>
 
@@ -135,7 +139,7 @@
 				android:layout_height="wrap_content"
 				android:id="@+id/title"
 				android:text="@string/use_unified_title"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				style="?attr/rbn_settings_title"
 			/>
 
@@ -144,12 +148,14 @@
 				android:layout_height="wrap_content"
 				android:layout_below="@id/title"
 				android:text="@string/use_unified_desc"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				style="?attr/rbn_settings_description"
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -163,7 +169,7 @@
 				android:id="@+id/checkbox"
 				android:clickable="false"
 				android:layout_centerVertical="true"
-				android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true"
 				style="?attr/rbn_settings_checkbox"
 			/>
 
@@ -171,7 +177,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:id="@+id/title"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:text="@string/invert_post_click_title"
 				style="?attr/rbn_settings_title"
 			/>
@@ -179,14 +185,16 @@
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:layout_below="@id/title"
 				android:text="@string/invert_post_click_desc"
 				style="?attr/rbn_settings_description"
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -198,7 +206,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:id="@+id/title"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:text="@string/single_click_link_title"
 				style="?attr/rbn_settings_title"
 			/>
@@ -206,14 +214,16 @@
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:layout_below="@id/title"
 				android:text="@string/single_click_link_desc"
 				style="?attr/rbn_settings_description"
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -238,7 +248,9 @@
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -252,7 +264,7 @@
 				android:id="@+id/checkbox"
 				android:clickable="false"
 				android:layout_centerVertical="true"
-				android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true"
 				style="?attr/rbn_settings_checkbox"
 			/>
 
@@ -261,7 +273,7 @@
 				android:layout_height="wrap_content"
 				android:id="@+id/title"
 				android:text="@string/web_readability_title"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				style="?attr/rbn_settings_title"
 			/>
 
@@ -270,12 +282,14 @@
 				android:layout_height="wrap_content"
 				android:layout_below="@id/title"
 				android:text="@string/web_readability_desc"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				style="?attr/rbn_settings_description"
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -289,7 +303,7 @@
 				android:id="@+id/checkbox"
 				android:clickable="false"
 				android:layout_centerVertical="true"
-				android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true"
 				style="?attr/rbn_settings_checkbox"
 			/>
 
@@ -299,7 +313,7 @@
 				android:id="@+id/title"
 				android:text="@string/global_stream_title"
 				android:layout_centerVertical="true"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				style="?attr/rbn_settings_title"
 			/>
 		</in.lib.view.SettingContainerView>
@@ -336,7 +350,9 @@
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -361,7 +377,9 @@
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -386,7 +404,9 @@
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -411,7 +431,9 @@
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -425,7 +447,7 @@
 				android:id="@+id/checkbox"
 				android:clickable="false"
 				android:layout_centerVertical="true"
-				android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true"
 				style="?attr/rbn_settings_checkbox"
 			/>
 
@@ -434,7 +456,7 @@
 				android:layout_height="wrap_content"
 				android:id="@+id/title"
 				android:text="@string/custom_fonts_title"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				style="?attr/rbn_settings_title"
 			/>
 
@@ -443,7 +465,7 @@
 				android:layout_height="wrap_content"
 				android:layout_below="@id/title"
 				android:text="@string/custom_fonts_desc"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				style="?attr/rbn_settings_description"
 			/>
 		</in.lib.view.SettingContainerView>
@@ -468,7 +490,7 @@
 				android:layout_height="wrap_content"
 				android:id="@+id/custom_username_desc"
 				android:layout_centerVertical="true"
-				android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true"
 				style="?attr/rbn_settings_description"
 			/>
 
@@ -478,12 +500,14 @@
 				android:id="@+id/title"
 				android:text="@string/username_settings_title"
 				android:layout_centerVertical="true"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				style="?attr/rbn_settings_title"
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<RelativeLayout
 			android:layout_width="match_parent"
@@ -503,8 +527,8 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:id="@+id/ticker"
-				android:gravity="right"
-				android:layout_alignParentRight="true"
+				android:gravity="end"
+				android:layout_alignParentEnd="true"
 			/>
 
 			<SeekBar

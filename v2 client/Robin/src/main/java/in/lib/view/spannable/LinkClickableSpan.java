@@ -41,7 +41,7 @@ public class LinkClickableSpan extends NotUnderlinedClickableSpan
 		openUrl(ctx);
 	}
 
-	public void openUrl(Context ctx)
+	private void openUrl(Context ctx)
 	{
 		Intent intent = null;
 

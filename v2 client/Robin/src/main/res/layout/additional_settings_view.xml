@@ -43,7 +43,9 @@
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -68,7 +70,9 @@
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -93,7 +97,9 @@
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<RelativeLayout
 			android:layout_width="match_parent"
@@ -113,8 +119,8 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:id="@+id/max_image_cache_ticker"
-				android:gravity="right"
-				android:layout_alignParentRight="true"
+				android:gravity="end"
+				android:layout_alignParentEnd="true"
 			/>
 
 			<SeekBar
@@ -129,7 +135,9 @@
 			/>
 		</RelativeLayout>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<RelativeLayout
 			android:layout_width="match_parent"
@@ -149,8 +157,8 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:id="@+id/max_cache_ticker"
-				android:gravity="right"
-				android:layout_alignParentRight="true"
+				android:gravity="end"
+				android:layout_alignParentEnd="true"
 			/>
 
 			<SeekBar
@@ -185,7 +193,7 @@
 				android:id="@+id/checkbox"
 				android:clickable="false"
 				android:layout_centerVertical="true"
-				android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true"
 				style="?attr/rbn_settings_checkbox"
 			/>
 
@@ -193,7 +201,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:id="@+id/title"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:text="@string/send_analytics_title"
 				style="?attr/rbn_settings_title"
 			/>
@@ -202,14 +210,16 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:id="@+id/description"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:layout_below="@id/title"
 				android:text="@string/send_analytics_desc"
 				style="?attr/rbn_settings_description"
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -223,7 +233,7 @@
 				android:id="@+id/checkbox"
 				android:clickable="false"
 				android:layout_centerVertical="true"
-				android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true"
 				style="?attr/rbn_settings_checkbox"
 			/>
 
@@ -231,7 +241,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:id="@+id/title"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:text="@string/send_crash_title"
 				style="?attr/rbn_settings_title"
 			/>
@@ -240,14 +250,16 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:id="@+id/description"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:layout_below="@id/title"
 				android:text="@string/send_crash_desc"
 				style="?attr/rbn_settings_description"
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -264,7 +276,9 @@
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -281,7 +295,9 @@
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -298,7 +314,9 @@
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -309,7 +327,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:id="@+id/build_number"
-				android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true"
 				android:layout_centerVertical="true"
 				style="?attr/rbn_settings_description"
 			/>
@@ -319,13 +337,15 @@
 				android:layout_height="wrap_content"
 				android:id="@+id/title"
 				android:text="@string/build_number"
-				android:layout_toLeftOf="@id/build_number"
+				android:layout_toStartOf="@id/build_number"
 				android:layout_centerVertical="true"
 				style="?attr/rbn_settings_title"
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"

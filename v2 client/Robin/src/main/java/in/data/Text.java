@@ -39,12 +39,16 @@ public class Text extends Model
 		{
 			JsonObject textObject = element.getAsJsonObject();
 
-			if (textObject.has("description"))
+			if (textObject.has("content"))
 			{
-				textObject = textObject.get("description").getAsJsonObject();
+				textObject = textObject.get("content").getAsJsonObject();
 			}
 
-			this.text = textObject.get("text").getAsString().trim();
+            if (textObject.has("text")) {
+                this.text = textObject.get("text").getAsString().trim();
+            } else {
+                this.text = "";
+            }
 
 			if (BitUtils.contains(SettingsManager.getInstance().getEmphasisBit(), Constants.BIT_EMPHASIS_ITALIC, Constants.BIT_EMPHASIS_BOLD, Constants.BIT_EMPHASIS_UNDERLINE))
 			{
@@ -84,7 +88,7 @@ public class Text extends Model
 			JsonObject entityObject = textObject.get("entities").getAsJsonObject();
 			this.mentions = new MentionEntity().createListFrom(entityObject.get("mentions"));
 			this.links = new LinkEntity().createListFrom(entityObject.get("links"));
-			this.hashTags = new HashEntity().createListFrom(entityObject.get("hashtags"));
+			this.hashTags = new HashEntity().createListFrom(entityObject.get("tags"));
 
 			return this;
 		}

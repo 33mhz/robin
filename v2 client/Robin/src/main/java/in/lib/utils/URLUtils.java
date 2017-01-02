@@ -20,7 +20,7 @@ public class URLUtils
 				(containsIgnoreCase(uri.getHost(), "i.rbn.im") && segments.size() > 0) ||
 				(containsIgnoreCase(uri.getHost(), "d.pr") && segments.size() > 1) ||
 				(containsIgnoreCase(uri.getHost(), "img.ly") && segments.size() > 0) ||
-				(containsIgnoreCase(uri.getHost(), "bli.ms") && segments.size() > 0 && IntegerUtils.parseInt(uri.getPathSegments().get(0)) > 0) ||
+				//(containsIgnoreCase(uri.getHost(), "bli.ms") && segments.size() > 0 && IntegerUtils.parseInt(uri.getPathSegments().get(0)) > 0) ||
 				(containsIgnoreCase(uri.getHost(), "instagram.com") && segments.size() > 1) ||
 				(containsIgnoreCase(uri.getHost(), "instagr.am") && segments.size() > 1);
 	}
@@ -107,10 +107,10 @@ public class URLUtils
 		{
 			return "http://i.imgur.com/" + uri.getLastPathSegment() + ".png";
 		}
-		else if (containsIgnoreCase(uri.getHost(), "bli.ms") && uri.getPathSegments().size() > 0)
+		/*else if (containsIgnoreCase(uri.getHost(), "bli.ms") && uri.getPathSegments().size() > 0)
 		{
 			return "http://bli.ms/" + uri.getLastPathSegment() + "_thumb.jpg";
-		}
+		}*/
 		else if (containsIgnoreCase(uri.getHost(), "instagram.com") || containsIgnoreCase(uri.getHost(), "instagr.am"))
 		{
 			if (uri.getPathSegments().get(0).equals("p"))

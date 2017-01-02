@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-	<item
-		android:id="@+id/menu_details"
-		android:title="@string/details"
-	/>
 
 	<item
 		android:id="@+id/menu_copy_text"
@@ -24,7 +20,7 @@
 
 	<item
 		android:id="@+id/menu_collapse"
-		android:title="Collapse thread"
+		android:title="@string/collapse_thread"
 		android:visible="false"
 	/>
 

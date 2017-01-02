@@ -25,12 +25,12 @@ public class Interaction extends AdnModel
 	public enum Type
 	{
 		REPOST(R.drawable.ic_repost_light),
-		STAR(R.drawable.ic_unstar_light),
+		BOOKMARK(R.drawable.ic_unstar_light),
 		FOLLOW(R.drawable.ic_follower_light);
 
 		@Getter private int icon;
 
-		private Type(int icon)
+		Type(int icon)
 		{
 			this.icon = icon;
 		}
@@ -48,17 +48,18 @@ public class Interaction extends AdnModel
 			JsonObject interactionObject = element.getAsJsonObject();
 			String action = interactionObject.get("action").getAsString();
 
-			if (action.equals("repost"))
-			{
-				this.type = Type.REPOST;
-			}
-			else if (action.equals("star"))
-			{
-				this.type = Type.STAR;
-			}
-			else if (action.equals("follow"))
-			{
-				this.type = Type.FOLLOW;
+			switch (action) {
+				case "repost":
+					this.type = Type.REPOST;
+					break;
+				case "bookmark":
+					this.type = Type.BOOKMARK;
+					break;
+				case "follow":
+					this.type = Type.FOLLOW;
+					break;
+                default:
+                    return null;
 			}
 
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
@@ -67,7 +68,7 @@ public class Interaction extends AdnModel
 
 			JsonElement objectObject = interactionObject.get("objects").getAsJsonArray().get(0);
 
-			if (type == Type.STAR || type == Type.REPOST)
+			if (type == Type.BOOKMARK || type == Type.REPOST)
 			{
 				this.object = new Post().createFrom(objectObject);
 
@@ -160,7 +161,7 @@ public class Interaction extends AdnModel
 
 				type = Type.values()[util.readInt()];
 				date = util.readLong();
-				object = util.readModel(type == Type.REPOST || type == Type.STAR ? Post.class : User.class);
+				object = util.readModel(type == Type.REPOST || type == Type.BOOKMARK ? Post.class : User.class);
 				users = util.readModelList(User.class);
 
 				return this;

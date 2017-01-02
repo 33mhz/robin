@@ -73,7 +73,7 @@ public class HintedImageView extends ImageView implements OnLongClickListener
 			getLocationInWindow(pos);
 
 			Toast t = Toast.makeText(getContext(), contentDesc, Toast.LENGTH_SHORT);
-			t.setGravity(Gravity.TOP | Gravity.LEFT, pos[0] - ((contentDesc.length() / 2) * 12), pos[1] - 128);
+			t.setGravity(Gravity.TOP | Gravity.START, pos[0] - ((contentDesc.length() / 2) * 12), pos[1] - 128);
 			t.show();
 		}
 	}

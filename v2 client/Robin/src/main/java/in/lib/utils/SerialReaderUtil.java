@@ -32,7 +32,7 @@ public class SerialReaderUtil
 	{
 		if (parcelObject != null)
 		{
-			return parcelObject.readByte() == (byte)1 ? true : false;
+			return parcelObject.readByte() == (byte)1;
 		}
 		else if (streamInputObject != null)
 		{

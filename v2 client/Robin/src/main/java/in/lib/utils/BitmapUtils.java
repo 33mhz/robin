@@ -147,8 +147,8 @@ public class BitmapUtils
 	 */
 	public static Bitmap duplicate(Bitmap bm)
 	{
-		Bitmap newBitmap = Bitmap.createBitmap(bm);
-		return newBitmap;
+		return Bitmap.createBitmap(bm);
+		//return newBitmap;
 	}
 
 	/**
@@ -307,10 +307,7 @@ public class BitmapUtils
 	 */
 	public static Bitmap crop(Bitmap bm, int startX, int startY, int width, int height)
 	{
-		int w = width;
-	    int h = height;
-
-	    Bitmap ret = Bitmap.createBitmap(w, h, Config.ARGB_8888);//bm.getConfig());
+	    Bitmap ret = Bitmap.createBitmap(width, height, Config.ARGB_8888);//bm.getConfig());
 	    Canvas canvas = new Canvas(ret);
 	    canvas.drawBitmap(bm, -startX, -startY, null);
 

@@ -40,7 +40,7 @@ public class SettingsManager
 	private int avatarSize = 100;
 
 	@Key(Constants.PREFS_USERNAME_TITLE) private String userTitle = "@#{username}|#{fullname}";
-	@Key(Constants.PREFS_COLLAPSED_THREADS) private Set<String> collapsedThreadIds = new LinkedHashSet<String>();
+	@Key(Constants.PREFS_COLLAPSED_THREADS) private Set<String> collapsedThreadIds = new LinkedHashSet<>();
 	//private ImageProvider imageProvider;
 	@Key(Constants.PREFS_SHAKE_REFRESH_ENABLED) private boolean shakeToRefreshEnabled;
 	@Key(Constants.PREFS_QUICK_POST_ENABLED) private boolean quickPostEnabled;
@@ -86,7 +86,7 @@ public class SettingsManager
 			{
 				try
 				{
-					Key key = (Key)field.getAnnotation(Key.class);
+					Key key = field.getAnnotation(Key.class);
 					field.setAccessible(true);
 
 					if (field.getType().equals(boolean.class))
@@ -120,7 +120,7 @@ public class SettingsManager
 			{
 				try
 				{
-					Key key = (Key)field.getAnnotation(Key.class);
+					Key key = field.getAnnotation(Key.class);
 					field.setAccessible(true);
 
 					if (field.getType().equals(boolean.class))
@@ -185,7 +185,7 @@ public class SettingsManager
 				notificationBuilder.setLargeIcon(b);
 			}
 
-			Notification notification = notificationBuilder.getNotification();
+			Notification notification = notificationBuilder.build();
 			notificationManager.notify(Constants.QUICK_POST_ID, notification);
 		}
 	}

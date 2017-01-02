@@ -39,7 +39,7 @@ public class User extends SimpleUser
 	protected int followerCount;
 	protected int postCount;
 	protected int starredCount;
-	protected Text description;
+	protected Text content;
 	protected boolean coverDefault = true;
 	protected boolean avatarDefault = true;
 	protected String verifiedDomain;
@@ -53,22 +53,22 @@ public class User extends SimpleUser
 
 			if (super.createFrom(userObject) != null)
 			{
-				this.coverUrl = userObject.get("cover_image").getAsJsonObject().get("url").getAsString();
-				this.following = userObject.has("you_follow") ? userObject.get("you_follow").getAsBoolean() : false;
-				this.follower = userObject.has("follows_you") ? userObject.get("follows_you").getAsBoolean() : false;
-				this.muted = userObject.has("you_muted") ? userObject.get("you_muted").getAsBoolean() : false;
-				this.blocked = userObject.has("you_blocked") ? userObject.get("you_blocked").getAsBoolean() : false;
+				this.coverUrl = userObject.get("content").getAsJsonObject().get("cover_image").getAsJsonObject().get("link").getAsString();
+				this.following = userObject.has("you_follow") && userObject.get("you_follow").getAsBoolean();
+				this.follower = userObject.has("follows_you") && userObject.get("follows_you").getAsBoolean();
+				this.muted = userObject.has("you_muted") && userObject.get("you_muted").getAsBoolean();
+				this.blocked = userObject.has("you_blocked") && userObject.get("you_blocked").getAsBoolean();
 				this.followingCount = userObject.get("counts").getAsJsonObject().get("following").getAsInt();
 				this.followerCount = userObject.get("counts").getAsJsonObject().get("followers").getAsInt();
 				this.postCount = userObject.get("counts").getAsJsonObject().get("posts").getAsInt();
-				this.starredCount = userObject.get("counts").getAsJsonObject().get("stars").getAsInt();
-				this.verifiedDomain = userObject.has("verified_domain") ? userObject.get("verified_domain").getAsString() : "";
-				this.avatarDefault = userObject.get("avatar_image").getAsJsonObject().get("is_default").getAsBoolean();
-				this.coverDefault = userObject.get("cover_image").getAsJsonObject().get("is_default").getAsBoolean();
+				this.starredCount = userObject.get("counts").getAsJsonObject().get("bookmarks").getAsInt();
+				this.verifiedDomain = userObject.has("verified") ? userObject.get("verified").getAsJsonObject().get("domain").getAsString() : "";
+				this.avatarDefault = userObject.get("content").getAsJsonObject().get("avatar_image").getAsJsonObject().get("is_default").getAsBoolean();
+				this.coverDefault = userObject.get("content").getAsJsonObject().get("cover_image").getAsJsonObject().get("is_default").getAsBoolean();
 
-				if (userObject.get("description") != null)
+				if (userObject.get("content").getAsJsonObject().has("text"))
 				{
-					this.description = new Text().createFrom(userObject.get("description"));
+					this.content = new Text().createFrom(userObject.get("content"));
 				}
 
 				return this;
@@ -95,7 +95,7 @@ public class User extends SimpleUser
 			try
 			{
 				JsonArray userArray = element.getAsJsonArray();
-				ArrayList<User> users = new ArrayList<User>(userArray.size());
+				ArrayList<User> users = new ArrayList<>(userArray.size());
 
 				for (JsonElement userElement : userArray)
 				{
@@ -140,7 +140,7 @@ public class User extends SimpleUser
 				this.followerCount = util.readInt();
 				this.postCount = util.readInt();
 				this.starredCount = util.readInt();
-				this.description = util.readModel(Text.class);
+				this.content = util.readModel(Text.class);
 				this.coverDefault = util.readBoolean();
 				this.avatarDefault = util.readBoolean();
 				this.verifiedDomain = util.readString();
@@ -177,7 +177,7 @@ public class User extends SimpleUser
 			util.writeInt(followerCount);
 			util.writeInt(postCount);
 			util.writeInt(starredCount);
-			util.writeModel(description);
+			util.writeModel(content);
 			util.writeBoolean(coverDefault);
 			util.writeBoolean(avatarDefault);
 			util.writeString(verifiedDomain);
@@ -257,17 +257,7 @@ public class User extends SimpleUser
 
 	@Override public boolean equals(Object object)
 	{
-		if (object == null)
-		{
-			return false;
-		}
-
-		if ((object == this) || (object instanceof User && ((User)object).getId().equals(getId())))
-		{
-			return true;
-		}
-
-		return false;
+		return (object != null && (object == this || (object instanceof User && object.getId().equals(getId()))));
 	}
 
 	public static final Parcelable.Creator<User> CREATOR = new Creator<User>()

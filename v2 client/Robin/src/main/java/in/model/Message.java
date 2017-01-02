@@ -104,9 +104,9 @@ public class Message extends AdnModel
 				this.postText = new Text().createFrom(postObject);
 			}
 
-			if (postObject.has("annotations"))
+			if (postObject.has("raw"))
 			{
-				JsonArray annotationArray = postObject.get("annotations").getAsJsonArray();
+				JsonArray annotationArray = postObject.get("raw").getAsJsonArray();
 				this.annotations = parseAnnotations(annotationArray);
 			}
 
@@ -167,7 +167,7 @@ public class Message extends AdnModel
 				JsonObject value = annotationObject.get("value").getAsJsonObject();
 				String type = annotationObject.get("type").getAsString();
 
-				if (type.equals("net.app.core.oembed") && value.has("type"))
+				if (type.equals("io.pnut.core.oembed") && value.has("type"))
 				{
 					if (value.get("type").getAsString().equalsIgnoreCase("photo"))
 					{
@@ -187,7 +187,7 @@ public class Message extends AdnModel
 						}
 					}
 				}
-				else if (type.equals("net.app.core.geolocation"))
+				else if (type.equals("io.pnut.core.geolocation"))
 				{
 					LocationAnnotation location = new LocationAnnotation().createFrom(value);
 
@@ -196,7 +196,7 @@ public class Message extends AdnModel
 						map.getLocations().add(location);
 					}
 				}
-				else if (type.equals("net.app.core.checkin"))
+				else if (type.equals("io.pnut.core.checkin"))
 				{
 					CheckinAnnotation location = new CheckinAnnotation().createFrom(value);
 
@@ -205,7 +205,7 @@ public class Message extends AdnModel
 						map.getLocations().add(location);
 					}
 				}
-				else if (type.equals("net.app.core.crosspost"))
+				else if (type.equals("io.pnut.core.crosspost"))
 				{
 					CrossPostAnnotation crosspost = new CrossPostAnnotation().createFrom(value);
 

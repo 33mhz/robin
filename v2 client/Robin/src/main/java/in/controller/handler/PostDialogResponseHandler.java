@@ -47,7 +47,7 @@ public class PostDialogResponseHandler extends DialogResponseHandler<Post>
 		notification.setProgress(0, 0, true);
 
 		NotificationManager notificationManager = (NotificationManager)getContext().getSystemService(Context.NOTIFICATION_SERVICE);
-		notificationManager.notify(notificationId, notification.getNotification());
+		notificationManager.notify(notificationId, notification.build());
 	}
 
 	@Override public void onSuccess()
@@ -68,7 +68,7 @@ public class PostDialogResponseHandler extends DialogResponseHandler<Post>
 		if (failed)
 		{
 			notification.setTicker("Failed to send");
-			notificationManager.notify(notificationId, notification.getNotification());
+			notificationManager.notify(notificationId, notification.build());
 		}
 		else
 		{
@@ -76,7 +76,7 @@ public class PostDialogResponseHandler extends DialogResponseHandler<Post>
 			{
 				notification.setTicker(getNotificationFinishText());
 				notification.setContentIntent(PendingIntent.getActivity(getContext(), 0, new Intent(), PendingIntent.FLAG_CANCEL_CURRENT));
-				notificationManager.notify(notificationId, notification.getNotification());
+				notificationManager.notify(notificationId, notification.build());
 				notificationManager.cancel(notificationId);
 			}
 		}

@@ -3,62 +3,61 @@ package in.lib;
 public class Constants
 {
 	// API Constants //
-	public static final String API_URL = "https://alpha-api.app.net/";
-	public static final String API_STREAM = "stream/";
-	public static final String API_VERSION = "0/";
-	public static final String API_AUTH = "https://alpha.app.net/oauth/access_token";
+	public static final String API_URL = "https://api.pnut.io/";
+	public static final String API_VERSION = "v0/";
+	public static final String API_AUTH = "https://api.pnut.io/v0/oauth/access_token";
 
 	public static final String API_POSTS = "posts";
-	public static final String API_TIMELINE_STREAM = API_POSTS + "/stream/";
-	public static final String API_UNIFIED_TIMELINE_STREAM = API_TIMELINE_STREAM + "/unified";
-	public static final String API_POST_THREAD = API_POSTS + "/%s/replies";
+	//private static final String API_TIMELINE_STREAM = API_POSTS + "/streams";
+	public static final String API_UNIFIED_TIMELINE_STREAM = API_POSTS + "/streams/unified";
+	public static final String API_POST_THREAD = API_POSTS + "/%s/thread";
 	public static final String API_POST_REPOST = API_POSTS + "/%s/repost";
 	public static final String API_SEARCH_POST = API_POSTS + "/search";
 
-	public static final String API_USERS = "users";
+	private static final String API_USERS = "users";
 	public static final String API_USER_DETAILS = API_USERS + "/%s/";
 	public static final String API_USER_MENTIONS = API_USER_DETAILS + "mentions";
 	public static final String API_USER_POSTS = API_USER_DETAILS + "posts";
 	public static final String API_USER_FOLLOWERS = API_USER_DETAILS + "followers";
 	public static final String API_USER_FOLLOWING = API_USER_DETAILS + "following";
 	public static final String API_USER_FILES = API_USER_DETAILS + "files";
-	public static final String API_USER_STARRED = API_USER_DETAILS + "stars";
-	public static final String API_USER_INTERACTIONS = API_USERS + "/me/interactions";
+	public static final String API_USER_BOOKMARKED = API_USER_DETAILS + "bookmarks";
+	public static final String API_USER_ACTIONS = API_USERS + "/me/actions";
 	public static final String API_SEARCH_USER = API_USERS + "/search";
 
-	public static final String API_CHANNELS = "channels";
-	public static final String API_CHANNEL_MESSAGES = API_CHANNELS + "/%s/messages";
-	public static final String API_CHANNEL_SUBSCRIBE = API_CHANNELS + "/%s/subscribe";
-	public static final String API_CHANNEL_MESSAGE_DETAILS = API_CHANNEL_MESSAGES + "/%s";
+	public static final String API_CHANNELS = "users/me/channels/subscribed";
+	public static final String API_CHANNEL_MESSAGES = "channels/%s/messages";
+	//public static final String API_CHANNEL_SUBSCRIBE = "channels/%s/subscribe";
+	//public static final String API_CHANNEL_MESSAGE_DETAILS = API_CHANNEL_MESSAGES + "/%s";
 
-	public static final String API_SCOPES = "stream email write_post follow messages update_profile files";
-	public static final String API_SCOPES_CSV = "stream,email,write_post,follow messages,update_profile,files";
+	public static final String API_SCOPES = "stream write_post follow messages update_profile";
+	public static final String API_SCOPES_CSV = "stream,write_post,follow,messages,update_profile";
 
 	public static final String API_COUNT = "count";
 	public static final String API_BEFORE_ID = "before_id";
 	public static final String API_SINCE_ID = "since_id";
 	public static final String API_ACCESS_TOKEN = "access_token";
 	public static final String API_INCLUDE_DELETED = "include_deleted";
-	public static final String API_INCLUDE_ANNOTATIONS = "include_annotations";
+	public static final String API_INCLUDE_RAW = "include_raw";
 	public static final String API_INCLUDE_DIRECTED_POSTS = "include_directed_posts";
-	public static final String API_INCLUDE_STARRED = "include_starred_by";
+	public static final String API_INCLUDE_BOOKMARKED = "include_bookmarked_by";
 	public static final String API_INCLUDE_REPOSTERS = "include_reposters";
 	public static final String API_REPLY_TO = "reply_to";
 	public static final String API_REPOST = "repost_of";
 	public static final String API_TEXT = "text";
 	public static final String API_CHANNEL_ID = "channel_id";
 	public static final String API_NAME = "name";
-	public static final String API_DESC = "description";
+	public static final String API_DESC = "content";
 	public static final String API_LOCALE = "locale";
 	public static final String API_TIMEZONE = "timezone";
 	public static final String API_CHANNEL_TYPES = "channel_types";
 	public static final String API_ALLOW_RECENT_MESSAGE = "include_recent_message";
-	public static final String API_INTERACTIONS = "interaction_actions";
+	public static final String API_ACTIONS = "filters";
 
 	public static final String CLIENT_TOKEN = "";
 	public static final String PASSWORD_GRANT = "";
 
-	public static final String CHANNEL_TYPES = "net.app.core.pm,net.patter-app.room";
+	public static final String CHANNEL_TYPES = "io.pnut.core.pm,io.pnut.core.chat";
 
 	// Preference constants //
 	public static final String PREFS_AUTH = "in.rob.client.auth";
@@ -88,12 +87,12 @@ public class Constants
 	public static final String RESPONSE_THREAD = "thread_%s";
 	public static final String RESPONSE_CHANNELS = "channels_%s";
 	public static final String RESPONSE_CHANNEL_MESSAGES = "channels_messages_%s";
-	public static final String RESPONSE_INTERACTIONS = "interactions";
-	public static final String RESPONSE_STARRED = "user_%s_starred";
+	public static final String RESPONSE_INTERACTIONS = "actions";
+	public static final String RESPONSE_BOOKMARKED = "user_%s_bookmarked";
 	public static final String RESPONSE_SEARCH_POST = "search_%s";
 	public static final String RESPONSE_SEARCH_USER = "search_user_%s";
 
-	// Request contstants //
+	// Request constants //
 	public static final int REQUEST_CODE_AUTHORIZE = 0x01;
 
 	// Cache constants //
@@ -106,8 +105,8 @@ public class Constants
 	public static final String CACHE_THREAD = "thread_%s";
 	public static final String CACHE_CHANNELS = "channels_%s";
 	public static final String CACHE_CHANNEL_MESSAGES = "channel_messages_%s";
-	public static final String CACHE_INTERACTIONS = "interactions";
-	public static final String CACHE_STARRED = "user_%s_starred";
+	public static final String CACHE_INTERACTIONS = "actions";
+	public static final String CACHE_STARRED = "user_%s_bookmarked";
 	public static final String CACHE_AUTOCOMPLETE_USERNAMES = "autocomplete_usernames";
 	public static final String CACHE_AUTOCOMPLETE_HASHTAGS = "autocomplete_hashtags";
 

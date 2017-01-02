@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
+import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 
 import in.data.annotation.FileAnnotation;
 import in.lib.manager.ImageOptionsManager;

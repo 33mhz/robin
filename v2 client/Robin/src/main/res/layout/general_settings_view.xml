@@ -43,7 +43,9 @@
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -57,7 +59,7 @@
 				android:id="@+id/checkbox"
 				android:clickable="false"
 				android:layout_centerVertical="true"
-				android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true"
 				style="?attr/rbn_settings_checkbox"
 			/>
 
@@ -65,7 +67,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:id="@+id/title"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:text="@string/shake_refresh"
 				style="?attr/rbn_settings_title"
 			/>
@@ -73,14 +75,16 @@
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:layout_below="@id/title"
 				android:text="@string/shake_refresh_desc"
 				style="?attr/rbn_settings_description"
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -94,7 +98,7 @@
 				android:id="@+id/checkbox"
 				android:clickable="false"
 				android:layout_centerVertical="true"
-				android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true"
 				style="?attr/rbn_settings_checkbox"
 			/>
 
@@ -102,7 +106,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:id="@+id/title"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:text="@string/quick_post"
 				style="?attr/rbn_settings_title"
 			/>
@@ -110,14 +114,16 @@
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:layout_below="@id/title"
 				android:text="@string/quick_post_desc"
 				style="?attr/rbn_settings_description"
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -131,7 +137,7 @@
 				android:id="@+id/checkbox"
 				android:clickable="false"
 				android:layout_centerVertical="true"
-				android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true"
 				style="?attr/rbn_settings_checkbox"
 			/>
 
@@ -139,7 +145,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:id="@+id/title"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:text="@string/inline_wifi_title"
 				style="?attr/rbn_settings_title"
 			/>
@@ -147,14 +153,16 @@
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:layout_below="@id/title"
 				android:text="@string/inline_wifi_desc"
 				style="?attr/rbn_settings_description"
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -200,7 +208,7 @@
 				android:id="@+id/checkbox"
 				android:clickable="false"
 				android:layout_centerVertical="true"
-				android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true"
 				style="?attr/rbn_settings_checkbox"
 			/>
 
@@ -208,7 +216,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:id="@+id/title"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:text="@string/quiet_mode_title"
 				style="?attr/rbn_settings_title"
 			/>
@@ -216,14 +224,16 @@
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:layout_below="@id/title"
 				android:text="@string/quiet_mode_desc"
 				style="?attr/rbn_settings_description"
 			/>
 		</in.lib.view.SettingContainerView>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<in.lib.view.SettingContainerView
 			android:layout_width="match_parent"
@@ -235,7 +245,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:id="@+id/title"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:text="@string/quiet_hours_title"
 				style="?attr/rbn_settings_title"
 			/>
@@ -243,7 +253,7 @@
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:layout_below="@id/title"
 				android:text="@string/quiet_hours_desc"
 				style="?attr/rbn_settings_description"
@@ -277,8 +287,8 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:id="@+id/ticker"
-				android:gravity="right"
-				android:layout_alignParentRight="true"
+				android:gravity="end"
+				android:layout_alignParentEnd="true"
 			/>
 
 			<SeekBar
@@ -293,7 +303,9 @@
 			/>
 		</RelativeLayout>
 
-		<View style="?attr/rbn_divider" />
+		<View style="?attr/rbn_divider"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 
 		<RelativeLayout
 			android:layout_width="match_parent"
@@ -313,8 +325,8 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:id="@+id/ticker"
-				android:gravity="right"
-				android:layout_alignParentRight="true"
+				android:gravity="end"
+				android:layout_alignParentEnd="true"
 			/>
 
 			<SeekBar

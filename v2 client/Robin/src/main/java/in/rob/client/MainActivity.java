@@ -13,7 +13,7 @@ import in.rob.client.dialog.NewPostDialog;
 import in.rob.client.fragment.InteractionsParentFragment;
 import in.rob.client.fragment.RobinPostsFragment;
 import in.rob.client.fragment.TimelineFragment;
-import in.rob.client.fragment.TrendingPostsFragment;
+import in.rob.client.fragment.GlobalPostsFragment;
 
 @Injectable
 public class MainActivity extends BaseActivity
@@ -31,8 +31,8 @@ public class MainActivity extends BaseActivity
 		Bundle mentionsBundle = new Bundle();
 		mentionsBundle.putString(Constants.EXTRA_TITLE, "Mentions");
 
-		Bundle trendingBundle = new Bundle();
-		trendingBundle.putString(Constants.EXTRA_TITLE, "Trending Posts");
+		Bundle globalBundle = new Bundle();
+		globalBundle.putString(Constants.EXTRA_TITLE, "Global Posts");
 
 		Bundle robinBundle = new Bundle();
 		robinBundle.putString(Constants.EXTRA_TITLE, "Robin Posts");
@@ -40,7 +40,7 @@ public class MainActivity extends BaseActivity
 		setPageAdapter(new ViewPageAdapter(this, getFragmentManager(), getViewPager()));
 		getPageAdapter().addPage(TimelineFragment.class, timelineBundle);
 		getPageAdapter().addPage(InteractionsParentFragment.class, mentionsBundle);
-		getPageAdapter().addPage(TrendingPostsFragment.class, trendingBundle);
+		getPageAdapter().addPage(GlobalPostsFragment.class, globalBundle);
 		getPageAdapter().addPage(RobinPostsFragment.class, robinBundle);
 		getViewPager().setAdapter(getPageAdapter());
 

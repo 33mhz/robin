@@ -20,15 +20,15 @@ import lombok.Setter;
 public abstract class RobinAdapter<T extends AdnModel> extends BaseAdapter implements OnItemLongClickListener
 {
 	@Getter private Context context;
-	@Getter private SparseArray<AdapterDelegate<T>> itemTypes = new SparseArray<AdapterDelegate<T>>();
+	@Getter private SparseArray<AdapterDelegate<T>> itemTypes = new SparseArray<>();
 	@Getter protected Stream<T> stream;
 	@Setter protected PageListener pageListener;
 	@Getter private ListView listView;
 	@Getter private int pageCount = 60;
 
-	public static interface PageListener
+	public interface PageListener
 	{
-		public void onEndReached();
+		void onEndReached();
 	}
 
 	public RobinAdapter(Context context)
@@ -44,7 +44,7 @@ public abstract class RobinAdapter<T extends AdnModel> extends BaseAdapter imple
 
 	@Override public boolean isEmpty()
 	{
-		return this.stream == null || (this.stream != null && this.stream.getItems().size() < 1);
+		return this.stream == null || this.stream.getItems().size() < 1;
 	}
 
 	/**
@@ -106,7 +106,7 @@ public abstract class RobinAdapter<T extends AdnModel> extends BaseAdapter imple
 		}
 
 		int viewType = getItemViewType(position);
-		T item = (T)getItem(position);
+		T item = getItem(position);
 
 		convertView = getItemTypes().get(viewType).getView(item, position, convertView, parent, LayoutInflater.from(getContext()));
 
@@ -166,8 +166,6 @@ public abstract class RobinAdapter<T extends AdnModel> extends BaseAdapter imple
 		}
 
 		int viewType = getItemViewType(position - getListView().getHeaderViewsCount());
-		boolean ret = getItemTypes().get(viewType).onItemLongClick(position, view);
-
-		return ret;
+		return getItemTypes().get(viewType).onItemLongClick(position, view);
 	}
 }

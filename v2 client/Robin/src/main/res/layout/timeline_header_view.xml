@@ -13,6 +13,7 @@
 		android:scaleType="centerCrop"
 		android:layout_gravity="top"
 		android:src="@drawable/default_cover"
+		android:contentDescription="@string/top_header"
 	/>
 	
 	<TextView
@@ -25,10 +26,10 @@
 		android:shadowDx="1"
 		android:shadowDy="1"
 		android:shadowRadius="1"
-		android:layout_gravity="bottom|right"
+		android:layout_gravity="bottom|end"
 		android:layout_marginTop="5dp"
 		android:layout_marginBottom="5dp"
-		android:layout_marginRight="5dp"
+		android:layout_marginEnd="5dp"
 		android:textSize="14sp"
 	/>
 </FrameLayout>

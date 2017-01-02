@@ -90,7 +90,7 @@ public class SimpleUser extends AdnModel
 			this.formattedMentionNameTitle = formattedName[0];
 			this.formattedMentionNameSubTitle = formattedName.length > 1 ? formattedName[1] : "";
 
-			this.avatarUrl = userObject.get("avatar_image").getAsJsonObject().get("url").getAsString();
+			this.avatarUrl = userObject.get("content").getAsJsonObject().get("avatar_image").getAsJsonObject().get("link").getAsString();
 
 			return this;
 		}
@@ -115,7 +115,7 @@ public class SimpleUser extends AdnModel
 			try
 			{
 				JsonArray userArray = element.getAsJsonArray();
-				ArrayList<SimpleUser> users = new ArrayList<SimpleUser>(userArray.size());
+				ArrayList<SimpleUser> users = new ArrayList<>(userArray.size());
 
 				for (JsonElement userElement : userArray)
 				{
@@ -197,7 +197,7 @@ public class SimpleUser extends AdnModel
 			return false;
 		}
 
-		if ((object == this) || (object instanceof SimpleUser && ((SimpleUser)object).getId().equals(getId())))
+		if (object == this || (object instanceof SimpleUser && ((SimpleUser)object).getId().equals(getId())))
 		{
 			return true;
 		}

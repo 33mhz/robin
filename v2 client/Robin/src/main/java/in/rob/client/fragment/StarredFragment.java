@@ -35,7 +35,7 @@ public class StarredFragment extends StreamFragment
 
 		if (arguments != null && arguments.containsKey(Constants.EXTRA_USER))
 		{
-			user = (User)arguments.getParcelable(Constants.EXTRA_USER);
+			user = arguments.getParcelable(Constants.EXTRA_USER);
 		}
 		else
 		{
@@ -54,7 +54,7 @@ public class StarredFragment extends StreamFragment
 	{
 		Post item = (Post)model;
 		Intent threadIntent = new Intent(getContext(), ThreadActivity.class);
-		threadIntent.putExtra(Constants.EXTRA_POST, (Parcelable)item);
+		threadIntent.putExtra(Constants.EXTRA_POST, item);
 		getActivity().startActivity(threadIntent);
 	}
 
@@ -67,7 +67,7 @@ public class StarredFragment extends StreamFragment
 	{
 		return new String[]
 		{
-			String.format(Constants.RESPONSE_STARRED, user.getId())
+			String.format(Constants.RESPONSE_BOOKMARKED, user.getId())
 		};
 	}
 

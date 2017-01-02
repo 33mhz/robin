@@ -28,7 +28,7 @@ public class HashEntity extends Entity
 			{
 				JsonObject hashObject = element.getAsJsonObject();
 
-				this.name = hashObject.get("name").getAsString();
+				this.name = hashObject.get("text").getAsString();
 
 				return this;
 			}
@@ -52,7 +52,7 @@ public class HashEntity extends Entity
 		try
 		{
 			JsonArray hashArray = element.getAsJsonArray();
-			ArrayList<HashEntity> hashs = new ArrayList<HashEntity>(hashArray.size());
+			ArrayList<HashEntity> hashes = new ArrayList<HashEntity>(hashArray.size());
 
 			for (JsonElement hashElement : hashArray)
 			{
@@ -60,11 +60,11 @@ public class HashEntity extends Entity
 
 				if (hash != null)
 				{
-					hashs.add(hash);
+					hashes.add(hash);
 				}
 			}
 
-			return hashs;
+			return hashes;
 		}
 		catch (Exception e)
 		{
@@ -123,7 +123,7 @@ public class HashEntity extends Entity
 			return false;
 		}
 
-		if ((object == this) || (object instanceof HashEntity && ((HashEntity)object).getName().equals(getName())))
+		if (object == this || (object instanceof HashEntity && ((HashEntity)object).getName().equals(getName())))
 		{
 			return true;
 		}

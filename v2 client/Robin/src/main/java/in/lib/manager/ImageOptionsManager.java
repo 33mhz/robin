@@ -44,51 +44,51 @@ public class ImageOptionsManager
 	{
 		ImageFader avatarFader = new ImageFader(400);
 
-		Builder avatarImageOptionsBuilder = new DisplayImageOptions.Builder();
-		avatarImageOptionsBuilder.cacheInMemory(true);
-		avatarImageOptionsBuilder.cacheOnDisc(true);
-		avatarImageOptionsBuilder.displayer(avatarFader);
-		avatarImageOptionsBuilder.bitmapConfig(Config.RGB_565);
-		avatarImageOptionsBuilder.showStubImage(R.drawable.default_avatar);
-		avatarImageOptionsBuilder.showImageForEmptyUri(R.drawable.default_avatar);
-		avatarImageOptionsBuilder.imageScaleType(ImageScaleType.EXACTLY_STRETCHED);
-		avatarImageOptionsBuilder.resetViewBeforeLoading(true);
+		Builder avatarImageOptionsBuilder = new DisplayImageOptions.Builder()
+			.cacheInMemory(true)
+			.cacheOnDisc(true)
+			.displayer(avatarFader)
+			.bitmapConfig(Config.RGB_565)
+			.showImageOnLoading(R.drawable.default_avatar)
+			.showImageForEmptyUri(R.drawable.default_avatar)
+			.imageScaleType(ImageScaleType.EXACTLY_STRETCHED)
+			.resetViewBeforeLoading(true);
 
-		Builder coverImageOptionsBuilder = new DisplayImageOptions.Builder();
-		coverImageOptionsBuilder.cacheInMemory(true);
-		coverImageOptionsBuilder.cacheOnDisc(true);
-		coverImageOptionsBuilder.showStubImage(R.drawable.default_cover);
-		coverImageOptionsBuilder.showImageForEmptyUri(R.drawable.default_cover);
-		coverImageOptionsBuilder.imageScaleType(ImageScaleType.IN_SAMPLE_POWER_OF_2);
-		coverImageOptionsBuilder.resetViewBeforeLoading(true);
+		Builder coverImageOptionsBuilder = new DisplayImageOptions.Builder()
+			.cacheInMemory(true)
+			.cacheOnDisc(true)
+			.showImageOnLoading(R.drawable.default_cover)
+			.showImageForEmptyUri(R.drawable.default_cover)
+			.imageScaleType(ImageScaleType.IN_SAMPLE_POWER_OF_2)
+			.resetViewBeforeLoading(true);
 
-		Builder threadAvatarImageOptionsBuilder = new DisplayImageOptions.Builder();
-		threadAvatarImageOptionsBuilder.cacheInMemory(true);
-		threadAvatarImageOptionsBuilder.cacheOnDisc(true);
-		threadAvatarImageOptionsBuilder.bitmapConfig(Config.RGB_565);
-		threadAvatarImageOptionsBuilder.showStubImage(R.drawable.default_avatar);
-		threadAvatarImageOptionsBuilder.showImageForEmptyUri(R.drawable.default_avatar);
-		threadAvatarImageOptionsBuilder.imageScaleType(ImageScaleType.EXACTLY_STRETCHED);
-		threadAvatarImageOptionsBuilder.resetViewBeforeLoading(true);
+		Builder threadAvatarImageOptionsBuilder = new DisplayImageOptions.Builder()
+			.cacheInMemory(true)
+			.cacheOnDisc(true)
+			.bitmapConfig(Config.RGB_565)
+			.showImageOnLoading(R.drawable.default_avatar)
+			.showImageForEmptyUri(R.drawable.default_avatar)
+			.imageScaleType(ImageScaleType.EXACTLY_STRETCHED)
+			.resetViewBeforeLoading(true);
 
-		Builder mediaImageOptionsBuilder = new DisplayImageOptions.Builder();
-		mediaImageOptionsBuilder.imageScaleType(ImageScaleType.IN_SAMPLE_POWER_OF_2);
-		mediaImageOptionsBuilder.bitmapConfig(Config.RGB_565);
-		mediaImageOptionsBuilder.resetViewBeforeLoading(true);
-		mediaImageOptionsBuilder.cacheInMemory(true);
-		mediaImageOptionsBuilder.cacheOnDisc(true);
+		Builder mediaImageOptionsBuilder = new DisplayImageOptions.Builder()
+			.imageScaleType(ImageScaleType.IN_SAMPLE_POWER_OF_2)
+			.bitmapConfig(Config.RGB_565)
+			.resetViewBeforeLoading(true)
+			.cacheInMemory(true)
+			.cacheOnDisc(true);
 
-		Builder inlineMediaImageOptionsBuilder = new DisplayImageOptions.Builder();
-		inlineMediaImageOptionsBuilder.imageScaleType(ImageScaleType.IN_SAMPLE_POWER_OF_2);
-		inlineMediaImageOptionsBuilder.bitmapConfig(Config.RGB_565);
-		inlineMediaImageOptionsBuilder.resetViewBeforeLoading(true);
-		inlineMediaImageOptionsBuilder.displayer(avatarFader);
-		inlineMediaImageOptionsBuilder.cacheInMemory(true);
+		Builder inlineMediaImageOptionsBuilder = new DisplayImageOptions.Builder()
+			.imageScaleType(ImageScaleType.IN_SAMPLE_POWER_OF_2)
+			.bitmapConfig(Config.RGB_565)
+			.resetViewBeforeLoading(true)
+			.displayer(avatarFader)
+			.cacheInMemory(true);
 
-		Builder centerPostMediaOptionsBuilder = new DisplayImageOptions.Builder();
-		centerPostMediaOptionsBuilder.imageScaleType(ImageScaleType.EXACTLY_STRETCHED);
-		centerPostMediaOptionsBuilder.bitmapConfig(Config.RGB_565);
-		centerPostMediaOptionsBuilder.cacheInMemory(true);
+		Builder centerPostMediaOptionsBuilder = new DisplayImageOptions.Builder()
+			.imageScaleType(ImageScaleType.EXACTLY_STRETCHED)
+			.bitmapConfig(Config.RGB_565)
+			.cacheInMemory(true);
 
 		avatarImageOptions = avatarImageOptionsBuilder.build();
 		coverImageOptions = coverImageOptionsBuilder.build();
@@ -105,7 +105,7 @@ public class ImageOptionsManager
 			super(delay);
 		}
 
-		@Override public Bitmap display(Bitmap bitmap, ImageView imageView, LoadedFrom loadedFrom)
+		/*@Override public Bitmap display(Bitmap bitmap, ImageView imageView, LoadedFrom loadedFrom)
 		{
 			if (loadedFrom != LoadedFrom.MEMORY_CACHE)
 			{
@@ -116,6 +116,6 @@ public class ImageOptionsManager
 				imageView.setImageBitmap(bitmap);
 				return bitmap;
 			}
-		}
+		}*/
 	}
 }

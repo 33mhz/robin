@@ -19,7 +19,7 @@ public class AutoCompleteWriter
 		int size = users.size();
 		TListWrapper listWrapper = CacheManager.getInstance().readFile(Constants.CACHE_AUTOCOMPLETE_USERNAMES, TListWrapper.class);
 
-		if (listWrapper == null || (listWrapper != null && listWrapper.getList() == null))
+		if (listWrapper == null || (listWrapper.getList() == null))
 		{
 			listWrapper = new TListWrapper(new ArrayList<SimpleUser>(size), SimpleUser.class);
 		}
@@ -60,7 +60,7 @@ public class AutoCompleteWriter
 		int size = items.size();
 		TListWrapper listWrapper = CacheManager.getInstance().readFile(Constants.CACHE_AUTOCOMPLETE_HASHTAGS, TListWrapper.class);
 
-		if (listWrapper == null || (listWrapper != null && listWrapper.getList() == null))
+		if (listWrapper == null || (listWrapper.getList() == null))
 		{
 			listWrapper = new TListWrapper(new ArrayList<HashEntity>(size), HashEntity.class);
 		}
@@ -73,9 +73,9 @@ public class AutoCompleteWriter
 			{
 				hashes = ((Message)items.get(index)).getPostText().getHashTags();
 			}
-			else if (items.get(index) instanceof User && ((User)items.get(index)).getDescription() != null)
+			else if (items.get(index) instanceof User && ((User)items.get(index)).getContent() != null)
 			{
-				hashes = ((User)items.get(index)).getDescription().getHashTags();
+				hashes = ((User)items.get(index)).getContent().getHashTags();
 			}
 			else
 			{

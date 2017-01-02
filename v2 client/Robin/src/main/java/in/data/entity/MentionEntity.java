@@ -30,14 +30,14 @@ public class MentionEntity extends Entity
 				JsonObject mentionObject = element.getAsJsonObject();
 
 				this.id = mentionObject.get("id").getAsString();
-				this.name = mentionObject.get("name").getAsString();
-
-				return this;
+				this.name = mentionObject.has("text") ? mentionObject.get("text").getAsString() : "";
 			}
 			catch (Exception e)
 			{
 				Debug.out(e);
 			}
+
+            return this;
 		}
 
 		return null;

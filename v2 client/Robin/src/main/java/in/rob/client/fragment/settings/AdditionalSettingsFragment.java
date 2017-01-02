@@ -9,11 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.nostra13.universalimageloader.cache.memory.MemoryCacheAware;
-import com.nostra13.universalimageloader.core.ImageLoader;
+//import com.nostra13.universalimageloader.cache.memory.MemoryCacheAware;
+//import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.io.File;
-import java.util.Iterator;
+//import java.util.Iterator;
 
 import in.lib.utils.Debug;
 import in.lib.utils.Views;
@@ -58,7 +58,7 @@ public class AdditionalSettingsFragment extends BaseFragment
 
 	public String calculateMemoryCacheSize()
 	{
-		try
+		/*try
 		{
 			long size = 0;
 
@@ -82,9 +82,9 @@ public class AdditionalSettingsFragment extends BaseFragment
 			return Math.floor((size / 1024.0d / 1024.0d) * 100.0d) / 100.0d + "MB";
 		}
 		catch (Exception e)
-		{
+		{*/
 			return "unavailable";
-		}
+		//}
 	}
 
 	public String calculateFolderCacheSize(String path)

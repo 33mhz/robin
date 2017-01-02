@@ -26,7 +26,8 @@ public class AuthenticationHandler extends ResponseHandler
 		{
 			JsonObject tokenObject = getContent().getAsJsonObject().get("token").getAsJsonObject();
 			JsonObject userObject = tokenObject.get("user").getAsJsonObject();
-			this.user = new User().createFrom(userObject);
+            this.user = new User().createFrom(userObject);
+
 			this.user.setToken(getContent().getAsJsonObject().get("access_token").getAsString());
 		}
 	}

@@ -63,9 +63,9 @@ public class InteractionPostHolder extends Holder<Interaction>
 				{
 					holder.actionText.setText("Reposted by");
 				}
-				else if (model.getType() == Type.STAR)
+				else if (model.getType() == Type.BOOKMARK)
 				{
-					holder.actionText.setText("Starred by");
+					holder.actionText.setText("Bookmarked by");
 				}
 			}
 		}

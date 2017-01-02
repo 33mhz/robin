@@ -10,19 +10,19 @@ import in.view.delegate.ChannelPmDelegate;
 public class ChannelAdapter extends RobinAdapter<Channel>
 {
 	private static final int TYPE_PM = 0;
-	private static final int TYPE_PATTER = 1;
+	private static final int TYPE_CHAT = 1;
 
 	public ChannelAdapter(Context context)
 	{
 		super(context);
 
 		getItemTypes().put(TYPE_PM, new ChannelPmDelegate(this));
-		getItemTypes().put(TYPE_PATTER, new ChannelPmDelegate(this));
+		getItemTypes().put(TYPE_CHAT, new ChannelPmDelegate(this));
 	}
 
 	@Override public int getItemViewType(int position)
 	{
 		Channel item = getItem(position);
-		return item.getType() == Type.PATTER_CHANNEL ? TYPE_PATTER : TYPE_PM;
+		return item.getType() == Type.PATTER_CHANNEL ? TYPE_CHAT : TYPE_PM;
 	}
 }

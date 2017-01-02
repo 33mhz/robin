@@ -45,7 +45,7 @@
 	<string name="channels">Channels</string>
 	<string name="channels_stream_fail">Failed to load channels</string>
 	<string name="check_updates">Check for updates</string>
-	<string name="checking_for_updates">Checking for updates...</string>
+	<string name="checking_for_updates">Checking for updates&#8320;</string>
 	<string name="clear_cache">Clear cache</string>
 	<string name="clear_image_cache">Clear image cache</string>
 	<string name="clear_images">Clear all images?</string>
@@ -228,7 +228,7 @@
 	<string name="notification_setting_patter_mentions">When I get mentioned in a patter channel</string>
 	<string name="notification_setting_pms">When I get a PM</string>
 	<string name="notification_setting_repost">When my posts are reposted</string>
-	<string name="notification_setting_star">When my posts are starred</string>
+	<string name="notification_setting_star">When my posts are bookmarked</string>
 	<string name="notification_sound_title">Notification sound</string>
 	<string name="notification_sound_desc">Set the tone played when a notification triggers</string>
 	<string name="notification_sound_enabled_desc">Enabled sounds for notifications</string>
@@ -266,10 +266,10 @@
 	<string name="preview">Preview</string>
 	<string name="private_messaging">Private Messages</string>
 	<string name="profile">Profile</string>
-	<string name="profile_stats" formatted="false">%s following%s followers%s starred%s posts</string>
+	<string name="profile_stats" formatted="false">%s following%s followers%s bookmarked%s posts</string>
 	<string name="profile_updated">Profile successfully updated!</string>
 	<string name="ptr_pull">Swipe down to refresh</string>
-	<string name="ptr_refreshing">Refreshing...</string>
+	<string name="ptr_refreshing">Refreshing&#8320;</string>
 	<string name="quick_post">Quick post</string>
 	<string name="quick_post_desc">Enabled the quick post on-going notification</string>
 	<string name="quiet_header">QUIET MODE</string>
@@ -312,9 +312,9 @@
 	<string name="save_to_drafts">Do you wish to save to drafts?</string>
 	<string name="saved_searches">SAVED SEARCHES</string>
 	<string name="search">Search</string>
-	<string name="search_for_tags">Search #tags, \@users, or keywords</string>
+	<string name="search_for_tags">Search #tags, \@users, or keywords (not functional)</string>
 	<string name="search_users">Search users</string>
-	<string name="searching_for_user">Searching for user</string>
+	<string name="searching_for_user">Searching for user (not functional)</string>
 	<string name="select_account">Select account</string>
 	<string name="select_animation_option">Select animations</string>
 	<string name="select_emphasis_option">Select post emphasis</string>
@@ -356,8 +356,8 @@
 	<string name="show_non_following_mentions"></string>
 	<string name="show_non_following_mentions_desc"></string>
 	<string name="show_reposters">Show reposters</string>
-	<string name="show_reposts_stars">Show reposts/stars</string>
-	<string name="show_starred_by">Show starred by</string>
+	<string name="show_reposts_stars">Show reposts/bookmarks</string>
+	<string name="show_starred_by">Show bookmarked by</string>
 	<string name="show_timeline_cover">Show timeline cover</string>
 	<string name="single_click_hashtag">Hashtags</string>
 	<string name="single_click_link_desc">Make links clickable in timeline streams</string>
@@ -369,12 +369,12 @@
 	<string name="splash_login_desc">Login to your account</string>
 	<string name="splash_signup">SIGNUP</string>
 	<string name="splash_signup_desc">Create an account</string>
-	<string name="star_failure">Failed to star post</string>
-	<string name="star_post">Star/unstar</string>
-	<string name="starred">Starred</string>
-	<string name="starred_by">Starred by</string>
-	<string name="starred_posts">Starred Posts</string>
-	<string name="stars">Stars:</string>
+	<string name="star_failure">Failed to bookmark post</string>
+	<string name="star_post">Bookmark/unbookmark</string>
+	<string name="starred">Bookmarked</string>
+	<string name="starred_by">Bookmarked by</string>
+	<string name="starred_posts">Bookmarked Posts</string>
+	<string name="stars">Bookmarks:</string>
 	<string name="stream">Stream</string>
 	<string name="stream_desc">Ability to read your stream</string>
 	<string name="stream_fail">Failed to get stream</string>
@@ -410,8 +410,8 @@
 	<string name="timezone">Timezone</string>
 	<string name="too_many_follow">You can only follow a maximum of 40 users</string>
 	<string name="translate_post">Translate</string>
-	<string name="trending">TRENDING HASHTAGS</string>
-	<string name="trending_load_failed">Loading trending failed</string>
+	<string name="global_hashtags">GLOBAL HASHTAGS</string>
+	<string name="global_load_failed">Loading global failed</string>
 	<string name="type_post">Type in your post&#8230;</string>
 	<string name="unauthorized">You are not authorized to view this stream</string>
 	<string name="unblock">Unblock</string>
@@ -419,7 +419,7 @@
 	<string name="unfollow_failed">Failed to unfollow user</string>
 	<string name="unfollow_failed_formatted" formatted="false">Failed to unfollow user \@%s</string>
 	<string name="unfollow_success" formatted="false">Successfully unfollowed \@%s</string>
-	<string name="unfollowing_user">Unfollowing user...</string>
+	<string name="unfollowing_user">Unfollowing user&#8230;</string>
 	<string name="unfound_user">Could not find user</string>
 	<string name="use_unified_desc">Include my mentions in timeline stream</string>
 	<string name="unmute">Unmute</string>
@@ -429,7 +429,7 @@
 	<string name="unmute_thread">Unmute Thread</string>
 	<string name="unsave">Unsave</string>
 	<string name="unsave_hashtag">Unsave hashtag</string>
-	<string name="unstar_failure">Failed to unstar post</string>
+	<string name="unstar_failure">Failed to unbookmark post</string>
 	<string name="unsubscribe">Unsubscribe</string>
 	<string name="update">Update</string>
 	<string name="update_failed">There was a problem downloading the update.</string>
@@ -452,7 +452,7 @@
 	<string name="user_unblocked">User successfully unblocked</string>
 	<string name="user_unmuted">User successfully unmuted</string>
 	<string name="using_camera">Using camera</string>
-	<string name="vague_error">An error occured while processing your request.</string>
+	<string name="vague_error">An error occurred while processing your request.</string>
 	<string name="verified" formatted="false">Verified %s</string>
 	<string name="version">Version</string>
 	<string name="view_profile">View profile</string>
@@ -465,7 +465,7 @@
 	<string name="yes">Yes</string>
 
 	<!-- NEW STRINGS -->
-	<string name="from_app_net">From app.net storage</string>
+	<string name="from_app_net">From pnut.io storage</string>
 	<string name="storage_title">My Photos</string>
 	<string name="thread_show_nested">Show as tree</string>
 	<string name="collapse_thread">Collapse thread</string>
@@ -485,4 +485,5 @@
 	<string name="clear_image_memory_cache">Clear image memory cache</string>
 	<string name="send">Send</string>
 	<string name="switch_accounts">Switch account</string>
+    <string name="top_header">top header</string>
 </resources>

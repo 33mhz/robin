@@ -22,11 +22,11 @@ public class Channel extends AdnModel
 {
 	public enum Type
 	{
-		PRIVATE_MESSAGE("net.app.core.pm"),
-		PATTER_CHANNEL("net.patter-app.room");
+		PRIVATE_MESSAGE("io.pnut.core.pm"),
+		PATTER_CHANNEL("io.pnut.core.chat");
 
 		@Getter private final String typeId;
-		private Type(String typeId)
+		Type(String typeId)
 		{
 			this.typeId = typeId;
 		}
@@ -55,8 +55,8 @@ public class Channel extends AdnModel
 	protected boolean subscribed;
 	protected boolean writable;
 	protected boolean isPublic;
-	protected List<String> readers = new ArrayList<String>();
-	protected List<User> users = new ArrayList<User>();
+	protected List<String> readers = new ArrayList<>();
+	protected List<User> users = new ArrayList<>();
 
 	@Override public Channel createFrom(JsonElement element)
 	{
@@ -77,19 +77,19 @@ public class Channel extends AdnModel
 			}
 
 			this.type = Type.getTypeById(channel.get("type").getAsString());
-			this.editable = channel.get("you_can_edit").getAsBoolean();
+			this.editable = channel.get("acl").getAsJsonObject().get("full").getAsJsonObject().get("you").getAsBoolean();
 			this.subscribed = channel.get("you_subscribed").getAsBoolean();
-			this.writable = channel.get("writers").getAsJsonObject().get("you").getAsBoolean();
+			this.writable = channel.get("acl").getAsJsonObject().get("write").getAsJsonObject().get("you").getAsBoolean();
 
-			JsonArray readerIds = channel.get("writers").getAsJsonObject().get("user_ids").getAsJsonArray();
+			JsonArray readerIds = channel.get("acl").getAsJsonObject().get("write").getAsJsonObject().get("user_ids").getAsJsonArray();
 
 			if (this.type == Type.PATTER_CHANNEL)
 			{
-				if (channel.get("readers").getAsJsonObject().has("public")
-				&& channel.get("writers").getAsJsonObject().has("any_user"))
+				if (channel.get("acl").getAsJsonObject().get("read").getAsJsonObject().has("public")
+				&& channel.get("acl").getAsJsonObject().get("write").getAsJsonObject().has("any_user"))
 				{
-					boolean readerPublic = channel.get("readers").getAsJsonObject().get("public").getAsBoolean();
-					boolean writerPublic = channel.get("writers").getAsJsonObject().get("any_user").getAsBoolean();
+					boolean readerPublic = channel.get("acl").getAsJsonObject().get("read").getAsJsonObject().get("public").getAsBoolean();
+					boolean writerPublic = channel.get("acl").getAsJsonObject().get("write").getAsJsonObject().get("any_user").getAsBoolean();
 					this.isPublic = readerPublic && writerPublic;
 				}
 			}
@@ -117,12 +117,12 @@ public class Channel extends AdnModel
 				}
 			}
 
-			if (channel.has("annotations"))
+			if (channel.has("raw"))
 			{
-				JsonArray annotations = channel.get("annotations").getAsJsonArray();
+				JsonArray annotations = channel.get("raw").getAsJsonArray();
 				for (JsonElement annotation : annotations)
 				{
-					if (annotation.getAsJsonObject().get("type").getAsString().equals("net.patter-app.settings"))
+					if (annotation.getAsJsonObject().get("type").getAsString().equals("io.pnut.core.chat-settings"))
 					{
 						if (annotation.getAsJsonObject().get("value").getAsJsonObject().has("name"))
 						{
@@ -148,7 +148,7 @@ public class Channel extends AdnModel
 		try
 		{
 			JsonArray channelArray = element.getAsJsonArray();
-			ArrayList<Channel> channels = new ArrayList<Channel>(channelArray.size());
+			ArrayList<Channel> channels = new ArrayList<>(channelArray.size());
 
 			for (JsonElement channelElement : channelArray)
 			{
