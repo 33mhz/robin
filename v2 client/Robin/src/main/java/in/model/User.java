@@ -30,20 +30,20 @@ import lombok.Data;
 @Data
 public class User extends SimpleUser
 {
-	protected String coverUrl;
-	protected boolean following;
-	protected boolean follower;
-	protected boolean muted;
-	protected boolean blocked;
-	protected int followingCount;
-	protected int followerCount;
-	protected int postCount;
-	protected int starredCount;
+    private String coverUrl;
+    private boolean following;
+    private boolean follower;
+    private boolean muted;
+    private boolean blocked;
+    private int followingCount;
+    private int followerCount;
+    private int postCount;
+    private int starredCount;
 	protected Text content;
-	protected boolean coverDefault = true;
-	protected boolean avatarDefault = true;
-	protected String verifiedDomain;
-	protected String token;
+    private boolean coverDefault = true;
+    private boolean avatarDefault = true;
+    private String verifiedDomain;
+    private String token;
 
 	@Override public User createFrom(JsonElement element)
 	{
@@ -248,7 +248,9 @@ public class User extends SimpleUser
 						return BitmapUtils.resize(b, width, height);
 					}
 				}
-				catch (OutOfMemoryError e){}
+				catch (OutOfMemoryError e){
+                    return null;
+                }
 			}
 		}
 
@@ -257,7 +259,7 @@ public class User extends SimpleUser
 
 	@Override public boolean equals(Object object)
 	{
-		return (object != null && (object == this || (object instanceof User && object.getId().equals(getId()))));
+		return (object != null && object instanceof User && ((User)object).getId().equals(getId()));
 	}
 
 	public static final Parcelable.Creator<User> CREATOR = new Creator<User>()

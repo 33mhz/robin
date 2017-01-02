@@ -21,15 +21,15 @@ import lombok.Data;
 public class SimpleUser extends AdnModel
 {
 	protected String username = "";
-	protected String firstName = "";
-	protected String lastName = "";
-	protected String avatarUrl;
-	protected String formattedMentionNameTitle;
-	protected String formattedMentionNameSubTitle;
+	private String firstName = "";
+    private String lastName = "";
+    private String avatarUrl;
+    private String formattedMentionNameTitle;
+    private String formattedMentionNameSubTitle;
 
 	public String getFullname()
 	{
-		return new StringBuilder().append(firstName).append(" ").append(lastName).toString().trim();
+		return firstName+" "+lastName;
 	}
 
 	public SimpleUser createFrom(User user)
@@ -192,17 +192,7 @@ public class SimpleUser extends AdnModel
 
 	@Override public boolean equals(Object object)
 	{
-		if (object == null)
-		{
-			return false;
-		}
-
-		if (object == this || (object instanceof SimpleUser && ((SimpleUser)object).getId().equals(getId())))
-		{
-			return true;
-		}
-
-		return false;
+		return (object != null && object instanceof SimpleUser && ((SimpleUser)object).getId().equals(getId()));
 	}
 
 	public static final Creator<SimpleUser> CREATOR = new Creator<SimpleUser>()

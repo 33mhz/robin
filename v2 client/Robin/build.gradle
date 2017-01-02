@@ -24,7 +24,7 @@ android {
 		release {
 			if (project.getGradle().startParameter.taskNames.size() > 0)
 			{
-				def taskName = project.getGradle().startParameter.taskNames.get(0);
+				//def taskName = project.getGradle().startParameter.taskNames.get(0);
 				def console = System.console();
 				if (console != null)// && taskName.contains("Release"))
 				{

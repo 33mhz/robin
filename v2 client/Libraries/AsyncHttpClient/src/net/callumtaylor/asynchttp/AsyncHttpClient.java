@@ -767,7 +767,7 @@ public class AsyncHttpClient
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	private void executeTask(RequestMode mode, Uri uri, List<Header> headers, HttpEntity sendData, AsyncHttpResponseHandler response)
 	{
-		if (executorTask != null || (executorTask != null && (executorTask.getStatus() == Status.RUNNING || executorTask.getStatus() == Status.PENDING)))
+		if (executorTask != null)// || (executorTask != null && (executorTask.getStatus() == Status.RUNNING || executorTask.getStatus() == Status.PENDING)))
 		{
 			executorTask.cancel(true);
 			executorTask = null;
@@ -787,7 +787,7 @@ public class AsyncHttpClient
 
 	public class ClientExecutorTask extends AsyncTask<Void, Packet, Void>
 	{
-		private static final int BUFFER_SIZE = 1 * 1024 * 8;
+		private static final int BUFFER_SIZE = 8192;
 
 		private final AsyncHttpResponseHandler response;
 		private final Uri requestUri;
@@ -821,7 +821,7 @@ public class AsyncHttpClient
 
 		@Override protected Void doInBackground(Void... params)
 		{
-			HttpClient httpClient;
+            HttpClient httpClient;
 
 			if (allowAllSsl)
 			{
@@ -844,7 +844,7 @@ public class AsyncHttpClient
 			}
 
 			HttpContext httpContext = new BasicHttpContext();
-			HttpRequestBase request = null;
+			HttpRequestBase request;
 
 			try
 			{
@@ -865,7 +865,9 @@ public class AsyncHttpClient
 				else if (requestMode == RequestMode.DELETE)
 				{
 					request = new HttpDeleteWithBody(requestUri.toString());
-				}
+				} else {
+                    return null;
+                }
 
 				HttpParams p = httpClient.getParams();
 				HttpClientParams.setRedirecting(p, allowRedirect);
@@ -915,7 +917,7 @@ public class AsyncHttpClient
 
 				if (response.getAllHeaders() != null && this.response != null)
 				{
-					this.response.getConnectionInfo().responseHeaders = new LinkedHashMap<String, String>();
+					this.response.getConnectionInfo().responseHeaders = new LinkedHashMap<>();
 					for (Header header : response.getAllHeaders())
 					{
 						this.response.getConnectionInfo().responseHeaders.put(header.getName(), header.getValue());

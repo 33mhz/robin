@@ -8,7 +8,7 @@
 	<string name="abbr_weeks">w</string>
 	<string name="abbr_years">y</string>
 	<string name="about">About</string>
-	<string name="about_copy">This app was made by \@scruffyfox and \@simpleline for App.net.\nWe\'re spending a lot of nights on this app and we love it!\nSo if you like Robin, buy us a beer!</string>
+	<string name="about_copy">This app was made by \@scruffyfox and \@simpleline for App.net,\nand reworked by @33MHz for pnut.io!</string>
 	<string name="accounts">Accounts</string>
 	<string name="add_account">Add account</string>
 	<string name="add_at">Add at</string>
@@ -87,7 +87,7 @@
 	<string name="donate">Donate</string>
 	<string name="done">Done</string>
 	<string name="download_saved" formatted="false">Image downloaded to %s</string>
-	<string name="downloading">Downloading...</string>
+	<string name="downloading">Downloading&#8320;</string>
 	<string name="downloading_image">Downloading image</string>
 	<string name="drafts">Drafts</string>
 	<string name="duplicate">Duplicate</string>
@@ -116,7 +116,7 @@
 	<string name="followers">Followers</string>
 	<string name="followers_stream_fail">Failed to load followers</string>
 	<string name="following">Following</string>
-	<string name="following_user">Following user...</string>
+	<string name="following_user">Following user&#8320;</string>
 	<string name="followings_stream_fail">Failed to load followings</string>
 	<string name="follows_following" formatted="false">%s following\n%s followers</string>
 	<string name="follows_you">Follows you</string>
@@ -165,11 +165,11 @@
 	<string name="login">Login</string>
 	<string name="login_button">Login</string>
 	<string name="login_error">There was a problem checking the beta key, please try again.</string>
-	<string name="login_info_description_1">Robin is an App.net client and requires an account.</string>
-	<string name="login_info_description_2">Robin uses password auth which has been approved by the staff of App.net and requires the permissions</string>
+	<string name="login_info_description_1">Robin is a pnut.io client and requires an account.</string>
+	<string name="login_info_description_2">Robin uses password auth which has been approved by the staff of pnut.io and requires the permissions</string>
 	<string name="login_info_description_3">App was created by \@scruffyfox and \@simpleline</string>
 	<string name="login_password">Password</string>
-	<string name="login_title">Login to App.net</string>
+	<string name="login_title">Login to pnut.io</string>
 	<string name="login_username">Username</string>
 	<string name="logout">Logout</string>
 	<string name="logout_description">This will log out all linked accounts</string>
@@ -218,14 +218,14 @@
 	<string name="notif_follow_from" formatted="false">You have a new follower: \@%s</string>
 	<string name="notif_message_from" formatted="false">Message from \@%s</string>
 	<string name="notif_new_message_from" formatted="false">New message from \@%s</string>
-	<string name="notif_new_patter_message_from" formatted="false">New patter mention from \@%s</string>
-	<string name="notif_patter_message_from" formatted="false">Patter mention from \@%s</string>
+	<string name="notif_new_patter_message_from" formatted="false">New chat room mention from \@%s</string>
+	<string name="notif_patter_message_from" formatted="false">Chat room mention from \@%s</string>
 	<string name="notification_for" formatted="false">for @%s</string>
 	<string name="notification_header">NOTIFICATIONS</string>
 	<string name="notification_new_post">Robin - new post</string>
 	<string name="notification_setting_mentions">When I get mentioned</string>
 	<string name="notification_setting_new_follow">When I get a new follower</string>
-	<string name="notification_setting_patter_mentions">When I get mentioned in a patter channel</string>
+	<string name="notification_setting_patter_mentions">When I get mentioned in a chat room</string>
 	<string name="notification_setting_pms">When I get a PM</string>
 	<string name="notification_setting_repost">When my posts are reposted</string>
 	<string name="notification_setting_star">When my posts are bookmarked</string>
@@ -353,8 +353,6 @@
 	<string name="post_dates_desc">Set how the post date is formatted</string>
 	<string name="show_non_following_title">Show non-following mentions</string>
 	<string name="show_non_following_desc">Show posts mentioning users you don\'t follow</string>
-	<string name="show_non_following_mentions"></string>
-	<string name="show_non_following_mentions_desc"></string>
 	<string name="show_reposters">Show reposters</string>
 	<string name="show_reposts_stars">Show reposts/bookmarks</string>
 	<string name="show_starred_by">Show bookmarked by</string>
