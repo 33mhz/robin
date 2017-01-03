@@ -96,7 +96,7 @@ public class DateRenderer
 		}
 	}
 
-	private static class Unit
+	public static class Unit
 	{
 		public String type;
 		public String name;

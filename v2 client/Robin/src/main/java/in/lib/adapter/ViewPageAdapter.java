@@ -186,7 +186,7 @@ public class ViewPageAdapter extends FragmentStatePagerAdapter implements OnPage
 		return fragments.get(position);
 	}
 
-    private Fragment getCurrentFragment()
+    public Fragment getCurrentFragment()
 	{
 		return fragments.get(viewPager.getCurrentItem());
 	}
