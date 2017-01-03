@@ -15,7 +15,7 @@ import java.util.List;
 import in.lib.utils.Debug;
 import in.lib.utils.SerialReaderUtil;
 import in.lib.utils.SerialWriterUtil;
-import in.rob.client.R;
+import in.pnutrob.client.R;
 import lombok.Data;
 import lombok.Getter;
 
@@ -99,7 +99,7 @@ public class Interaction extends AdnModel
 		try
 		{
 			JsonArray interactionArray = element.getAsJsonArray();
-			ArrayList<Interaction> interactions = new ArrayList<Interaction>(interactionArray.size());
+			ArrayList<Interaction> interactions = new ArrayList<>(interactionArray.size());
 
 			for (JsonElement interactionElement : interactionArray)
 			{

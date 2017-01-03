@@ -8,7 +8,7 @@ import in.lib.utils.Views.InjectView;
 import in.lib.utils.Views.Injectable;
 import in.lib.view.AvatarImageView;
 import in.model.User;
-import in.rob.client.R;
+import in.pnutrob.client.R;
 import in.view.holder.base.Holder;
 import lombok.Getter;
 
@@ -18,7 +18,7 @@ public class UserHolder extends Holder<User>
 	@Getter @InjectView(R.id.username_title) protected TextView usernameTitle;
 	@Getter @InjectView(R.id.username_subtitle) protected TextView usernameSubtitle;
 	@Getter @InjectView(R.id.avatar) protected AvatarImageView avatar;
-	@Getter @InjectView(R.id.user_action) protected Button userAction;
+	@Getter @InjectView(R.id.user_action) private Button userAction;
 
 	public UserHolder(View view)
 	{

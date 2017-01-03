@@ -17,21 +17,21 @@ import in.lib.view.FlowLayout;
 import in.lib.view.LinkedTextView;
 import in.lib.view.TextChronometer;
 import in.model.Channel;
-import in.rob.client.R;
+import in.pnutrob.client.R;
 import in.view.holder.base.Holder;
 import lombok.Getter;
 
 @Injectable
 public class ChannelHolder extends Holder<Channel>
 {
-	@Getter @InjectView(R.id.recent_message) protected View recentMessage;
+	@Getter @InjectView(R.id.recent_message) private View recentMessage;
 	@Getter @InjectView(R.id.title) protected TextView title;
 	@Getter @InjectView(R.id.post_text) protected LinkedTextView postText;
 	@Getter @InjectView(R.id.avatar) protected AvatarImageView avatar;
 	@Getter @InjectView(R.id.date) protected TextChronometer date;
 	@Getter @InjectView(R.id.username_title) protected TextView usernameTitle;
 	@Getter @InjectView(R.id.username_subtitle) protected TextView usernameSubtitle;
-	@Getter @InjectView(R.id.avatar_container) protected FlowLayout avatarContainer;
+	@Getter @InjectView(R.id.avatar_container) private FlowLayout avatarContainer;
 
 	public ChannelHolder(View view)
 	{

@@ -4,7 +4,7 @@ import android.app.Fragment;
 
 import in.data.stream.base.Stream;
 import in.lib.utils.Debug;
-import in.rob.client.fragment.base.StreamFragment;
+import in.pnutrob.client.fragment.base.StreamFragment;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -31,7 +31,7 @@ public abstract class StreamResponseHandler<T extends Stream> extends ResponseHa
 
 	@Override public void onFinish(boolean failed)
 	{
-		if (getFragment() instanceof StreamResponseListener)
+		if (getFragment() != null)
 		{
 			if (failed)
 			{
@@ -45,7 +45,7 @@ public abstract class StreamResponseHandler<T extends Stream> extends ResponseHa
 			if (getFragment() != null)
 			{
 				getFragment().setLoading(false);
-				((StreamResponseListener)getFragment()).handleResponse(stream, append);
+				getFragment().handleResponse(stream, append);
 				detachResponse();
 			}
 			else
@@ -56,7 +56,7 @@ public abstract class StreamResponseHandler<T extends Stream> extends ResponseHa
 					@Override public void onFragmentAttached(Fragment fragment)
 					{
 						getFragment().setLoading(false);
-						((StreamResponseListener)getFragment()).handleResponse(stream, append);
+						getFragment().handleResponse(stream, append);
 						setOnFragmentAttachedListener(null);
 						detachResponse();
 					}

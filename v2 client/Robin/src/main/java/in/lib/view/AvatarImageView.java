@@ -18,9 +18,9 @@ import in.lib.manager.SettingsManager;
 import in.lib.utils.BitUtils;
 import in.model.SimpleUser;
 import in.model.User;
-import in.rob.client.ProfileActivity;
-import in.rob.client.R;
-import in.rob.client.dialog.PopupProfileDialog;
+import in.pnutrob.client.ProfileActivity;
+import in.pnutrob.client.R;
+import in.pnutrob.client.dialog.PopupProfileDialog;
 import lombok.Getter;
 
 public class AvatarImageView extends ImageView implements OnClickListener, OnLongClickListener
@@ -104,7 +104,7 @@ public class AvatarImageView extends ImageView implements OnClickListener, OnLon
 		if (user != null && user instanceof User)
 		{
 			Intent intent = new Intent(getContext(), ProfileActivity.class);
-			intent.putExtra(Constants.EXTRA_USER, (Parcelable)user);
+			intent.putExtra(Constants.EXTRA_USER, user);
 			getContext().startActivity(intent);
 		}
 	}
@@ -114,7 +114,7 @@ public class AvatarImageView extends ImageView implements OnClickListener, OnLon
 		if (user != null && user instanceof User)
 		{
 			Intent intent = new Intent(getContext(), PopupProfileDialog.class);
-			intent.putExtra(Constants.EXTRA_USER, (Parcelable)user);
+			intent.putExtra(Constants.EXTRA_USER, user);
 			getContext().startActivity(intent);
 
 			return true;

@@ -14,7 +14,7 @@ import in.controller.adapter.base.RobinAdapter;
 import in.lib.utils.Debug;
 import in.lib.utils.StringUtils;
 import in.model.Post;
-import in.rob.client.R;
+import in.pnutrob.client.R;
 import in.view.holder.ThreadPostHolder;
 
 public class ThreadPostDelegate extends PostDelegate

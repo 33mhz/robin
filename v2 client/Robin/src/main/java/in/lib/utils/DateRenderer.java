@@ -2,17 +2,17 @@ package in.lib.utils;
 
 import android.content.Context;
 
-import in.rob.client.R;
+import in.pnutrob.client.R;
 
 public class DateRenderer
 {
 	public static final String SECONDS = "seconds";
-	public static final String MINUTES = "minutes";
-	public static final String HOURS = "hours";
-	public static final String DAYS = "days";
-	public static final String WEEKS = "weeks";
-	public static final String MONTHS = "months";
-	public static final String YEARS = "years";
+	private static final String MINUTES = "minutes";
+    private static final String HOURS = "hours";
+    private static final String DAYS = "days";
+    private static final String WEEKS = "weeks";
+    private static final String MONTHS = "months";
+    private static final String YEARS = "years";
 
 	private final String now, sec, min, hour, day, wk, mon, yr;
 
@@ -96,12 +96,12 @@ public class DateRenderer
 		}
 	}
 
-	public static class Unit
+	private static class Unit
 	{
 		public String type;
 		public String name;
-		public int limit;
-		public int inSeconds;
+        private int limit;
+        private int inSeconds;
 
 		public Unit(String type, String name, int limit, int inSeconds)
 		{

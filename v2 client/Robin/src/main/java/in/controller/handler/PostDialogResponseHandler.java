@@ -8,13 +8,13 @@ import android.content.Intent;
 
 import in.controller.handler.base.DialogResponseHandler;
 import in.model.Post;
-import in.rob.client.R;
+import in.pnutrob.client.R;
 
 public class PostDialogResponseHandler extends DialogResponseHandler<Post>
 {
 	private int notificationId;
 
-	public PostDialogResponseHandler(Context context, int notificationId)
+	protected PostDialogResponseHandler(Context context, int notificationId)
 	{
 		super(context);
 		this.notificationId = notificationId;

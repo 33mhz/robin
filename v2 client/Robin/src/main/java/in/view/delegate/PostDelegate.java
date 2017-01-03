@@ -23,10 +23,10 @@ import in.lib.manager.SettingsManager;
 import in.lib.manager.UserManager;
 import in.lib.utils.ViewUtils;
 import in.model.Post;
-import in.rob.client.R;
-import in.rob.client.dialog.DeletePostDialog;
-import in.rob.client.dialog.QuotePostDialog;
-import in.rob.client.dialog.ReplyPostDialog;
+import in.pnutrob.client.R;
+import in.pnutrob.client.dialog.DeletePostDialog;
+import in.pnutrob.client.dialog.QuotePostDialog;
+import in.pnutrob.client.dialog.ReplyPostDialog;
 import in.view.delegate.base.AdapterDelegate;
 import in.view.holder.PostHolder;
 
@@ -77,7 +77,7 @@ public class PostDelegate extends AdapterDelegate<Post> implements OnClickListen
 		if (v.getId() == R.id.reply || v.getId() == R.id.reply_all)
 		{
 			Intent replyIntent = new Intent(v.getContext(), ReplyPostDialog.class);
-			replyIntent.putExtra(Constants.EXTRA_POST, (Parcelable)item);
+			replyIntent.putExtra(Constants.EXTRA_POST, item);
 			replyIntent.putExtra(Constants.EXTRA_REPLY_ALL, v.getId() == R.id.reply_all);
 			v.getContext().startActivity(replyIntent);
 		}
@@ -100,7 +100,7 @@ public class PostDelegate extends AdapterDelegate<Post> implements OnClickListen
 		}
 	}
 
-	protected void onMoreClick(final View view, final Post item)
+	private void onMoreClick(final View view, final Post item)
 	{
 		final PopupMenu options = new PopupMenu(view.getContext(), view);
 		options.getMenuInflater().inflate(R.menu.menu_post_more, options.getMenu());
@@ -162,7 +162,7 @@ public class PostDelegate extends AdapterDelegate<Post> implements OnClickListen
 		options.show();
 	}
 
-	protected void onRepostClick(final View v, final Post item)
+    private void onRepostClick(final View v, final Post item)
 	{
 		final PopupMenu options = new PopupMenu(v.getContext(), v);
 
@@ -201,7 +201,7 @@ public class PostDelegate extends AdapterDelegate<Post> implements OnClickListen
 				else if (menuItem.getItemId() == 1)
 				{
 					Intent quoteIntent = new Intent(v.getContext(), QuotePostDialog.class);
-					quoteIntent.putExtra(Constants.EXTRA_POST, (Parcelable)item);
+					quoteIntent.putExtra(Constants.EXTRA_POST, item);
 					v.getContext().startActivity(quoteIntent);
 				}
 

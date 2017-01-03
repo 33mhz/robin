@@ -60,7 +60,7 @@ public class Constants
 	public static final String CHANNEL_TYPES = "io.pnut.core.pm,io.pnut.core.chat";
 
 	// Preference constants //
-	public static final String PREFS_AUTH = "in.rob.client.auth";
+	public static final String PREFS_AUTH = "in.pnutrobin.client.auth";
 	public static final String PREFS_VERSION = "version";
 	public static final String PREFS_AUTH_USER_ACCESS_TOKEN = PREFS_AUTH + "user_%s_access_token";
 	public static final String PREFS_AUTH_SELECTED_USER = PREFS_AUTH + "selected_user";

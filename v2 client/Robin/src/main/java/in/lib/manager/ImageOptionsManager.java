@@ -10,7 +10,7 @@ import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.LoadedFrom;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
-import in.rob.client.R;
+import in.pnutrob.client.R;
 import lombok.Getter;
 
 public class ImageOptionsManager
@@ -98,7 +98,7 @@ public class ImageOptionsManager
 		centerPostMediaOptions = centerPostMediaOptionsBuilder.build();
 	}
 
-	public static class ImageFader extends FadeInBitmapDisplayer
+	private static class ImageFader extends FadeInBitmapDisplayer
 	{
 		public ImageFader(int delay)
 		{

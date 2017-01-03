@@ -13,18 +13,18 @@ import in.lib.utils.Views.InjectView;
 import in.lib.utils.Views.Injectable;
 import in.lib.view.LinkTouchMovementMethod;
 import in.model.Post;
-import in.rob.client.R;
+import in.pnutrob.client.R;
 import lombok.Getter;
 
 @Injectable
 public class ThreadPostSelectedHolder extends ThreadPostHolder
 {
-	@Getter @InjectView(R.id.star_count) protected TextView starCount;
-	@Getter @InjectView(R.id.repost_count) protected TextView repostCount;
+	@Getter @InjectView(R.id.star_count) private TextView starCount;
+	@Getter @InjectView(R.id.repost_count) private TextView repostCount;
 
-	@Getter @InjectView(R.id.reposted_by) protected TextView repostedBy;
-	@Getter @InjectView(R.id.crosspost) protected TextView crosspost;
-	@Getter @InjectView(R.id.checkin) protected TextView checkin;
+	@Getter @InjectView(R.id.reposted_by) private TextView repostedBy;
+	@Getter @InjectView(R.id.crosspost) private TextView crosspost;
+	@Getter @InjectView(R.id.checkin) private TextView checkin;
 
 	public ThreadPostSelectedHolder(View view)
 	{

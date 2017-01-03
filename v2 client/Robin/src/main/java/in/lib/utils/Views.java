@@ -16,7 +16,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Locale;
 
-import in.rob.client.R;
+import in.pnutrob.client.R;
 
 /**
  * View injection class which runs at runtime rather than compile time like ButterKnife. The benefit to this is there's no generated code which some IDEs (such as Eclipse) fail to generate properly and can often lead to broken references.
@@ -120,7 +120,7 @@ public class Views
 	 */
 	public static void reset(Object target)
 	{
-		ArrayList<Field> fields = new ArrayList<Field>();
+		ArrayList<Field> fields = new ArrayList<>();
 		Class objOrSuper = target.getClass();
 
 		if (!objOrSuper.isAnnotationPresent(Injectable.class))
@@ -219,8 +219,8 @@ public class Views
 		{
 			Context c = source instanceof Activity ? (Activity)source : ((View)source).getContext();
 
-			ArrayList<Method> methods = new ArrayList<Method>();
-			ArrayList<Field> fields = new ArrayList<Field>();
+			ArrayList<Method> methods = new ArrayList<>();
+			ArrayList<Field> fields = new ArrayList<>();
 			Class objOrSuper = target.getClass();
 
 			if (!objOrSuper.isAnnotationPresent(Injectable.class))
@@ -254,16 +254,16 @@ public class Views
 			{
 				if (field.isAnnotationPresent(InjectView.class))
 				{
-					InjectView a = (InjectView)field.getAnnotation(InjectView.class);
+					InjectView a = field.getAnnotation(InjectView.class);
 
 					try
 					{
 						field.setAccessible(true);
 
-						int id = ((InjectView)a).value();
+						int id = a.value();
 						if (id < 1)
 						{
-							String key = ((InjectView)a).id();
+							String key = a.id();
 							if (TextUtils.isEmpty(key))
 							{
 								key = field.getName();
@@ -289,7 +289,7 @@ public class Views
 
 				if (field.isAnnotationPresent(OnClick.class))
 				{
-					OnClick a = (OnClick)field.getAnnotation(OnClick.class);
+					OnClick a = field.getAnnotation(OnClick.class);
 
 					try
 					{
@@ -334,7 +334,7 @@ public class Views
 			{
 				if (method.isAnnotationPresent(OnClick.class))
 				{
-					final OnClick annotation = (OnClick)method.getAnnotation(OnClick.class);
+					final OnClick annotation = method.getAnnotation(OnClick.class);
 					final String clickName = method.getName();
 
 					try
@@ -362,13 +362,13 @@ public class Views
 							{
 								try
 								{
-									if (method != null && method.getParameterTypes().length > 0)
+									if (method.getParameterTypes().length > 0)
 									{
 										Class<?> paramType = method.getParameterTypes()[0];
 										method.setAccessible(true);
 										method.invoke(target, paramType.cast(v));
 									}
-									else if (method != null && method.getParameterTypes().length < 1)
+									else if (method.getParameterTypes().length < 1)
 									{
 										method.setAccessible(true);
 										method.invoke(target);

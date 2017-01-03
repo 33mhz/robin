@@ -21,7 +21,7 @@ import in.lib.view.AvatarImageView;
 import in.lib.view.LinkedTextView;
 import in.lib.view.TextChronometer;
 import in.model.Post;
-import in.rob.client.R;
+import in.pnutrob.client.R;
 import in.view.holder.base.Holder;
 import lombok.Getter;
 
@@ -34,11 +34,11 @@ public class PostHolder extends Holder<Post>
 	@Getter @InjectView(R.id.username_subtitle) protected TextView usernameSubtitle;
 	@Getter @InjectView(R.id.post_text) protected LinkedTextView postText;
 
-	@Getter @InjectView(R.id.conversation_indicator) protected View conversationIndicator;
+	@Getter @InjectView(R.id.conversation_indicator) private View conversationIndicator;
 
-	@Getter @InjectView(R.id.reposted_by) protected TextView repostedBy;
-	@Getter @InjectView(R.id.crosspost) protected TextView crosspost;
-	@Getter @InjectView(R.id.checkin) protected TextView checkin;
+	@Getter @InjectView(R.id.reposted_by) private TextView repostedBy;
+	@Getter @InjectView(R.id.crosspost) private TextView crosspost;
+	@Getter @InjectView(R.id.checkin) private TextView checkin;
 
 	@Getter @InjectView(R.id.options_container) protected View optionsContainer;
 	@Getter @InjectView(R.id.reply) protected View reply;

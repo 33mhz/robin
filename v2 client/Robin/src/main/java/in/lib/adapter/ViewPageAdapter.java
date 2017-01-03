@@ -23,8 +23,8 @@ import java.util.ArrayList;
 
 import in.lib.Constants;
 import in.lib.utils.Views;
-import in.rob.client.R;
-import in.rob.client.fragment.base.StreamFragment;
+import in.pnutrob.client.R;
+import in.pnutrob.client.fragment.base.StreamFragment;
 import lombok.Getter;
 
 public class ViewPageAdapter extends FragmentStatePagerAdapter implements OnPageChangeListener
@@ -46,9 +46,9 @@ public class ViewPageAdapter extends FragmentStatePagerAdapter implements OnPage
 		this.context = context;
 		this.manager = manager;
 		this.viewPager = pager;
-		this.bundles = new ArrayList<Bundle>(2);
-		this.fragmentClasses = new ArrayList<Class<? extends Fragment>>(2);
-		this.fragments = new SparseArray<Fragment>(3);
+		this.bundles = new ArrayList<>(2);
+		this.fragmentClasses = new ArrayList<>(2);
+		this.fragments = new SparseArray<>(3);
 		this.indicatorContainer = Views.findViewById(R.id.indicator, context);
 		this.setTopScrollable(context.getWindow());
 
@@ -157,8 +157,7 @@ public class ViewPageAdapter extends FragmentStatePagerAdapter implements OnPage
 
 	@Override public Fragment getItem(int index)
 	{
-		Fragment fragment = Fragment.instantiate(getContext(), fragmentClasses.get(index).getName(), bundles.get(index));
-		return fragment;
+		return Fragment.instantiate(getContext(), fragmentClasses.get(index).getName(), bundles.get(index));
 	}
 
 	@Override public Object instantiateItem(ViewGroup container, int position)
@@ -182,12 +181,12 @@ public class ViewPageAdapter extends FragmentStatePagerAdapter implements OnPage
 	 * @param position The position to query
 	 * @return The fragment if found, or null
 	 */
-	public Fragment getItemAt(int position)
+    private Fragment getItemAt(int position)
 	{
 		return fragments.get(position);
 	}
 
-	public Fragment getCurrentFragment()
+    private Fragment getCurrentFragment()
 	{
 		return fragments.get(viewPager.getCurrentItem());
 	}
@@ -233,8 +232,7 @@ public class ViewPageAdapter extends FragmentStatePagerAdapter implements OnPage
 		Bundle bundle = bundles.get(position);
 		if (bundle != null && bundle.containsKey(Constants.EXTRA_TITLE))
 		{
-			String title = bundle.getString(Constants.EXTRA_TITLE, "");
-			return title;
+			return bundle.getString(Constants.EXTRA_TITLE, "");
 		}
 
 		return "";
@@ -243,7 +241,7 @@ public class ViewPageAdapter extends FragmentStatePagerAdapter implements OnPage
 	/**
 	 * Hides all the refreshables for the non-visible fragments
 	 */
-	public void resetRefreshables()
+    private void resetRefreshables()
 	{
 		for (int index = 0, size = getCount(); index < size; index++)
 		{
@@ -260,7 +258,7 @@ public class ViewPageAdapter extends FragmentStatePagerAdapter implements OnPage
 	 * index
 	 * @param index
 	 */
-	public void setRefreshable(int index)
+    private void setRefreshable(int index)
 	{
 		Fragment frag = getItemAt(index);
 		if (frag instanceof StreamFragment && ((StreamFragment)frag).getRefreshHelper() != null)
@@ -272,7 +270,7 @@ public class ViewPageAdapter extends FragmentStatePagerAdapter implements OnPage
 		}
 	}
 
-	public void setTopScrollable(Window window)
+    private void setTopScrollable(Window window)
 	{
 		if ((window.getDecorView().findViewById(R.id.title) != null))
 		{

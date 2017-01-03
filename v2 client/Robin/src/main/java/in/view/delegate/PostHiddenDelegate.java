@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 
 import in.controller.adapter.base.RobinAdapter;
 import in.model.Post;
-import in.rob.client.R;
+import in.pnutrob.client.R;
 
 public class PostHiddenDelegate extends PostDelegate
 {

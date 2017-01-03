@@ -9,14 +9,14 @@ import in.lib.manager.ImageOptionsManager;
 import in.lib.utils.Views.InjectView;
 import in.lib.utils.Views.Injectable;
 import in.model.User;
-import in.rob.client.R;
+import in.pnutrob.client.R;
 import in.view.holder.base.Holder;
 import lombok.Getter;
 
 @Injectable
 public class TimelineHeaderHolder extends Holder<User>
 {
-	@Getter @InjectView(R.id.cover) protected ImageView cover;
+	@Getter @InjectView(R.id.cover) private ImageView cover;
 
 	public TimelineHeaderHolder(View view)
 	{

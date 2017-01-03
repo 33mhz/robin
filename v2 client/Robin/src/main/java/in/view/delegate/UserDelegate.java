@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 
 import in.controller.adapter.base.RobinAdapter;
 import in.model.User;
-import in.rob.client.R;
+import in.pnutrob.client.R;
 import in.view.delegate.base.AdapterDelegate;
 import in.view.holder.UserHolder;
 

@@ -14,8 +14,8 @@ android {
 		minSdkVersion 23
 		targetSdkVersion 25
 
-		testApplicationId "in.rob.client.test"
-		testInstrumentationRunner "in.rob.client.test.Runner"
+		testApplicationId "in.pnutrob.client.test"
+		testInstrumentationRunner "in.pnutrob.client.test.Runner"
 		testHandleProfiling true
 		testFunctionalTest true
 	}

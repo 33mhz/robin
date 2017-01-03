@@ -15,8 +15,8 @@ import in.lib.builder.DialogBuilder;
 import in.lib.utils.ViewUtils;
 import in.model.DraftPost;
 import in.model.base.Draft;
-import in.rob.client.R;
-import in.rob.client.dialog.NewPostDialog;
+import in.pnutrob.client.R;
+import in.pnutrob.client.dialog.NewPostDialog;
 import in.view.delegate.base.AdapterDelegate;
 import in.view.holder.DraftPostHolder;
 
@@ -66,7 +66,7 @@ public class DraftPostDelegate extends AdapterDelegate<Draft> implements OnClick
 		if (view.getId() == R.id.send)
 		{
 			Intent postIntent = new Intent(view.getContext(), NewPostDialog.class);
-			postIntent.putExtra(Constants.EXTRA_DRAFT_POST, (Parcelable)item);
+			postIntent.putExtra(Constants.EXTRA_DRAFT_POST, item);
 			postIntent.putExtra(Constants.EXTRA_SEND, true);
 			view.getContext().startActivity(postIntent);
 
@@ -75,7 +75,7 @@ public class DraftPostDelegate extends AdapterDelegate<Draft> implements OnClick
 		else if (view.getId() == R.id.edit)
 		{
 			Intent postIntent = new Intent(view.getContext(), NewPostDialog.class);
-			postIntent.putExtra(Constants.EXTRA_DRAFT_POST, (Parcelable)item);
+			postIntent.putExtra(Constants.EXTRA_DRAFT_POST, item);
 			view.getContext().startActivity(postIntent);
 		}
 		else if (view.getId() == R.id.duplicate)
@@ -83,7 +83,7 @@ public class DraftPostDelegate extends AdapterDelegate<Draft> implements OnClick
 			DraftPost post = (DraftPost)item;
 			post.setDate(System.currentTimeMillis());
 			post.save();
-			post = null;
+			//post = null;
 
 			// TODO: Send event
 		}

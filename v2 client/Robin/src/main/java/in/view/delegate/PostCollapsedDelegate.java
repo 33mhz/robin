@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import in.controller.adapter.base.RobinAdapter;
 import in.lib.manager.SettingsManager;
 import in.model.Post;
-import in.rob.client.R;
+import in.pnutrob.client.R;
 import in.view.holder.PostCollapsedHolder;
 
 public class PostCollapsedDelegate extends PostDelegate

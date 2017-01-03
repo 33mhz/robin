@@ -16,8 +16,8 @@ import in.lib.builder.DialogBuilder;
 import in.lib.manager.SettingsManager;
 import in.lib.utils.BitUtils;
 import in.lib.utils.URLUtils;
-import in.rob.client.R;
-import in.rob.client.URLMatcher;
+import in.pnutrob.client.R;
+import in.pnutrob.client.URLMatcher;
 
 public class LinkClickableSpan extends NotUnderlinedClickableSpan
 {
@@ -96,7 +96,7 @@ public class LinkClickableSpan extends NotUnderlinedClickableSpan
 						Intent shareIntent = new Intent(Intent.ACTION_SEND);
 						shareIntent.putExtra(Intent.EXTRA_TEXT, link.getUrl());
 						shareIntent.setType("text/plain");
-						((Activity)ctx).startActivity(Intent.createChooser(shareIntent, ctx.getString(R.string.share_via)));
+						ctx.startActivity(Intent.createChooser(shareIntent, ctx.getString(R.string.share_via)));
 					}
 				}
 			})

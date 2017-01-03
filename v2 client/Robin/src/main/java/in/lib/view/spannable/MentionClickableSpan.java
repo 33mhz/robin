@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import in.data.entity.MentionEntity;
-import in.rob.client.ProfileActivity;
+import in.pnutrob.client.ProfileActivity;
 
 public class MentionClickableSpan extends NotUnderlinedClickableSpan
 {

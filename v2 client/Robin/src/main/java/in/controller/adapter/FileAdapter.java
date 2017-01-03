@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 import in.controller.adapter.base.RobinAdapter;
 import in.data.annotation.FileAnnotation;
-import in.rob.client.R;
+import in.pnutrob.client.R;
 import in.view.delegate.FileDelegate;
 
 public class FileAdapter extends RobinAdapter<FileAnnotation>

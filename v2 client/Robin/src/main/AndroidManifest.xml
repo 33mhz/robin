@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	package="in.rob.client"
-	android:versionCode="9868"
+	package="in.pnutrob.client"
+	android:versionCode="6"
 	android:versionName="3.0"
 >
 	<uses-permission android:name="android.permission.INTERNET" />
@@ -37,61 +37,61 @@
 		<activity android:name=".ProfileActivity" android:theme="@style/Theme.Light" android:parentActivityName=".MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="in.rob.client.MainActivity"
+				android:value="in.pnutrob.client.MainActivity"
 			/>
 		</activity>
 		<activity android:name=".ThreadActivity" android:theme="@style/Theme.Light" android:parentActivityName=".MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="in.rob.client.MainActivity"
+				android:value="in.pnutrob.client.MainActivity"
 			/>
 		</activity>
 		<activity android:name=".ChannelsActivity" android:theme="@style/Theme.Light" android:parentActivityName=".MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="in.rob.client.MainActivity"
+				android:value="in.pnutrob.client.MainActivity"
 			/>
 		</activity>
 		<activity android:name=".StarredActivity" android:theme="@style/Theme.Light" android:parentActivityName=".MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="in.rob.client.MainActivity"
+				android:value="in.pnutrob.client.MainActivity"
 			/>
 		</activity>
 		<activity android:name=".SearchActivity" android:theme="@style/Theme.Light" android:parentActivityName=".MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="in.rob.client.MainActivity"
+				android:value="in.pnutrob.client.MainActivity"
 			/>
 		</activity>
 		<activity android:name=".SearchResultsActivity" android:theme="@style/Theme.Light" android:parentActivityName=".MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="in.rob.client.MainActivity"
+				android:value="in.pnutrob.client.MainActivity"
 				/>
 		</activity>
 		<activity android:name=".ChannelMessagesActivity" android:theme="@style/Theme.Light" android:parentActivityName=".MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="in.rob.client.MainActivity"
+				android:value="in.pnutrob.client.MainActivity"
 			/>
 		</activity>
 		<activity android:name=".StorageBrowserActivity" android:theme="@style/Theme.Light" android:parentActivityName=".MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="in.rob.client.MainActivity"
+				android:value="in.pnutrob.client.MainActivity"
 			/>
 		</activity>
 		<activity android:name=".DraftsActivity" android:theme="@style/Theme.Light" android:parentActivityName=".MainActivity" android:launchMode="singleTask">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="in.rob.client.MainActivity"
+				android:value="in.pnutrob.client.MainActivity"
 			/>
 		</activity>
 		<activity android:name=".SettingsActivity" android:theme="@style/Theme.Light" android:parentActivityName=".MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="in.rob.client.MainActivity"
+				android:value="in.pnutrob.client.MainActivity"
 			/>
 		</activity>
 
@@ -128,8 +128,8 @@
 				<action android:name="android.intent.action.VIEW" />
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
-				<data android:host="alpha.app.net" android:scheme="https" />
-				<data android:host="posts.app.net" android:scheme="https" />
+				<data android:host="pnut.io" android:scheme="https" />
+				<data android:host="posts.pnut.io" android:scheme="https" />
 				<data android:host="omega.app.net" android:scheme="https" />
 				<data android:host="patter-app.net" android:scheme="http" />
 			</intent-filter>
@@ -137,15 +137,15 @@
 
 		<!-- WIDGETS -->
 		<receiver
-			android:name="in.rob.client.widget.WidgetBroadcastReceiver"
+			android:name="in.pnutrob.client.widget.WidgetBroadcastReceiver"
 			android:label="WidgetBroadcastReceiver"
 			android:exported="false"
 		>
 			<intent-filter >
-				<action android:name="in.rob.client.widget.intent.NEW_POST"/>
-				<action android:name="in.rob.client.widget.intent.OPEN_APP"/>
-				<action android:name="in.rob.client.widget.intent.REFRESH"/>
-				<action android:name="in.rob.client.widget.intent.RELOAD"/>
+				<action android:name="in.pnutrob.client.widget.intent.NEW_POST"/>
+				<action android:name="in.pnutrob.client.widget.intent.OPEN_APP"/>
+				<action android:name="in.pnutrob.client.widget.intent.REFRESH"/>
+				<action android:name="in.pnutrob.client.widget.intent.RELOAD"/>
 			</intent-filter>
 		</receiver>
 

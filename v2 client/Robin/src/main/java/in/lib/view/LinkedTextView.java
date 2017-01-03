@@ -30,7 +30,7 @@ import in.lib.view.spannable.HashTagClickableSpan;
 import in.lib.view.spannable.LinkClickableSpan;
 import in.lib.view.spannable.MentionClickableSpan;
 import in.lib.view.spannable.NotUnderlinedClickableSpan;
-import in.rob.client.R;
+import in.pnutrob.client.R;
 import lombok.Setter;
 
 public class LinkedTextView extends TextView implements OnLongClickListener
@@ -122,12 +122,7 @@ public class LinkedTextView extends TextView implements OnLongClickListener
 		linkHit = false;
 		boolean res = super.onTouchEvent(event);
 
-		if (!linkHit)
-		{
-			return false;
-		}
-
-		return res;
+        return linkHit && res;
 	}
 
 	/**

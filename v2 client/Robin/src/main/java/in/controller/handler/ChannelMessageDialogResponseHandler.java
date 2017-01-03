@@ -8,7 +8,7 @@ import android.content.Intent;
 
 import in.controller.handler.base.DialogResponseHandler;
 import in.model.ChannelMessage;
-import in.rob.client.R;
+import in.pnutrob.client.R;
 
 public class ChannelMessageDialogResponseHandler extends DialogResponseHandler<ChannelMessage>
 {
@@ -55,7 +55,7 @@ public class ChannelMessageDialogResponseHandler extends DialogResponseHandler<C
 			notification.setSmallIcon(R.drawable.ic_launcher);
 			notification.setWhen(System.currentTimeMillis());
 
-			notificationManager.notify(notificationId, notification.getNotification());
+			notificationManager.notify(notificationId, notification.build());
 			notificationManager.cancel(notificationId);
 		}
 	}

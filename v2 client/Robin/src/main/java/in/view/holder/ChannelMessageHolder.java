@@ -9,7 +9,7 @@ import in.lib.view.AvatarImageView;
 import in.lib.view.LinkedTextView;
 import in.lib.view.TextChronometer;
 import in.model.ChannelMessage;
-import in.rob.client.R;
+import in.pnutrob.client.R;
 import in.view.holder.base.Holder;
 import lombok.Getter;
 

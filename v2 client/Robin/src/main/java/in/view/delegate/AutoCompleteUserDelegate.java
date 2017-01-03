@@ -7,7 +7,7 @@ import android.widget.BaseAdapter;
 
 import in.model.AdnModel;
 import in.model.SimpleUser;
-import in.rob.client.R;
+import in.pnutrob.client.R;
 import in.view.delegate.base.AdapterDelegate;
 import in.view.holder.AccountHolder;
 

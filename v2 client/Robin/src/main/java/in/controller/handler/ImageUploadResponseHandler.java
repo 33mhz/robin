@@ -9,7 +9,7 @@ import android.content.Intent;
 import in.controller.handler.base.ResponseHandler;
 import in.data.annotation.FileAnnotation;
 import in.lib.utils.Debug;
-import in.rob.client.R;
+import in.pnutrob.client.R;
 import lombok.Getter;
 
 public class ImageUploadResponseHandler extends ResponseHandler
@@ -20,7 +20,7 @@ public class ImageUploadResponseHandler extends ResponseHandler
 	private Notification.Builder notification;
 	private NotificationManager notificationManager;
 
-	public ImageUploadResponseHandler(Context context, int notificationId)
+	protected ImageUploadResponseHandler(Context context, int notificationId)
 	{
 		this.context = context.getApplicationContext();
 		this.notificationId = notificationId;
@@ -48,14 +48,14 @@ public class ImageUploadResponseHandler extends ResponseHandler
 		}
 	}
 
-	public void sendNotification(String ticker)
+	protected void sendNotification(String ticker)
 	{
 		notification.setContentText(ticker);
 		notification.setTicker(ticker);
 		notification.setSmallIcon(android.R.drawable.stat_sys_upload);
 		notification.setProgress(0, 0, true);
 
-		notificationManager.notify(notificationId, notification.getNotification());
+		notificationManager.notify(notificationId, notification.build());
 	}
 
 	private int lastProgress = -1;
@@ -65,7 +65,7 @@ public class ImageUploadResponseHandler extends ResponseHandler
 		if (progress > lastProgress)
 		{
 			notification.setProgress(100, progress, false);
-			notificationManager.notify(notificationId, notification.getNotification());
+			notificationManager.notify(notificationId, notification.build());
 			lastProgress = progress;
 		}
 	}
