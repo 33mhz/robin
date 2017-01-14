@@ -564,6 +564,7 @@ public class APIManager
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
+        params.add(new BasicNameValuePair(Constants.API_UPDATE_MARKER, "1"));
 
 		JsonObject object = new JsonObject();
 		object.addProperty(Constants.API_TEXT, message.getPostText());

@@ -42,6 +42,7 @@ public class Constants
 	public static final String API_INCLUDE_DIRECTED_POSTS = "include_directed_posts";
 	public static final String API_INCLUDE_BOOKMARKED = "include_bookmarked_by";
 	public static final String API_INCLUDE_REPOSTERS = "include_reposters";
+    public static final String API_UPDATE_MARKER = "update_marker";
 	public static final String API_REPLY_TO = "reply_to";
 	public static final String API_REPOST = "repost_of";
 	public static final String API_TEXT = "text";
