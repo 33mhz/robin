@@ -73,6 +73,11 @@ public class Message extends AdnModel
 		{
 			JsonObject postObject = element.getAsJsonObject();
 
+            if (postObject.has("data"))
+            {
+                postObject = postObject.get("data").getAsJsonObject();
+            }
+
 			this.id = postObject.get("id").getAsString();
 			this.poster = new User().createFrom(postObject.get("user"));
 
@@ -125,7 +130,7 @@ public class Message extends AdnModel
 		try
 		{
 			JsonArray postArray = element.getAsJsonArray();
-			ArrayList<Message> posts = new ArrayList<Message>(postArray.size());
+			ArrayList<Message> posts = new ArrayList<>(postArray.size());
 
 			for (JsonElement postElement : postArray)
 			{
@@ -155,7 +160,7 @@ public class Message extends AdnModel
 
 	public AnnotationList parseAnnotations(JsonArray annotationArray)
 	{
-		ArrayList<String> tmpImageList = new ArrayList<String>();
+		ArrayList<String> tmpImageList = new ArrayList<>();
 
 		AnnotationList map = new AnnotationList();
 

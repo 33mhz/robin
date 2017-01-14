@@ -43,7 +43,7 @@ public class AuthenticationHandler extends ResponseHandler
 			if (getFragment() != null)
 			{
 				JsonObject errorObject = getContent().getAsJsonObject();
-				getFragment().handleFailure(errorObject.get("error_slug").getAsString(), errorObject.get("error").getAsString());
+				getFragment().handleFailure(errorObject.get("meta").getAsJsonObject().get("error").getAsString(), errorObject.get("meta").getAsJsonObject().get("error_message").getAsString());
 				detachResponse();
 			}
 		}

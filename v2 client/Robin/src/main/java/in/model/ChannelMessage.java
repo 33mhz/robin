@@ -28,6 +28,11 @@ public class ChannelMessage extends Message
 		{
 			JsonObject messageObject = element.getAsJsonObject();
 
+            if (messageObject.has("data"))
+            {
+                messageObject = messageObject.get("data").getAsJsonObject();
+            }
+
 			this.channelId = messageObject.get("channel_id").getAsString();
 
 			return this;

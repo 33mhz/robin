@@ -78,7 +78,7 @@ public class APIManager
 	{
 		String accessToken = UserManager.getInstance().getAccessToken();
 
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "" + maxCount));
 
 		if (lastId.equals("last_read"))
@@ -107,7 +107,7 @@ public class APIManager
 	{
 		String accessToken = UserManager.getInstance().getAccessToken();
 
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "-60"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
@@ -126,7 +126,7 @@ public class APIManager
 		boolean includeDirectedPosts = true;
 		String accessToken = UserManager.getInstance().getAccessToken();
 
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "60"));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, lastId));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
@@ -146,7 +146,7 @@ public class APIManager
 	{
 		String accessToken = UserManager.getInstance().getAccessToken();
 
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "60"));
 
 		if (lastId.equals("last_read"))
@@ -175,7 +175,7 @@ public class APIManager
 	{
 		String accessToken = UserManager.getInstance().getAccessToken();
 
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		List<NameValuePair> params = new ArrayList<>();
 
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "60"));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, lastId));
@@ -192,7 +192,7 @@ public class APIManager
 	{
 		String accessToken = UserManager.getInstance().getAccessToken();
 
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		List<NameValuePair> params = new ArrayList<>();
 
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "60"));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, lastId));
@@ -209,7 +209,7 @@ public class APIManager
 	{
 		String accessToken = UserManager.getInstance().getAccessToken();
 
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "60"));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, lastId));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
@@ -232,7 +232,7 @@ public class APIManager
 
 	public AsyncHttpClient getUser(String userId, String accessToken, AsyncHttpResponseHandler response)
 	{
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 
@@ -246,7 +246,7 @@ public class APIManager
 	{
 		String accessToken = UserManager.getInstance().getAccessToken();
 
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "60"));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, "" + lastId));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
@@ -263,7 +263,7 @@ public class APIManager
 	{
 		String accessToken = UserManager.getInstance().getAccessToken();
 
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "60"));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, lastId));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
@@ -281,7 +281,7 @@ public class APIManager
 		String accessToken = UserManager.getInstance().getAccessToken();
 		int maxCount = 60;
 
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "" + maxCount));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, lastId));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
@@ -303,7 +303,7 @@ public class APIManager
 		String accessToken = UserManager.getInstance().getAccessToken();
 		int maxCount = 60;
 
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "" + maxCount));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, "" + lastId));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
@@ -321,7 +321,7 @@ public class APIManager
 		try
 		{
 			MultiPartEntity params = new MultiPartEntity();
-			List<Header> headers = new ArrayList<Header>();
+			List<Header> headers = new ArrayList<>();
 			params.addPart("type", "robin.image.photo");
 			params.addPart("kind", "image");
 			headers.add(new BasicHeader("Authorization", "BEARER " + accessToken));
@@ -397,7 +397,7 @@ public class APIManager
 			}
 		}
 
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
@@ -477,7 +477,7 @@ public class APIManager
 	{
 		String accessToken = UserManager.getInstance().getAccessToken();
 
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 
 		JsonObject object = new JsonObject();
@@ -509,12 +509,13 @@ public class APIManager
 	public AsyncHttpClient postMessage(Context context, final DraftMessage message, final AsyncHttpResponseHandler response)
 	{
 		final Context applicationContext = context.getApplicationContext();
-		String accessToken = "";
+        String accessToken = UserManager.getInstance().getAccessToken();
 
-		if (TextUtils.isEmpty(message.getSelectedAccountId()))
-		{
-			accessToken = UserManager.getInstance().getAccessToken();
-		}
+		// buggy?
+		//if (TextUtils.isEmpty(message.getSelectedAccountId()))
+		//{
+		//	accessToken = UserManager.getInstance().getAccessToken();
+		//}
 
 		// Upload any pending images
 		if (message.getImages().size() > 0)
@@ -548,7 +549,6 @@ public class APIManager
 
 			return null;
 		}
-
 		// Add the links to the post
 		//if (message.getAnnotations() != null && message.getAnnotations().size() > 0)
 		//{
@@ -559,7 +559,7 @@ public class APIManager
 			//}
 		//}
 
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
@@ -586,7 +586,6 @@ public class APIManager
 				object.add("raw", annotations);
 			}
 		}
-
 		try
 		{
 			JsonEntity postData = new JsonEntity(object);
@@ -599,7 +598,6 @@ public class APIManager
 				postData,
 				response
 			);
-
 			return client;
 		}
 		catch (Exception e)
@@ -615,7 +613,7 @@ public class APIManager
 		String accessToken = UserManager.getInstance().getAccessToken();
 		int maxCount = 60;
 
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "" + maxCount));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, "" + lastId));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
@@ -635,7 +633,7 @@ public class APIManager
 		String accessToken = UserManager.getInstance().getAccessToken();
 		int maxCount = 200;
 
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "" + maxCount));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, "" + lastId));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
@@ -655,7 +653,7 @@ public class APIManager
 		String accessToken = UserManager.getInstance().getAccessToken();
 		int maxCount = 60;
 
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "" + maxCount));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, "" + lastId));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
@@ -675,7 +673,7 @@ public class APIManager
 		String accessToken = UserManager.getInstance().getAccessToken();
 		int maxCount = 60;
 
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "" + maxCount));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, "" + lastId));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
@@ -732,7 +730,7 @@ public class APIManager
 			accessToken = UserManager.getInstance().getAccessToken();
 		}
 
-		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 
 		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);

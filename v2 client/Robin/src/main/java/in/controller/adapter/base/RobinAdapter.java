@@ -135,12 +135,19 @@ public abstract class RobinAdapter<T extends AdnModel> extends BaseAdapter imple
 
 	@Override public T getItem(int position)
 	{
-		if (this.stream != null && this.stream.getItems() != null)
-		{
-			return this.stream.getItems().get(position);
-		}
+        if (this.stream != null && this.stream.getItems() != null)
+        {
+            try
+            {
+                return this.stream.getItems().get(position);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
 
-		return null;
+        return null;
 	}
 
 	@Override public long getItemId(int position)
