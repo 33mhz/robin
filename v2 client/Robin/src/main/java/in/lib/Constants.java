@@ -8,13 +8,15 @@ public class Constants
 	public static final String API_AUTH = "https://api.pnut.io/v0/oauth/access_token";
 
 	public static final String API_POSTS = "posts";
-	//private static final String API_TIMELINE_STREAM = API_POSTS + "/streams";
+	public static final String API_TIMELINE_STREAM = API_POSTS + "/streams/me";
 	public static final String API_UNIFIED_TIMELINE_STREAM = API_POSTS + "/streams/unified";
 	public static final String API_POST_THREAD = API_POSTS + "/%s/thread";
 	public static final String API_POST_REPOST = API_POSTS + "/%s/repost";
+    public static final String API_POST_BOOKMARK = API_POSTS + "/%s/bookmark";
 	public static final String API_SEARCH_POST = API_POSTS + "/search";
 
 	private static final String API_USERS = "users";
+    public static final String API_USER_FOLLOW = API_USERS + "/%s/follow";
 	public static final String API_USER_DETAILS = API_USERS + "/%s/";
 	public static final String API_USER_MENTIONS = API_USER_DETAILS + "mentions";
 	public static final String API_USER_POSTS = API_USER_DETAILS + "posts";

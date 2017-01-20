@@ -22,8 +22,9 @@ public class Post extends Message
 	protected String threadId;
 	protected String replyTo;
 	protected User reposter;
-	protected boolean starred;
-	protected boolean repost;
+	public boolean starred;
+	public boolean repost;
+    public boolean reposted;
 	protected Boolean hasReplies = false;
 	protected int replyCount;
 	protected int repostCount;
@@ -55,6 +56,7 @@ public class Post extends Message
 					this.starCount = postObject.get("counts").getAsJsonObject().get("bookmarks").getAsInt();
 					this.repostCount = postObject.get("counts").getAsJsonObject().get("reposts").getAsInt();
 					this.starred = postObject.has("you_bookmarked") && postObject.get("you_bookmarked").getAsBoolean();
+                    this.reposted = postObject.has("you_reposted") && postObject.get("you_reposted").getAsBoolean();
 					this.reposters = new User().createListFrom(postObject.get("reposters"));
 					this.starrers = new User().createListFrom(postObject.get("bookmarked_by"));
 
@@ -129,6 +131,8 @@ public class Post extends Message
 				starred = util.readBoolean();
 				repost = util.readBoolean();
 				hasReplies = util.readBoolean();
+                reposted = util.readBoolean();
+                starred = util.readBoolean();
 				replyCount = util.readInt();
 				repostCount = util.readInt();
 				starCount = util.readInt();
@@ -159,6 +163,8 @@ public class Post extends Message
 			util.writeModel(reposter);
 			util.writeBoolean(starred);
 			util.writeBoolean(repost);
+            util.writeBoolean(reposted);
+            util.writeBoolean(starred);
 			util.writeBoolean(hasReplies);
 			util.writeInt(replyCount);
 			util.writeInt(repostCount);

@@ -32,6 +32,7 @@ public class ThreadPostSelectedDelegate extends ThreadPostDelegate
 			holder.getReply().setOnClickListener(this);
 			holder.getReplyAll().setOnClickListener(this);
 			holder.getRepost().setOnClickListener(this);
+            holder.getStar().setOnClickListener(this);
 			holder.getShare().setOnClickListener(this);
 			holder.getMore().setOnClickListener(this);
 

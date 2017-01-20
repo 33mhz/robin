@@ -93,8 +93,8 @@ public class APIManager
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DIRECTED_POSTS, SettingsManager.getInstance().isNonFollowingMentionEnabled() ? "1" : "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
+		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
+		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 
 		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
@@ -111,8 +111,8 @@ public class APIManager
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "-60"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
+		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
+		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 
 		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
@@ -131,8 +131,8 @@ public class APIManager
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, lastId));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
+		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
+		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 		params.add(new BasicNameValuePair(Constants.API_ACTIONS, "repost,follow,bookmark"));
 
@@ -161,8 +161,8 @@ public class APIManager
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DIRECTED_POSTS, SettingsManager.getInstance().isNonFollowingMentionEnabled() ? "1" : "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
+		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
+		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 
 		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
@@ -214,8 +214,8 @@ public class APIManager
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, lastId));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
+		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
+		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 
 		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
@@ -400,8 +400,8 @@ public class APIManager
 		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
+		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
+		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
 
 		JsonObject object = new JsonObject();
 		object.addProperty(Constants.API_TEXT, post.getPostText());
@@ -429,7 +429,7 @@ public class APIManager
 			}
 		}
 
-		if (post.getLinkEntities() != null)
+		/*if (post.getLinkEntities() != null)
 		{
 			JsonArray linksArr = new JsonArray();
 
@@ -448,7 +448,7 @@ public class APIManager
 			links.addProperty("parse_links", true);
 			links.add("links", linksArr);
 			object.add("entities", links);
-		}
+		}*/
 
 		try
 		{
@@ -506,6 +506,82 @@ public class APIManager
 		return null;
 	}
 
+    public AsyncHttpClient postUnrepost(String postId, AsyncHttpResponseHandler response)
+    {
+        String accessToken = UserManager.getInstance().getAccessToken();
+
+        List<NameValuePair> params = new ArrayList<>();
+        params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
+
+        try
+        {
+            AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+            client.delete(String.format(Constants.API_POST_REPOST, postId), params, response);
+
+            return client;
+        }
+        catch (Exception e)
+        {
+            Debug.out(e);
+        }
+
+        return null;
+    }
+
+    public AsyncHttpClient postBookmark(String postId, AsyncHttpResponseHandler response)
+    {
+        String accessToken = UserManager.getInstance().getAccessToken();
+
+        List<NameValuePair> params = new ArrayList<>();
+        params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
+
+        JsonObject object = new JsonObject();
+
+        try
+        {
+            JsonEntity postData = new JsonEntity(object);
+
+            AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+            client.put
+            (
+                String.format(Constants.API_POST_BOOKMARK, postId),
+                params,
+                postData,
+                response
+            );
+
+            return client;
+        }
+        catch (Exception e)
+        {
+            Debug.out(e);
+        }
+
+        return null;
+    }
+
+    public AsyncHttpClient postUnbookmark(String postId, AsyncHttpResponseHandler response)
+    {
+        String accessToken = UserManager.getInstance().getAccessToken();
+
+        List<NameValuePair> params = new ArrayList<>();
+        params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
+
+        try
+        {
+            AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+            client.delete(String.format(Constants.API_POST_BOOKMARK, postId), params, response);
+
+            return client;
+        }
+        catch (Exception e)
+        {
+            Debug.out(e);
+        }
+
+        return null;
+    }
+
 	public AsyncHttpClient postMessage(Context context, final DraftMessage message, final AsyncHttpResponseHandler response)
 	{
 		final Context applicationContext = context.getApplicationContext();
@@ -562,8 +638,8 @@ public class APIManager
 		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
+		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
+		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
         params.add(new BasicNameValuePair(Constants.API_UPDATE_MARKER, "1"));
 
 		JsonObject object = new JsonObject();
@@ -739,4 +815,57 @@ public class APIManager
 
 		return client;
 	}
+
+    public AsyncHttpClient userFollow(String userId, AsyncHttpResponseHandler response)
+    {
+        String accessToken = UserManager.getInstance().getAccessToken();
+
+        List<NameValuePair> params = new ArrayList<>();
+        params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
+
+        try
+        {
+            AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+            client.put
+                (
+                    String.format(Constants.API_USER_FOLLOW, userId),
+                    params,
+                    response
+                );
+
+            return client;
+        }
+        catch (Exception e)
+        {
+            Debug.out(e);
+        }
+
+        return null;
+    }
+
+    public AsyncHttpClient userUnfollow(String userId, AsyncHttpResponseHandler response)
+    {
+        String accessToken = UserManager.getInstance().getAccessToken();
+
+        List<NameValuePair> params = new ArrayList<>();
+        params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
+
+        try
+        {
+            AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+            client.delete(
+                String.format(Constants.API_USER_FOLLOW, userId),
+                params,
+                response
+            );
+
+            return client;
+        }
+        catch (Exception e)
+        {
+            Debug.out(e);
+        }
+
+        return null;
+    }
 }

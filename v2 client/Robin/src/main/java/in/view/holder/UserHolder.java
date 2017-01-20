@@ -31,7 +31,7 @@ public class UserHolder extends Holder<User>
 		usernameSubtitle.setText(model.getFormattedMentionNameSubTitle());
 		avatar.setUser(model);
 
-		if (model.isFollowing())
+		if (model.following)
 		{
 			userAction.setText(R.string.unfollow);
 		}

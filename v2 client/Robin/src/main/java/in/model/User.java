@@ -31,7 +31,7 @@ import lombok.Data;
 public class User extends SimpleUser
 {
     private String coverUrl;
-    private boolean following;
+    public boolean following;
     private boolean follower;
     private boolean muted;
     private boolean blocked;

@@ -30,8 +30,4 @@
 		android:visible="false"
 	/>
 
-	<item
-		android:id="@+id/menu_report"
-		android:title="@string/report"
-	/>
 </menu>

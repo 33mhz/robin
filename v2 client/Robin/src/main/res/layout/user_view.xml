@@ -11,7 +11,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="match_parent"
 		android:id="@+id/user_action"
-		android:layout_alignParentRight="true"
+		android:layout_alignParentEnd="true"
 		android:layout_centerVertical="true"
 		android:text="@string/follow"
 	/>
@@ -21,7 +21,7 @@
 		android:layout_height="@dimen/avatar_height"
 		android:id="@+id/avatar"
 		android:layout_centerVertical="true"
-		android:layout_marginRight="10dp"
+		android:layout_marginEnd="10dp"
 		android:clickable="true"
 		android:longClickable="true"
 	/>
@@ -30,8 +30,8 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:orientation="vertical"
-		android:layout_toRightOf="@id/avatar"
-		android:layout_toLeftOf="@id/user_action"
+		android:layout_toEndOf="@id/avatar"
+		android:layout_toStartOf="@id/user_action"
 		android:layout_centerVertical="true"
 	>
 		<TextView

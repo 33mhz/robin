@@ -53,6 +53,7 @@ public class PostDelegate extends AdapterDelegate<Post> implements OnClickListen
 			holder.getReply().setOnClickListener(this);
 			holder.getReplyAll().setOnClickListener(this);
 			holder.getRepost().setOnClickListener(this);
+            holder.getStar().setOnClickListener(this);
 			holder.getShare().setOnClickListener(this);
 			holder.getMore().setOnClickListener(this);
 
@@ -85,10 +86,14 @@ public class PostDelegate extends AdapterDelegate<Post> implements OnClickListen
 		{
 			onRepostClick(v, item);
 		}
+        else if (v.getId() == R.id.star)
+        {
+            onStarClick(v, item);
+        }
 		else if (v.getId() == R.id.share)
 		{
 			String originalText = item.getPostText().getText();
-			String shareText = originalText + " via @" + item.getPoster().getUsername() + " " + item.getCanonicalUrl();
+			String shareText = originalText + " via @" + item.getPoster().getUsername() + " https://posts.pnut.io/" + item.getId();
 			Intent shareIntent = new Intent(Intent.ACTION_SEND);
 			shareIntent.putExtra(Intent.EXTRA_TEXT, shareText);
 			shareIntent.setType("text/plain");
@@ -116,8 +121,7 @@ public class PostDelegate extends AdapterDelegate<Post> implements OnClickListen
 		}
 
 		if (item.getPoster().equals(UserManager.getInstance().getUser())
-		|| UserManager.getInstance().getLinkedUserIds().contains(item.getPoster().getId())
-		|| item.getReposters().contains(UserManager.getInstance().getUser()))
+		|| UserManager.getInstance().getLinkedUserIds().contains(item.getPoster().getId()))
 		{
 			options.getMenu().findItem(R.id.menu_delete).setVisible(true);
 		}
@@ -162,15 +166,56 @@ public class PostDelegate extends AdapterDelegate<Post> implements OnClickListen
 		options.show();
 	}
 
+    private void onStarClick(final View v, final Post item)
+    {
+        if (!item.starred) {
+            APIManager.getInstance().postBookmark(item.getId(), new PostDialogResponseHandler(v.getContext(), new Random().nextInt()) {
+                @Override
+                public String getNotificationTitle() {
+                    return getContext().getString(R.string.starring_title);
+                }
+
+                @Override
+                public String getNotificationText() {
+                    return getContext().getString(R.string.starring);
+                }
+
+                @Override
+                public String getNotificationFinishText() {
+                    return getContext().getString(R.string.star_success);
+                }
+            });
+        } else {
+            APIManager.getInstance().postUnbookmark(item.getId(), new PostDialogResponseHandler(v.getContext(), new Random().nextInt()) {
+                @Override
+                public String getNotificationTitle() {
+                    return getContext().getString(R.string.unstarring_title);
+                }
+
+                @Override
+                public String getNotificationText() {
+                    return getContext().getString(R.string.unstarring);
+                }
+
+                @Override
+                public String getNotificationFinishText() {
+                    return getContext().getString(R.string.unstar_success);
+                }
+            });
+        }
+    }
+
     private void onRepostClick(final View v, final Post item)
 	{
 		final PopupMenu options = new PopupMenu(v.getContext(), v);
 
-		if (!item.getPoster().equals(UserManager.getInstance().getUser())
-		&& !UserManager.getInstance().getLinkedUserIds().contains(item.getPoster().getId())
-		&& !item.getReposters().contains(UserManager.getInstance().getUser()))
+		if (!item.getPoster().equals(UserManager.getInstance().getUser()) && !item.repost)
 		{
-			options.getMenu().add(0, 0, 0, "Repost");
+            if (!item.reposted) {
+                options.getMenu().add(0, 0, 0, "Repost");
+            } else {
+                options.getMenu().add(0, 0, 0, "Unrepost");
+            }
 		}
 
 		options.getMenu().add(0, 1, 0, "Quote");
@@ -180,23 +225,41 @@ public class PostDelegate extends AdapterDelegate<Post> implements OnClickListen
 			{
 				if (menuItem.getItemId() == 0)
 				{
-					APIManager.getInstance().postRepost(item.getId(), new PostDialogResponseHandler(v.getContext(), new Random().nextInt())
-					{
-						@Override public String getNotificationTitle()
-						{
-							return getContext().getString(R.string.reposting_title);
-						}
+                    if (!item.reposted) {
+                        APIManager.getInstance().postRepost(item.getId(), new PostDialogResponseHandler(v.getContext(), new Random().nextInt()) {
+                            @Override
+                            public String getNotificationTitle() {
+                                return getContext().getString(R.string.reposting_title);
+                            }
 
-						@Override public String getNotificationText()
-						{
-							return getContext().getString(R.string.reposting);
-						}
+                            @Override
+                            public String getNotificationText() {
+                                return getContext().getString(R.string.reposting);
+                            }
 
-						@Override public String getNotificationFinishText()
-						{
-							return getContext().getString(R.string.repost_success);
-						}
-					});
+                            @Override
+                            public String getNotificationFinishText() {
+                                return getContext().getString(R.string.repost_success);
+                            }
+                        });
+                    } else {
+                        APIManager.getInstance().postUnrepost(item.getId(), new PostDialogResponseHandler(v.getContext(), new Random().nextInt()) {
+                            @Override
+                            public String getNotificationTitle() {
+                                return getContext().getString(R.string.unreposting_title);
+                            }
+
+                            @Override
+                            public String getNotificationText() {
+                                return getContext().getString(R.string.unreposting);
+                            }
+
+                            @Override
+                            public String getNotificationFinishText() {
+                                return getContext().getString(R.string.unrepost_success);
+                            }
+                        });
+                    }
 				}
 				else if (menuItem.getItemId() == 1)
 				{

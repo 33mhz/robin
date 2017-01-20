@@ -295,13 +295,16 @@
 	<string name="replying_to" formatted="false">Replying to \@%s&#8230;</string>
 	<string name="report">Report</string>
 	<string name="repost" formatted="false">Repost \@%s</string>
-	<string name="repost_failure">Failed to repost.</string>
+	<string name="repost_failure">Failed to repost</string>
 	<string name="repost_post">Repost</string>
 	<string name="repost_success">Post successfully reposted</string>
+    <string name="unrepost_success">Repost successfully deleted</string>
 	<string name="repost_title">Repost</string>
 	<string name="reposted_by">Reposted by</string>
 	<string name="reposting">Reposting post&#8230;</string>
+    <string name="unreposting">Deleting repost&#8230;</string>
 	<string name="reposting_title">Reposting post</string>
+    <string name="unreposting_title">Deleting repost</string>
 	<string name="reposts">Reposts:</string>
 	<string name="request_timeout">Request timeout</string>
 	<string name="restart_required_desc">You have changed some settings that require a restart. Do that now?</string>
@@ -367,10 +370,17 @@
 	<string name="splash_login_desc">Login to your account</string>
 	<string name="splash_signup">SIGNUP</string>
 	<string name="splash_signup_desc">Create an account</string>
-	<string name="star_failure">Failed to bookmark post</string>
-	<string name="star_post">Bookmark/unbookmark</string>
+    <string name="star_failure">Failed to bookmark post</string>
+	<string name="star_post">Bookmark</string>
+    <string name="star_success">Post successfully bookmarked</string>
+    <string name="unstar_success">Bookmark successfully deleted</string>
+    <string name="star_title">Bookmark</string>
 	<string name="starred">Bookmarked</string>
 	<string name="starred_by">Bookmarked by</string>
+    <string name="starring">Bookmarking post&#8230;</string>
+    <string name="unstarring">Deleting bookmark&#8230;</string>
+    <string name="starring_title">Bookmarking post</string>
+    <string name="unstarring_title">Deleting bookmark</string>
 	<string name="starred_posts">Bookmarked Posts</string>
 	<string name="stars">Bookmarks:</string>
 	<string name="stream">Stream</string>
