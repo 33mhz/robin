@@ -17,8 +17,8 @@
 			android:layout_width="@dimen/avatar_width"
 			android:layout_height="@dimen/avatar_height"
 			android:id="@+id/avatar"
-			android:layout_marginLeft="8dp"
-			android:layout_alignParentRight="true"
+			android:layout_marginStart="8dp"
+			android:layout_alignParentEnd="true"
 			android:clickable="true"
 			android:longClickable="true"
 		/>
@@ -26,7 +26,7 @@
 		<include
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_toLeftOf="@id/avatar"
+			android:layout_toStartOf="@id/avatar"
 			layout="@layout/post_text_stub"
 		/>
 	</RelativeLayout>

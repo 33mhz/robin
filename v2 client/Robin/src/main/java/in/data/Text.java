@@ -47,7 +47,9 @@ public class Text extends Model
             if (textObject.has("text")) {
                 this.text = textObject.get("text").getAsString().trim();
             } else {
-                this.text = "";
+                // debugging
+                System.out.println("text missing on post");
+                return null;
             }
 
 			if (BitUtils.contains(SettingsManager.getInstance().getEmphasisBit(), Constants.BIT_EMPHASIS_ITALIC, Constants.BIT_EMPHASIS_BOLD, Constants.BIT_EMPHASIS_UNDERLINE))

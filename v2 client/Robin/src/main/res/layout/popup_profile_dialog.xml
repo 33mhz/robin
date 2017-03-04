@@ -24,8 +24,8 @@
 			android:layout_width="@dimen/avatar_width"
 			android:layout_height="@dimen/avatar_height"
 			android:id="@+id/avatar"
-			android:layout_gravity="left"
-			android:layout_marginLeft="8dp"
+			android:layout_gravity="start"
+			android:layout_marginStart="8dp"
 			android:layout_marginTop="8dp"
 			android:scaleType="fitXY"
 		/>
@@ -51,7 +51,7 @@
 				android:layout_height="wrap_content"
 				android:id="@+id/full_name"
 				android:textColor="#cccccc"
-				android:layout_marginLeft="8dp"
+				android:layout_marginStart="8dp"
 				android:textSize="14sp"
 			/>
 		</LinearLayout>
@@ -60,14 +60,14 @@
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:id="@+id/follow_count"
-			android:gravity="right"
+			android:gravity="end"
 			android:shadowColor="#000000"
 			android:shadowDx="0"
 			android:shadowDy="0"
 			android:shadowRadius="2"
 			android:textColor="@android:color/white"
 			android:textSize="16sp"
-			android:layout_gravity="right"
+			android:layout_gravity="end"
 			android:layout_margin="8dp"
 			android:textStyle="bold"
 		/>

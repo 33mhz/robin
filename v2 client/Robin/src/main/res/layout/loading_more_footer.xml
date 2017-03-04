@@ -14,14 +14,14 @@
 		android:id="@+id/small_icon"
 		android:src="@drawable/ic_launcher"
 		android:adjustViewBounds="true"
-		android:layout_marginRight="8dp"
+		android:layout_marginEnd="8dp"
 		android:layout_gravity="center"
 	/>
 
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:textSize="18dp"
+		android:textSize="18sp"
 		android:text="@string/loading_next_page"
 		android:fontFamily="sans-serif-light"
 		android:layout_gravity="center"

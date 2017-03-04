@@ -29,7 +29,7 @@ import lombok.Getter;
 public class PostHolder extends Holder<Post>
 {
 	@Getter @InjectView(R.id.avatar) protected AvatarImageView avatar;
-	@Getter @InjectView(R.id.date) protected TextChronometer date;
+    @Getter @InjectView(R.id.date) protected TextChronometer date;
 	@Getter @InjectView(R.id.username_title) protected TextView usernameTitle;
 	@Getter @InjectView(R.id.username_subtitle) protected TextView usernameSubtitle;
 	@Getter @InjectView(R.id.post_text) protected LinkedTextView postText;
@@ -68,7 +68,7 @@ public class PostHolder extends Holder<Post>
 		conversationIndicator.setVisibility(View.GONE);
 		mediaImage.setImageBitmap(null);
 
-		date.setTime(model.getDate());
+        date.setTime(model.getDate());
 
 		if (model.getReplyCount() > 0 || !TextUtils.isEmpty(model.getReplyTo()))
 		{

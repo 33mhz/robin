@@ -12,6 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import in.data.AnnotationList;
 import in.data.Text;
@@ -41,7 +42,6 @@ public class Message extends AdnModel
 	protected String clientName;
 	protected String clientLink;
 	protected String replyTo;
-	protected boolean machinePost;
 	protected boolean newPost = false;
 	protected boolean deleted = false;
 	protected AnnotationList annotations;
@@ -53,7 +53,7 @@ public class Message extends AdnModel
 
 	public boolean isMention(String userId)
 	{
-		if (postText.getMentions() != null)
+		if (postText != null && postText.getMentions() != null)
 		{
 			for (MentionEntity mention : postText.getMentions())
 			{
@@ -81,18 +81,20 @@ public class Message extends AdnModel
 			this.id = postObject.get("id").getAsString();
 			this.poster = new User().createFrom(postObject.get("user"));
 
-			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-			Date postDate = format.parse(postObject.get("created_at").getAsString());
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault());
+            Date postDate = format.parse(postObject.get("created_at").getAsString());
 			this.date = postDate.getTime();
-			this.dateStr = new SimpleDateFormat().format(postDate);
+            this.dateStr = android.text.format.DateUtils.getRelativeTimeSpanString(postDate.getTime(), System.currentTimeMillis(), android.text.format.DateUtils.FORMAT_ABBREV_RELATIVE).toString();
+
 			this.timeZone = postObject.get("user").getAsJsonObject().get("timezone").getAsString();
 			this.clientName = postObject.get("source").getAsJsonObject().get("name").getAsString();
 			this.clientLink = postObject.get("source").getAsJsonObject().get("link").getAsString();
 
-			if (postObject.has("canonical_url"))
-			{
+			if (postObject.has("canonical_url")) {
 				this.canonicalUrl = postObject.get("canonical_url").getAsString();
-			}
+			} else {
+                this.canonicalUrl = "https://posts.pnut.io/"+this.id;
+            }
 
 			if (postObject.has("reply_to"))
 			{
@@ -269,7 +271,6 @@ public class Message extends AdnModel
 			util.writeString(clientName);
 			util.writeString(clientLink);
 			util.writeString(replyTo);
-			util.writeBoolean(machinePost);
 			util.writeBoolean(newPost);
 			util.writeBoolean(deleted);
 			util.writeModel(annotations);
@@ -298,7 +299,6 @@ public class Message extends AdnModel
 				clientName = util.readString();
 				clientLink = util.readString();
 				replyTo = util.readString();
-				machinePost = util.readBoolean();
 				newPost = util.readBoolean();
 				deleted = util.readBoolean();
 				annotations = util.readModel(AnnotationList.class);

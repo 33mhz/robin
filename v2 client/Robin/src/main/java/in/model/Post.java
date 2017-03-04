@@ -7,8 +7,11 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import in.lib.utils.Debug;
 import in.lib.utils.SerialReaderUtil;
@@ -64,9 +67,9 @@ public class Post extends Message
 					{
 						this.replyTo = postObject.get("reply_to").getAsString();
 					}
-				}
 
-				return this;
+                    return this;
+				}
 			}
 			catch (Exception e)
 			{

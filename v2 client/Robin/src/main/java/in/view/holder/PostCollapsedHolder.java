@@ -22,6 +22,6 @@ public class PostCollapsedHolder extends Holder<Post>
 
 	@Override public void populate(Post model)
 	{
-		title.setText(String.format("Collapsed thread id#%s", model.getThreadId()));
+		title.setText(String.format("Collapsed thread %s", model.getThreadId()));
 	}
 }

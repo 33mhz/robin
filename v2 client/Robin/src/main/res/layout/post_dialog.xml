@@ -24,7 +24,7 @@
 			android:layout_width="@dimen/dialog_ab_ic_width"
 			android:layout_height="@dimen/dialog_ab_ic_height"
 			android:id="@+id/positive_button"
-			android:layout_alignParentRight="true"
+			android:layout_alignParentEnd="true"
 			android:contentDescription="@string/send"
 			style="?attr/rbn_dialog_ic_send"
 		/>
@@ -34,8 +34,8 @@
 			android:layout_height="wrap_content"
 			android:id="@+id/title"
 			android:layout_centerVertical="true"
-			android:layout_toLeftOf="@id/positive_button"
-			android:layout_toRightOf="@id/negative_button"
+			android:layout_toStartOf="@id/positive_button"
+			android:layout_toEndOf="@id/negative_button"
 			android:text="New Post"
 			style="?attr/rbn_dialog_title"
 		/>
@@ -52,7 +52,7 @@
 			android:layout_height="wrap_content"
 			android:id="@+id/counter_container"
 			android:orientation="horizontal"
-			android:layout_marginRight="4dp"
+			android:layout_marginEnd="4dp"
 		>
 			<in.lib.view.AvatarImageView
 				android:layout_width="@dimen/dialog_ic_width"
@@ -75,7 +75,7 @@
 		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_toRightOf="@id/counter_container"
+			android:layout_toEndOf="@id/counter_container"
 			android:gravity="right"
 		>
 			<in.lib.view.HintedImageButton

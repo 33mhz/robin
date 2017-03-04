@@ -266,7 +266,6 @@ public class APIManager
 		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "60"));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, lastId));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 
@@ -284,11 +283,8 @@ public class APIManager
 		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "" + maxCount));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, lastId));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
 		params.add(new BasicNameValuePair(Constants.API_CHANNEL_TYPES, Constants.CHANNEL_TYPES));
 		params.add(new BasicNameValuePair(Constants.API_ALLOW_RECENT_MESSAGE, "1"));
 
@@ -693,7 +689,6 @@ public class APIManager
 		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "" + maxCount));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, "" + lastId));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DIRECTED_POSTS, SettingsManager.getInstance().isNonFollowingMentionEnabled() ? "1" : "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
@@ -713,7 +708,6 @@ public class APIManager
 		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "" + maxCount));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, "" + lastId));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DIRECTED_POSTS, SettingsManager.getInstance().isNonFollowingMentionEnabled() ? "1" : "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
@@ -727,6 +721,7 @@ public class APIManager
 
 	public AsyncHttpClient getRobinPosts(String lastId, AsyncHttpResponseHandler response)
 	{
+		/* TODO: Search not part of API yet.
 		String accessToken = UserManager.getInstance().getAccessToken();
 		int maxCount = 60;
 
@@ -740,9 +735,9 @@ public class APIManager
 		params.add(new BasicNameValuePair("client_id", ""));
 
 		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
-		client.get(Constants.API_SEARCH_POST, params, response);
+		client.get(Constants.API_SEARCH_POST, params, response);*/
 
-		return client;
+		return null;
 	}
 
 	public AsyncHttpClient getGlobalPosts(String lastId, AsyncHttpResponseHandler response)

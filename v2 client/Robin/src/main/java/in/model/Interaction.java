@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import in.lib.utils.Debug;
 import in.lib.utils.SerialReaderUtil;
@@ -62,7 +63,7 @@ public class Interaction extends AdnModel
                     return null;
 			}
 
-			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault());
 			Date postDate = format.parse(interactionObject.get("event_date").getAsString());
 			this.date = postDate.getTime();
 

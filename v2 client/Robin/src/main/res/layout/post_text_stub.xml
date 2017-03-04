@@ -15,8 +15,8 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/date"
-			android:layout_alignParentRight="true"
-			android:layout_marginLeft="4dp"
+			android:layout_alignParentEnd="true"
+			android:layout_marginStart="4dp"
 			style="?attr/rbn_post_date"
 		/>
 
@@ -24,7 +24,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/conversation_indicator"
-			android:layout_toLeftOf="@id/date"
+			android:layout_toStartOf="@id/date"
 			android:visibility="gone"
 			style="?attr/rbn_post_convo"
 		/>
@@ -33,7 +33,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/username_title"
-			android:singleLine="true"
+			android:maxLines="1"
 			style="?attr/rbn_post_user_title"
 		/>
 
@@ -41,10 +41,10 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/username_subtitle"
-			android:singleLine="true"
-			android:layout_toRightOf="@id/username_title"
-			android:layout_toLeftOf="@id/conversation_indicator"
-			android:layout_marginLeft="6dp"
+			android:maxLines="1"
+			android:layout_toEndOf="@id/username_title"
+			android:layout_toStartOf="@id/conversation_indicator"
+			android:layout_marginStart="6dp"
 			android:layout_alignBaseline="@id/username_title"
 			style="?attr/rbn_post_user_sub_title"
 		/>

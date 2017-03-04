@@ -37,6 +37,7 @@
 		android:paddingTop="10dp"
 		android:paddingBottom="10dp"
 		android:weightSum="2"
+        android:baselineAligned="false"
 	>
 		<LinearLayout 
 			android:layout_height="wrap_content"
@@ -93,7 +94,7 @@
 				android:shadowDx="1"
 				android:shadowDy="1"
 				android:shadowRadius="1.0"
-				android:singleLine="false"
+				android:maxLines="1"
 				android:textSize="24sp"
 				android:layout_gravity="center"
 				android:gravity="center"
@@ -112,7 +113,7 @@
 				android:textSize="12sp"
 				android:layout_gravity="center"
 				android:gravity="center"
-				android:singleLine="false"
+				android:maxLines="1"
 				android:fontFamily="sans-serif-light"
 			/>
 		</LinearLayout>

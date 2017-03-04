@@ -59,7 +59,7 @@
 				android:id="@+id/checkbox"
 				android:clickable="false"
 				android:layout_centerVertical="true"
-				android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true"
 				style="?attr/rbn_settings_checkbox"
 			/>
 
@@ -67,7 +67,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:id="@+id/title"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:text="@string/notifications_following_title"
 				style="?attr/rbn_settings_title"
 			/>
@@ -75,7 +75,7 @@
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:layout_below="@id/title"
 				android:text="@string/notifications_following_desc"
 				style="?attr/rbn_settings_description"
@@ -130,7 +130,7 @@
 				android:id="@+id/checkbox"
 				android:clickable="false"
 				android:layout_centerVertical="true"
-				android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true"
 				style="?attr/rbn_settings_checkbox"
 			/>
 
@@ -138,7 +138,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:id="@+id/title"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:text="@string/notification_vibrate_title"
 				style="?attr/rbn_settings_title"
 			/>
@@ -146,7 +146,7 @@
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:layout_below="@id/title"
 				android:text="@string/notification_vibrate_desc"
 				style="?attr/rbn_settings_description"
@@ -169,7 +169,7 @@
 				android:id="@+id/checkbox"
 				android:clickable="false"
 				android:layout_centerVertical="true"
-				android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true"
 				style="?attr/rbn_settings_checkbox"
 			/>
 
@@ -177,7 +177,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:id="@+id/title"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:text="@string/notifications_sound_enabled_title"
 				style="?attr/rbn_settings_title"
 			/>
@@ -185,7 +185,7 @@
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_toLeftOf="@id/checkbox"
+				android:layout_toStartOf="@id/checkbox"
 				android:layout_below="@id/title"
 				android:text="@string/notification_sound_enabled_desc"
 				style="?attr/rbn_settings_description"
