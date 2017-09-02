@@ -8,6 +8,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import java.text.SimpleDateFormat;
+import java.util.TimeZone;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,7 +17,7 @@ import java.util.Locale;
 import in.lib.utils.Debug;
 import in.lib.utils.SerialReaderUtil;
 import in.lib.utils.SerialWriterUtil;
-import in.pnutrob.client.R;
+import in.pnutrob.client.alpha.R;
 import lombok.Data;
 import lombok.Getter;
 
@@ -59,11 +60,12 @@ public class Interaction extends AdnModel
 				case "follow":
 					this.type = Type.FOLLOW;
 					break;
-                default:
-                    return null;
+				default:
+					return null;
 			}
 
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault());
+			format.setTimeZone(TimeZone.getTimeZone("UTC"));
 			Date postDate = format.parse(interactionObject.get("event_date").getAsString());
 			this.date = postDate.getTime();
 

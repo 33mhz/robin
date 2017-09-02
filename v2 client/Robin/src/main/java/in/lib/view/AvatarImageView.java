@@ -2,7 +2,6 @@ package in.lib.view;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,8 +17,8 @@ import in.lib.manager.SettingsManager;
 import in.lib.utils.BitUtils;
 import in.model.SimpleUser;
 import in.model.User;
-import in.pnutrob.client.ProfileActivity;
-import in.pnutrob.client.R;
+import in.pnutrob.client.alpha.ProfileActivity;
+import in.pnutrob.client.alpha.R;
 import in.pnutrob.client.dialog.PopupProfileDialog;
 import lombok.Getter;
 

@@ -5,12 +5,12 @@ repositories {
 }
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+    compileSdkVersion 26
+    buildToolsVersion "25.0.2"
 
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 25
+        targetSdkVersion 26
     }
 
     sourceSets {
@@ -40,7 +40,7 @@ android {
 }
 
 dependencies {
-    compile 'com.google.code.gson:gson:2.6'
+    compile 'com.google.code.gson:gson:2.7'
     compile 'org.apache.httpcomponents:httpmime:4.2.5'
 }
 

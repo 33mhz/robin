@@ -10,7 +10,7 @@ import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.LoadedFrom;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
-import in.pnutrob.client.R;
+import in.pnutrob.client.alpha.R;
 import lombok.Getter;
 
 public class ImageOptionsManager

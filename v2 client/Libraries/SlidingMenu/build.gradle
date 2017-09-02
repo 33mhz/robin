@@ -5,12 +5,12 @@ repositories {
 }
 
 android {
-	compileSdkVersion 25
-	buildToolsVersion "25.0.1"
+	compileSdkVersion 26
+	buildToolsVersion "25.0.2"
 
 	defaultConfig {
 		minSdkVersion 19
-		targetSdkVersion 25
+		targetSdkVersion 26
 	}
 
 	sourceSets {
@@ -23,5 +23,5 @@ android {
 }
 
 dependencies {
-	compile "com.android.support:support-v4:25.1.0"
+	compile "com.android.support:support-v4:+"
 }

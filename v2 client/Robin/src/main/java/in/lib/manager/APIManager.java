@@ -29,9 +29,7 @@ import java.util.List;
 
 import in.controller.handler.ImageUploadResponseHandler;
 import in.data.annotation.Annotation;
-import in.data.annotation.FileAnnotation;
-import in.data.entity.Entity;
-import in.data.entity.LinkEntity;
+//import in.data.annotation.FileAnnotation;
 import in.lib.Constants;
 import in.lib.utils.Debug;
 import in.model.DraftMessage;
@@ -93,11 +91,11 @@ public class APIManager
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DIRECTED_POSTS, SettingsManager.getInstance().isNonFollowingMentionEnabled() ? "1" : "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
-		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
-		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
+		params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
+		params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 
-		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
 		client.get(Constants.API_UNIFIED_TIMELINE_STREAM, params, response);
 
 		return client;
@@ -111,11 +109,11 @@ public class APIManager
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "-60"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
-		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
-		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
+		params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
+		params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 
-		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
 		client.get(String.format(Constants.API_POST_THREAD, threadId), params, response);
 
 		return client;
@@ -130,13 +128,10 @@ public class APIManager
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "60"));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, lastId));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
-		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
-		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 		params.add(new BasicNameValuePair(Constants.API_ACTIONS, "repost,follow,bookmark"));
 
-		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
 		client.get(Constants.API_USER_ACTIONS, params, response);
 
 		return client;
@@ -161,11 +156,11 @@ public class APIManager
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DIRECTED_POSTS, SettingsManager.getInstance().isNonFollowingMentionEnabled() ? "1" : "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
-		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
-		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
+		params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
+		params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 
-		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
 		client.get(String.format(Constants.API_USER_POSTS, userId), params, response);
 
 		return client;
@@ -179,10 +174,9 @@ public class APIManager
 
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "60"));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, lastId));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 
-		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
 		client.get(String.format(Constants.API_USER_FILES, "me"), params, response);
 
 		return client;
@@ -196,10 +190,9 @@ public class APIManager
 
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "60"));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, lastId));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 
-		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
 		client.get(String.format(Constants.API_USER_BOOKMARKED, userId), params, response);
 
 		return client;
@@ -214,11 +207,11 @@ public class APIManager
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, lastId));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
-		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
-		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
+		params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
+		params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 
-		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
 		client.get(String.format(Constants.API_USER_MENTIONS, userId), params, response);
 
 		return client;
@@ -236,7 +229,7 @@ public class APIManager
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 
-		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
 		client.get(String.format(Constants.API_USER_DETAILS, userId), params, response);
 
 		return client;
@@ -249,11 +242,10 @@ public class APIManager
 		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "60"));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, "" + lastId));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 
-		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
 		client.get(String.format(Constants.API_USER_FOLLOWERS, userId), params, response);
 
 		return client;
@@ -269,7 +261,7 @@ public class APIManager
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 
-		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
 		client.get(String.format(Constants.API_USER_FOLLOWING, userId), params, response);
 
 		return client;
@@ -288,7 +280,7 @@ public class APIManager
 		params.add(new BasicNameValuePair(Constants.API_CHANNEL_TYPES, Constants.CHANNEL_TYPES));
 		params.add(new BasicNameValuePair(Constants.API_ALLOW_RECENT_MESSAGE, "1"));
 
-		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
 		client.get(Constants.API_CHANNELS, params, response);
 
 		return client;
@@ -306,13 +298,13 @@ public class APIManager
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 
-		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
 		client.get(String.format(Constants.API_CHANNEL_MESSAGES, channelId), params, response);
 
 		return client;
 	}
 
-	public AsyncHttpClient uploadImage(Context context, String accessToken, String path, AsyncHttpResponseHandler response)
+	private AsyncHttpClient uploadImage(Context context, String accessToken, String path, AsyncHttpResponseHandler response)
 	{
 		try
 		{
@@ -320,11 +312,13 @@ public class APIManager
 			List<Header> headers = new ArrayList<>();
 			params.addPart("type", "robin.image.photo");
 			params.addPart("kind", "image");
+            // TODO use file's actual name for upload
+			params.addPart("name", "robin_file");
 			headers.add(new BasicHeader("Authorization", "BEARER " + accessToken));
 
 			params.addPart("content", getImageBody(context, path));
 
-			AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION + "files");
+			AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + "files");
 			client.post(params, headers, response);
 
 			return client;
@@ -381,23 +375,21 @@ public class APIManager
 		}
 
 		// Add the links to the post
-		if (post.getAnnotations() != null && post.getAnnotations().size() > 0)
+		/*if (post.getAnnotations() != null && post.getAnnotations().size() > 0)
 		{
 			int imageCount = 0;
 			for (Annotation annotation : post.getAnnotations())
 			{
 				if (annotation instanceof FileAnnotation)
 				{
-					post.setPostText((post.getPostText() + " posts.pnut.io/{post_id}/" + ++imageCount).trim());
+					post.setPostText((post.getPostText() + " photos.app.net/{post_id}/" + ++imageCount).trim());
 				}
 			}
-		}
+		}*/
 
 		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
-		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
-		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
 
 		JsonObject object = new JsonObject();
 		object.addProperty(Constants.API_TEXT, post.getPostText());
@@ -425,39 +417,18 @@ public class APIManager
 			}
 		}
 
-		/*if (post.getLinkEntities() != null)
-		{
-			JsonArray linksArr = new JsonArray();
-
-			for (Entity entity : post.getLinkEntities())
-			{
-				LinkEntity linkEntity = (LinkEntity)entity;
-				JsonObject link = new JsonObject();
-				link.addProperty("pos", linkEntity.getPos());
-				link.addProperty("len", linkEntity.getLength());
-				link.addProperty("link", linkEntity.getUrl());
-
-				linksArr.add(link);
-			}
-
-			JsonObject links = new JsonObject();
-			links.addProperty("parse_links", true);
-			links.add("links", linksArr);
-			object.add("entities", links);
-		}*/
-
 		try
 		{
 			JsonEntity postData = new JsonEntity(object);
 
-			AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+			AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
 			client.post
-			(
-				Constants.API_POSTS,
-				params,
-				postData,
-				response
-			);
+            (
+                Constants.API_POSTS,
+                params,
+                postData,
+                response
+            );
 
 			return client;
 		}
@@ -483,7 +454,7 @@ public class APIManager
 		{
 			JsonEntity postData = new JsonEntity(object);
 
-			AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+			AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
 			client.put
 			(
 				String.format(Constants.API_POST_REPOST, postId),
@@ -511,7 +482,7 @@ public class APIManager
 
         try
         {
-            AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+            AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
             client.delete(String.format(Constants.API_POST_REPOST, postId), params, response);
 
             return client;
@@ -537,7 +508,7 @@ public class APIManager
         {
             JsonEntity postData = new JsonEntity(object);
 
-            AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+            AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
             client.put
             (
                 String.format(Constants.API_POST_BOOKMARK, postId),
@@ -565,7 +536,7 @@ public class APIManager
 
         try
         {
-            AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+            AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
             client.delete(String.format(Constants.API_POST_BOOKMARK, postId), params, response);
 
             return client;
@@ -634,8 +605,6 @@ public class APIManager
 		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
-		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_BOOKMARKED, "1"));
-		//params.add(new BasicNameValuePair(Constants.API_INCLUDE_REPOSTERS, "1"));
         params.add(new BasicNameValuePair(Constants.API_UPDATE_MARKER, "1"));
 
 		JsonObject object = new JsonObject();
@@ -663,7 +632,7 @@ public class APIManager
 		{
 			JsonEntity postData = new JsonEntity(object);
 
-			AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+			AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
 			client.post
 			(
 				String.format(Constants.API_CHANNEL_MESSAGES, message.getChannelId()),
@@ -692,9 +661,9 @@ public class APIManager
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DIRECTED_POSTS, SettingsManager.getInstance().isNonFollowingMentionEnabled() ? "1" : "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
-		params.add(new BasicNameValuePair("text", searchTerm));
+		params.add(new BasicNameValuePair("q", searchTerm));
 
-		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
 		client.get(Constants.API_SEARCH_POST, params, response);
 
 		return client;
@@ -713,7 +682,7 @@ public class APIManager
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 		params.add(new BasicNameValuePair("q", searchTerm));
 
-		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
 		client.get(Constants.API_SEARCH_USER, params, response);
 
 		return client;
@@ -721,21 +690,19 @@ public class APIManager
 
 	public AsyncHttpClient getRobinPosts(String lastId, AsyncHttpResponseHandler response)
 	{
-		/* TODO: Search not part of API yet.
 		String accessToken = UserManager.getInstance().getAccessToken();
 		int maxCount = 60;
 
 		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_COUNT, "" + maxCount));
 		params.add(new BasicNameValuePair(Constants.API_BEFORE_ID, "" + lastId));
-		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DELETED, "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_DIRECTED_POSTS, SettingsManager.getInstance().isNonFollowingMentionEnabled() ? "1" : "0"));
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
-		params.add(new BasicNameValuePair("client_id", ""));
+		params.add(new BasicNameValuePair("client_id", Constants.CLIENT_TOKEN));
 
-		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
-		client.get(Constants.API_SEARCH_POST, params, response);*/
+		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
+		client.get(Constants.API_SEARCH_POST, params, response);
 
 		return null;
 	}
@@ -753,7 +720,7 @@ public class APIManager
 		params.add(new BasicNameValuePair(Constants.API_INCLUDE_RAW, "1"));
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 
-		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
 		client.get(Constants.API_POSTS + "/streams/global", params, response);
 
 		return client;
@@ -805,7 +772,7 @@ public class APIManager
 		List<NameValuePair> params = new ArrayList<>();
 		params.add(new BasicNameValuePair(Constants.API_ACCESS_TOKEN, accessToken));
 
-		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+		AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
 		client.delete(Constants.API_POSTS + "/" + post.getId(), params, response);
 
 		return client;
@@ -820,7 +787,7 @@ public class APIManager
 
         try
         {
-            AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+            AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
             client.put
                 (
                     String.format(Constants.API_USER_FOLLOW, userId),
@@ -847,7 +814,7 @@ public class APIManager
 
         try
         {
-            AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL + Constants.API_VERSION);
+            AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
             client.delete(
                 String.format(Constants.API_USER_FOLLOW, userId),
                 params,

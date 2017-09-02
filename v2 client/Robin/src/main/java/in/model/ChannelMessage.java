@@ -18,7 +18,7 @@ import lombok.Data;
 @Data
 public class ChannelMessage extends Message
 {
-	protected  String channelId = "-1";
+	private  String channelId = "-1";
 
 	@Override public ChannelMessage createFrom(JsonElement element)
 	{
@@ -50,7 +50,7 @@ public class ChannelMessage extends Message
 		try
 		{
 			JsonArray messageArray = element.getAsJsonArray();
-			ArrayList<ChannelMessage> messages = new ArrayList<ChannelMessage>(messageArray.size());
+			ArrayList<ChannelMessage> messages = new ArrayList<>(messageArray.size());
 
 			for (JsonElement messageElement : messageArray)
 			{

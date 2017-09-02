@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-import in.pnutrob.client.R;
+import in.pnutrob.client.alpha.R;
 
 public class FlowLayout extends ViewGroup
 {

@@ -17,7 +17,7 @@ import in.lib.view.FlowLayout;
 import in.lib.view.LinkedTextView;
 import in.lib.view.TextChronometer;
 import in.model.Channel;
-import in.pnutrob.client.R;
+import in.pnutrob.client.alpha.R;
 import in.view.holder.base.Holder;
 import lombok.Getter;
 
@@ -86,7 +86,7 @@ public class ChannelHolder extends Holder<Channel>
 				ImageView image = (ImageView)LayoutInflater.from(avatarContainer.getContext()).inflate(R.layout.channel_avatar_stub, avatarContainer, false);
 				avatarContainer.addView(image);
 
-				ImageLoader.getInstance().displayImage(Constants.API_URL + Constants.API_VERSION + "users/" + user + "/avatar?avatar=1&w=60&id=" + user, image, ImageOptionsManager.getInstance().getAvatarImageOptions());
+				ImageLoader.getInstance().displayImage(Constants.API_URL + "users/" + user + "/avatar?w=60", image, ImageOptionsManager.getInstance().getAvatarImageOptions());
 
 				if (counter++ > 15) break;
 			}

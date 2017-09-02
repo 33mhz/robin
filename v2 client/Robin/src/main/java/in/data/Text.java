@@ -54,7 +54,7 @@ public class Text extends Model
 
 			if (BitUtils.contains(SettingsManager.getInstance().getEmphasisBit(), Constants.BIT_EMPHASIS_ITALIC, Constants.BIT_EMPHASIS_BOLD, Constants.BIT_EMPHASIS_UNDERLINE))
 			{
-				this.emphasisStyles = new ArrayList<StyledEntity>();
+				this.emphasisStyles = new ArrayList<>();
 
 				if (BitUtils.contains(SettingsManager.getInstance().getEmphasisBit(), Constants.BIT_EMPHASIS_ITALIC))
 				{

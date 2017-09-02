@@ -16,7 +16,7 @@ import in.model.Interaction;
 import in.model.Interaction.Type;
 import in.model.Post;
 import in.model.User;
-import in.pnutrob.client.R;
+import in.pnutrob.client.alpha.R;
 import in.view.holder.base.Holder;
 import lombok.Getter;
 

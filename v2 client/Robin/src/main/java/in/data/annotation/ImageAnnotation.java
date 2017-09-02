@@ -80,12 +80,7 @@ public class ImageAnnotation extends Annotation
 			this.width = value.get("width").getAsInt();
 			this.height = value.get("height").getAsInt();
 
-			if (value.has("thumbnail_large_url_immediate"))
-			{
-				this.thumbUrl = value.get("thumbnail_large_url_immediate").getAsString();
-				this.previewUrl = this.getThumbUrl();
-			}
-			else if (value.has("thumbnail_url"))
+			if (value.has("thumbnail_url"))
 			{
 				this.thumbUrl = value.get("thumbnail_url").getAsString();
 				this.previewUrl = this.getThumbUrl();

@@ -30,7 +30,7 @@ import in.lib.view.spannable.HashTagClickableSpan;
 import in.lib.view.spannable.LinkClickableSpan;
 import in.lib.view.spannable.MentionClickableSpan;
 import in.lib.view.spannable.NotUnderlinedClickableSpan;
-import in.pnutrob.client.R;
+import in.pnutrob.client.alpha.R;
 import lombok.Setter;
 
 public class LinkedTextView extends TextView implements OnLongClickListener

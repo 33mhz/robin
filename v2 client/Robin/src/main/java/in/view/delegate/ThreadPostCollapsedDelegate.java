@@ -8,7 +8,7 @@ import in.controller.adapter.ThreadAdapter;
 import in.controller.adapter.ThreadAdapter.Mode;
 import in.controller.adapter.base.RobinAdapter;
 import in.model.Post;
-import in.pnutrob.client.R;
+import in.pnutrob.client.alpha.R;
 import in.view.holder.ThreadPostCollapsedHolder;
 
 public class ThreadPostCollapsedDelegate extends ThreadPostDelegate

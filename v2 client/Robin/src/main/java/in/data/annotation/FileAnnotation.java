@@ -47,19 +47,19 @@ public class FileAnnotation extends Annotation
 				JsonObject files = value.get("derived_files").getAsJsonObject();
 				JsonObject thumb = null;
 
-				if (files.has("image_thumb_960r"))
+				if (files.has("core_image_960r"))
 				{
-					thumb = files.get("image_thumb_960r").getAsJsonObject();
+					thumb = files.get("core_image_960r").getAsJsonObject();
 				}
-				else if (files.has("image_thumb_200s"))
+				else if (files.has("core_image_200s"))
 				{
-					thumb = files.get("image_thumb_200s").getAsJsonObject();
+					thumb = files.get("core_image_200s").getAsJsonObject();
 				}
 
 				if (thumb != null)
 				{
 					JsonObject thumbInfo = thumb.get("image_info").getAsJsonObject();
-					this.thumbUrl = thumb.get("url").getAsString();
+					this.thumbUrl = thumb.get("link").getAsString();
 					this.thumbWidth = thumbInfo.get("width").getAsInt();
 					this.thumbHeight = thumbInfo.get("height").getAsInt();
 				}
@@ -86,7 +86,7 @@ public class FileAnnotation extends Annotation
 		try
 		{
 			JsonArray fileArray = element.getAsJsonArray();
-			ArrayList<FileAnnotation> files = new ArrayList<FileAnnotation>(fileArray.size());
+			ArrayList<FileAnnotation> files = new ArrayList<>(fileArray.size());
 
 			for (JsonElement fileElement : fileArray)
 			{
@@ -166,8 +166,8 @@ public class FileAnnotation extends Annotation
 		file.addProperty("file_id", getId());
 		file.addProperty("file_token", getFileToken());
 		file.addProperty("format", "oembed");
-		object.addProperty("type", "net.app.core.oembed");
-		value.add("+net.app.core.file", file);
+		object.addProperty("type", "io.pnut.core.oembed");
+		value.add("+io.pnut.core.file", file);
 		object.add("value", value);
 
 		return object;

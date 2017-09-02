@@ -1,6 +1,6 @@
 package in.controller.handler;
 
-import android.app.Notification;
+import android.support.v4.app.NotificationCompat;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.content.Intent;
 
 import in.controller.handler.base.DialogResponseHandler;
 import in.model.Post;
-import in.pnutrob.client.R;
+import in.pnutrob.client.alpha.R;
 
 public class PostDialogResponseHandler extends DialogResponseHandler<Post>
 {
@@ -37,8 +37,8 @@ public class PostDialogResponseHandler extends DialogResponseHandler<Post>
 
 	@Override public void onSend()
 	{
-		Notification.Builder notification;
-		notification = new Notification.Builder(getContext());
+		NotificationCompat.Builder notification;
+		notification = new NotificationCompat.Builder(getContext());
 		notification.setContentTitle(getNotificationTitle());
 		notification.setContentText(getNotificationText());
 		notification.setContentIntent(PendingIntent.getActivity(getContext(), 0, new Intent(), PendingIntent.FLAG_CANCEL_CURRENT));
@@ -61,7 +61,7 @@ public class PostDialogResponseHandler extends DialogResponseHandler<Post>
 	@Override public void onFinish(boolean failed)
 	{
 		NotificationManager notificationManager = (NotificationManager)getContext().getSystemService(Context.NOTIFICATION_SERVICE);
-		Notification.Builder notification = new Notification.Builder(getContext());
+		NotificationCompat.Builder notification = new NotificationCompat.Builder(getContext());
 		notification.setSmallIcon(R.drawable.ic_notif_mention);
 		notification.setWhen(System.currentTimeMillis());
 

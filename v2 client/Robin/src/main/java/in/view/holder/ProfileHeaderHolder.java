@@ -16,7 +16,7 @@ import in.lib.view.AvatarImageView;
 import in.lib.view.LinkTouchMovementMethod;
 import in.lib.view.LinkedTextView;
 import in.model.User;
-import in.pnutrob.client.R;
+import in.pnutrob.client.alpha.R;
 import in.view.holder.base.Holder;
 
 @Injectable

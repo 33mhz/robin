@@ -21,7 +21,7 @@ import in.lib.view.AvatarImageView;
 import in.lib.view.LinkedTextView;
 import in.lib.view.TextChronometer;
 import in.model.Post;
-import in.pnutrob.client.R;
+import in.pnutrob.client.alpha.R;
 import in.view.holder.base.Holder;
 import lombok.Getter;
 
@@ -67,7 +67,6 @@ public class PostHolder extends Holder<Post>
 		optionsContainer.setVisibility(View.GONE);
 		conversationIndicator.setVisibility(View.GONE);
 		mediaImage.setImageBitmap(null);
-
         date.setTime(model.getDate());
 
 		if (model.getReplyCount() > 0 || !TextUtils.isEmpty(model.getReplyTo()))
@@ -87,7 +86,7 @@ public class PostHolder extends Holder<Post>
 			crosspost.setVisibility(View.VISIBLE);
 		}
 
-		if (model.getAnnotations() != null && model.getAnnotations().getLocations().size() > 0)
+		/*if (model.getAnnotations() != null && model.getAnnotations().getLocations().size() > 0)
 		{
 			if (model.getAnnotations().getLocations().get(0) instanceof CheckinAnnotation)
 			{
@@ -95,7 +94,7 @@ public class PostHolder extends Holder<Post>
 				checkin.setText("Check-in at " + annotation.getName() + (annotation.getAddress() == null ? "" : " " + annotation.getAddress()));
 				checkin.setVisibility(View.VISIBLE);
 			}
-		}
+		}*/
 
 		usernameTitle.setText(model.getPoster().getFormattedMentionNameTitle());
 		usernameSubtitle.setText(model.getPoster().getFormattedMentionNameSubTitle());

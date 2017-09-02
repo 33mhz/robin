@@ -3,37 +3,36 @@ package in.lib;
 public class Constants
 {
 	// API Constants //
-	public static final String API_URL = "https://api.pnut.io/";
-	public static final String API_VERSION = "v0/";
+	public static final String API_URL = "https://api.pnut.io/v0";
 	public static final String API_AUTH = "https://api.pnut.io/v0/oauth/access_token";
 
 	public static final String API_POSTS = "posts";
-	public static final String API_TIMELINE_STREAM = API_POSTS + "/streams/me";
-	public static final String API_UNIFIED_TIMELINE_STREAM = API_POSTS + "/streams/unified";
-	public static final String API_POST_THREAD = API_POSTS + "/%s/thread";
-	public static final String API_POST_REPOST = API_POSTS + "/%s/repost";
-    public static final String API_POST_BOOKMARK = API_POSTS + "/%s/bookmark";
-	public static final String API_SEARCH_POST = API_POSTS + "/search";
+	//public static final String API_TIMELINE_STREAM = "posts/streams/me";
+	public static final String API_UNIFIED_TIMELINE_STREAM = "posts/streams/unified";
+	public static final String API_POST_THREAD = "posts/%s/thread";
+	public static final String API_POST_REPOST = "posts/%s/repost";
+    public static final String API_POST_BOOKMARK = "posts/%s/bookmark";
+	public static final String API_SEARCH_POST = "posts/search";
 
-	private static final String API_USERS = "users";
-    public static final String API_USER_FOLLOW = API_USERS + "/%s/follow";
-	public static final String API_USER_DETAILS = API_USERS + "/%s/";
-	public static final String API_USER_MENTIONS = API_USER_DETAILS + "mentions";
-	public static final String API_USER_POSTS = API_USER_DETAILS + "posts";
-	public static final String API_USER_FOLLOWERS = API_USER_DETAILS + "followers";
-	public static final String API_USER_FOLLOWING = API_USER_DETAILS + "following";
-	public static final String API_USER_FILES = API_USER_DETAILS + "files";
-	public static final String API_USER_BOOKMARKED = API_USER_DETAILS + "bookmarks";
-	public static final String API_USER_ACTIONS = API_USERS + "/me/actions";
-	public static final String API_SEARCH_USER = API_USERS + "/search";
+	//private static final String API_USERS = "users";
+    public static final String API_USER_FOLLOW = "users/%s/follow";
+	public static final String API_USER_DETAILS = "users/%s/";
+	public static final String API_USER_MENTIONS = "users/%s/mentions";
+	public static final String API_USER_POSTS = "users/%s/posts";
+	public static final String API_USER_FOLLOWERS = "users/%s/followers";
+	public static final String API_USER_FOLLOWING = "users/%s/following";
+	public static final String API_USER_FILES = "users/%s/files";
+	public static final String API_USER_BOOKMARKED = "users/%s/bookmarks";
+	public static final String API_USER_ACTIONS = "users/me/actions";
+	public static final String API_SEARCH_USER = "users/search";
 
 	public static final String API_CHANNELS = "users/me/channels/subscribed";
 	public static final String API_CHANNEL_MESSAGES = "channels/%s/messages";
 	//public static final String API_CHANNEL_SUBSCRIBE = "channels/%s/subscribe";
 	//public static final String API_CHANNEL_MESSAGE_DETAILS = API_CHANNEL_MESSAGES + "/%s";
 
-	public static final String API_SCOPES = "stream write_post follow messages update_profile";
-	public static final String API_SCOPES_CSV = "stream,write_post,follow,messages,update_profile";
+	public static final String API_SCOPES = "stream write_post follow messages:io.pnut.core.pm messages:io.pnut.core.chat update_profile files";
+	public static final String API_SCOPES_CSV = "stream,write_post,follow,messages:io.pnut.core.pm,messages:io.pnut.core.chat,update_profile,files";
 
 	public static final String API_COUNT = "count";
 	public static final String API_BEFORE_ID = "before_id";
@@ -41,18 +40,19 @@ public class Constants
 	public static final String API_ACCESS_TOKEN = "access_token";
 	public static final String API_INCLUDE_DELETED = "include_deleted";
 	public static final String API_INCLUDE_RAW = "include_raw";
+	//public static final String API_INCLUDE_POST_RAW = "include_post_raw";
 	public static final String API_INCLUDE_DIRECTED_POSTS = "include_directed_posts";
 	public static final String API_INCLUDE_BOOKMARKED = "include_bookmarked_by";
-	public static final String API_INCLUDE_REPOSTERS = "include_reposters";
+	public static final String API_INCLUDE_REPOSTERS = "include_reposted_by";
     public static final String API_UPDATE_MARKER = "update_marker";
 	public static final String API_REPLY_TO = "reply_to";
 	public static final String API_REPOST = "repost_of";
 	public static final String API_TEXT = "text";
 	public static final String API_CHANNEL_ID = "channel_id";
-	public static final String API_NAME = "name";
-	public static final String API_DESC = "content";
-	public static final String API_LOCALE = "locale";
-	public static final String API_TIMEZONE = "timezone";
+	//public static final String API_NAME = "name";
+	//public static final String API_DESC = "content";
+	//public static final String API_LOCALE = "locale";
+	//public static final String API_TIMEZONE = "timezone";
 	public static final String API_CHANNEL_TYPES = "channel_types";
 	public static final String API_ALLOW_RECENT_MESSAGE = "include_recent_message";
 	public static final String API_ACTIONS = "filters";
@@ -86,7 +86,7 @@ public class Constants
 	public static final String RESPONSE_FOLLOWERS = "followers_%s";
 	public static final String RESPONSE_FOLLOWINGS = "followings_%s";
 	public static final String RESPONSE_USER_STREAM = "user_%s_stream";
-	public static final String RESPONSE_USER = "user_%s";
+	//public static final String RESPONSE_USER = "user_%s";
 	public static final String RESPONSE_THREAD = "thread_%s";
 	public static final String RESPONSE_CHANNELS = "channels_%s";
 	public static final String RESPONSE_CHANNEL_MESSAGES = "channels_messages_%s";
@@ -104,8 +104,8 @@ public class Constants
 	public static final String CACHE_FOLLOWERS = "followers_%s";
 	public static final String CACHE_FOLLOWINGS = "followings_%s";
 	public static final String CACHE_USER_STREAM = "user_%s_stream";
-	public static final String CACHE_USER = "user_%s";
-	public static final String CACHE_THREAD = "thread_%s";
+	//public static final String CACHE_USER = "user_%s";
+	//public static final String CACHE_THREAD = "thread_%s";
 	public static final String CACHE_CHANNELS = "channels_%s";
 	public static final String CACHE_CHANNEL_MESSAGES = "channel_messages_%s";
 	public static final String CACHE_INTERACTIONS = "actions";
@@ -160,17 +160,17 @@ public class Constants
 	public static final int BIT_EMPHASIS_UNDERLINE = 0x0000004;
 
 	// Actions //
-	public static final String ACTION_NEW_POST = "in.rob.posting.new";
-	public static final String ACTION_DELETE_POST = "in.rob.posting.delete";
-	public static final String ACTION_REPOST = "in.rob.posting.repost";
-	public static final String ACTION_STAR_POST = "in.rob.posting.star";
-	public static final String ACTION_NEW_MESSAGE = "in.rob.posting.new_message";
-	public static final String ACTION_DELETE_MESSAGE = "in.rob.posting.delete_message";
-	public static final String ACTION_NEW_CHANNEL = "in.rob.posting.new_channel";
+	//public static final String ACTION_NEW_POST = "in.pnutrob.posting.new";
+	//public static final String ACTION_DELETE_POST = "in.pnutrob.posting.delete";
+	//public static final String ACTION_REPOST = "in.pnutrob.posting.repost";
+	//public static final String ACTION_STAR_POST = "in.pnutrob.posting.star";
+	//public static final String ACTION_NEW_MESSAGE = "in.pnutrob.posting.new_message";
+	//public static final String ACTION_DELETE_MESSAGE = "in.pnutrob.posting.delete_message";
+	//public static final String ACTION_NEW_CHANNEL = "in.pnutrob.posting.new_channel";
 
-	public static final String ACTION_INTENT_NEW_POST = "in.rob.client.widget.intent.NEW_POST";
-	public static final String ACTION_INTENT_OPEN_APP = "in.rob.client.widget.intent.OPEN_APP";
-	public static final String ACTION_INTENT_THREAD = "in.rob.client.widget.intent.THREAD";
-	public static final String ACTION_INTENT_REFRESH = "in.rob.client.widget.intent.REFRESH";
-	public static final String ACTION_INTENT_RELOAD = "in.rob.client.widget.intent.RELOAD";
+	public static final String ACTION_INTENT_NEW_POST = "in.pnutrob.client.alpha.widget.intent.NEW_POST";
+	public static final String ACTION_INTENT_OPEN_APP = "in.pnutrob.client.alpha.widget.intent.OPEN_APP";
+	public static final String ACTION_INTENT_THREAD = "in.pnutrob.client.alpha.widget.intent.THREAD";
+	public static final String ACTION_INTENT_REFRESH = "in.pnutrob.client.alpha.widget.intent.REFRESH";
+	public static final String ACTION_INTENT_RELOAD = "in.pnutrob.client.alpha.widget.intent.RELOAD";
 }

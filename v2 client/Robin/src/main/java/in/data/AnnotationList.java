@@ -10,7 +10,7 @@ import java.util.List;
 
 import in.data.annotation.CrossPostAnnotation;
 import in.data.annotation.ImageAnnotation;
-import in.data.annotation.LocationAnnotation;
+//import in.data.annotation.LocationAnnotation;
 import in.data.annotation.VideoAnnotation;
 import in.lib.utils.Debug;
 import in.lib.utils.SerialReaderUtil;
@@ -21,9 +21,9 @@ import lombok.Data;
 @Data
 public class AnnotationList extends Model
 {
-	protected List<ImageAnnotation> images = new ArrayList<ImageAnnotation>();
-	protected List<VideoAnnotation> videos = new ArrayList<VideoAnnotation>();
-	protected List<LocationAnnotation> locations = new ArrayList<LocationAnnotation>();
+	protected List<ImageAnnotation> images = new ArrayList<>();
+	protected List<VideoAnnotation> videos = new ArrayList<>();
+	//protected List<LocationAnnotation> locations = new ArrayList<>();
 	protected List<CrossPostAnnotation> crossposts = new ArrayList<CrossPostAnnotation>();
 
 	@Override public AnnotationList createFrom(JsonElement element)
@@ -56,7 +56,7 @@ public class AnnotationList extends Model
 
 			this.images = util.readModelList(ImageAnnotation.class);
 			this.videos = util.readModelList(VideoAnnotation.class);
-			this.locations = util.readModelList(LocationAnnotation.class);
+			//this.locations = util.readModelList(LocationAnnotation.class);
 			this.crossposts = util.readModelList(CrossPostAnnotation.class);
 
 			return this;
@@ -76,7 +76,7 @@ public class AnnotationList extends Model
 			util.writeString(getVersion());
 			util.writeModelList(images);
 			util.writeModelList(videos);
-			util.writeModelList(locations);
+			//util.writeModelList(locations);
 			util.writeModelList(crossposts);
 		}
 		catch (Exception e)

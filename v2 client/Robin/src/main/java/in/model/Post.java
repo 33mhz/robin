@@ -8,6 +8,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import java.text.SimpleDateFormat;
+import java.util.TimeZone;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -34,6 +35,8 @@ public class Post extends Message
 	protected int starCount;
 	protected List<User> reposters;
 	protected List<User> starrers;
+    protected long date;
+	protected String dateStr;
 
 	@Override public Post createFrom(JsonElement element)
 	{
@@ -42,6 +45,10 @@ public class Post extends Message
 			try
 			{
 				JsonObject postObject = element.getAsJsonObject();
+				if (postObject.has("data"))
+				{
+					postObject = postObject.get("data").getAsJsonObject();
+				}
 				setOriginalId(postObject.get("id").getAsString());
 
 				if (postObject.has("repost_of"))
@@ -60,8 +67,14 @@ public class Post extends Message
 					this.repostCount = postObject.get("counts").getAsJsonObject().get("reposts").getAsInt();
 					this.starred = postObject.has("you_bookmarked") && postObject.get("you_bookmarked").getAsBoolean();
                     this.reposted = postObject.has("you_reposted") && postObject.get("you_reposted").getAsBoolean();
-					this.reposters = new User().createListFrom(postObject.get("reposters"));
+					this.reposters = new User().createListFrom(postObject.get("reposted_by"));
 					this.starrers = new User().createListFrom(postObject.get("bookmarked_by"));
+
+					SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault());
+					format.setTimeZone(TimeZone.getTimeZone("UTC"));
+					Date postDate = format.parse(postObject.get("created_at").getAsString());
+					this.date = postDate.getTime();
+					this.dateStr = android.text.format.DateUtils.getRelativeTimeSpanString(postDate.getTime(), System.currentTimeMillis(), android.text.format.DateUtils.FORMAT_ABBREV_RELATIVE).toString();
 
 					if (postObject.has("reply_to"))
 					{
@@ -141,6 +154,8 @@ public class Post extends Message
 				starCount = util.readInt();
 				reposters = util.readModelList(User.class);
 				starrers = util.readModelList(User.class);
+				date = util.readLong();
+				dateStr = util.readString();
 
 				return this;
 			}
@@ -174,6 +189,8 @@ public class Post extends Message
 			util.writeInt(starCount);
 			util.writeModelList(reposters);
 			util.writeModelList(starrers);
+			util.writeLong(date);
+			util.writeString(dateStr);
 		}
 		catch (Exception e)
 		{

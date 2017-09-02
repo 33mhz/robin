@@ -26,6 +26,7 @@
 			android:id="@+id/conversation_indicator"
 			android:layout_toStartOf="@id/date"
 			android:visibility="gone"
+			android:contentDescription="@string/postImageDescription"
 			style="?attr/rbn_post_convo"
 		/>
 

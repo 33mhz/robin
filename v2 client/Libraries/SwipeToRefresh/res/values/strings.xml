@@ -1,4 +1,4 @@
 <resources>
 	<string name="ptr_pull">Swipe down to refresh</string>
-	<string name="ptr_refreshing">Refreshing...</string>
+	<string name="ptr_refreshing">Refreshing&#8230;</string>
 </resources>

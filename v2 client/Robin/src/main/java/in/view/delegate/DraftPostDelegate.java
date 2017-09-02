@@ -15,8 +15,8 @@ import in.lib.builder.DialogBuilder;
 import in.lib.utils.ViewUtils;
 import in.model.DraftPost;
 import in.model.base.Draft;
-import in.pnutrob.client.R;
-import in.pnutrob.client.dialog.NewPostDialog;
+import in.pnutrob.client.alpha.R;
+import in.pnutrob.client.alpha.dialog.NewPostDialog;
 import in.view.delegate.base.AdapterDelegate;
 import in.view.holder.DraftPostHolder;
 

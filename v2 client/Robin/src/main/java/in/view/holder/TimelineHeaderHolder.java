@@ -9,7 +9,7 @@ import in.lib.manager.ImageOptionsManager;
 import in.lib.utils.Views.InjectView;
 import in.lib.utils.Views.Injectable;
 import in.model.User;
-import in.pnutrob.client.R;
+import in.pnutrob.client.alpha.R;
 import in.view.holder.base.Holder;
 import lombok.Getter;
 

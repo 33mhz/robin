@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	package="in.pnutrob.client"
-	android:versionCode="97"
-	android:versionName="3.0"
+	package="in.pnutrob.client.alpha"
+	android:versionCode="196"
 >
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -37,61 +36,61 @@
 		<activity android:name=".ProfileActivity" android:theme="@style/Theme.Light" android:parentActivityName=".MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="in.pnutrob.client.MainActivity"
+				android:value=".MainActivity"
 			/>
 		</activity>
 		<activity android:name=".ThreadActivity" android:theme="@style/Theme.Light" android:parentActivityName=".MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="in.pnutrob.client.MainActivity"
+				android:value=".MainActivity"
 			/>
 		</activity>
 		<activity android:name=".ChannelsActivity" android:theme="@style/Theme.Light" android:parentActivityName=".MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="in.pnutrob.client.MainActivity"
+				android:value=".MainActivity"
 			/>
 		</activity>
 		<activity android:name=".StarredActivity" android:theme="@style/Theme.Light" android:parentActivityName=".MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="in.pnutrob.client.MainActivity"
+				android:value=".MainActivity"
 			/>
 		</activity>
 		<activity android:name=".SearchActivity" android:theme="@style/Theme.Light" android:parentActivityName=".MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="in.pnutrob.client.MainActivity"
+				android:value=".MainActivity"
 			/>
 		</activity>
 		<activity android:name=".SearchResultsActivity" android:theme="@style/Theme.Light" android:parentActivityName=".MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="in.pnutrob.client.MainActivity"
+				android:value=".MainActivity"
 				/>
 		</activity>
 		<activity android:name=".ChannelMessagesActivity" android:theme="@style/Theme.Light" android:parentActivityName=".MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="in.pnutrob.client.MainActivity"
+				android:value=".MainActivity"
 			/>
 		</activity>
 		<activity android:name=".StorageBrowserActivity" android:theme="@style/Theme.Light" android:parentActivityName=".MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="in.pnutrob.client.MainActivity"
+				android:value=".MainActivity"
 			/>
 		</activity>
 		<activity android:name=".DraftsActivity" android:theme="@style/Theme.Light" android:parentActivityName=".MainActivity" android:launchMode="singleTask">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="in.pnutrob.client.MainActivity"
+				android:value=".MainActivity"
 			/>
 		</activity>
 		<activity android:name=".SettingsActivity" android:theme="@style/Theme.Light" android:parentActivityName=".MainActivity">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="in.pnutrob.client.MainActivity"
+				android:value=".MainActivity"
 			/>
 		</activity>
 

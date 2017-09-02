@@ -2,7 +2,7 @@ package in.lib.utils;
 
 import android.content.Context;
 
-import in.pnutrob.client.R;
+import in.pnutrob.client.alpha.R;
 
 public class DateRenderer
 {

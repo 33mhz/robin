@@ -1,7 +1,7 @@
 package in.controller.handler;
 
-import android.app.Notification;
 import android.app.NotificationManager;
+import android.support.v4.app.NotificationCompat;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -9,7 +9,7 @@ import android.content.Intent;
 import in.controller.handler.base.ResponseHandler;
 import in.data.annotation.FileAnnotation;
 import in.lib.utils.Debug;
-import in.pnutrob.client.R;
+import in.pnutrob.client.alpha.R;
 import lombok.Getter;
 
 public class ImageUploadResponseHandler extends ResponseHandler
@@ -17,7 +17,7 @@ public class ImageUploadResponseHandler extends ResponseHandler
 	@Getter private FileAnnotation image;
 	@Getter private Context context;
 	private int notificationId;
-	private Notification.Builder notification;
+	private NotificationCompat.Builder notification;
 	private NotificationManager notificationManager;
 
 	protected ImageUploadResponseHandler(Context context, int notificationId)
@@ -29,7 +29,7 @@ public class ImageUploadResponseHandler extends ResponseHandler
 
 	@Override public void onSend()
 	{
-		notification = new Notification.Builder(getContext());
+		notification = new NotificationCompat.Builder(getContext());
 		notification.setContentTitle(getContext().getString(R.string.uploading_image_title));
 		notification.setContentIntent(PendingIntent.getActivity(getContext(), 0, new Intent(), PendingIntent.FLAG_CANCEL_CURRENT));
 	}

@@ -4,7 +4,7 @@ import android.app.Fragment;
 
 import in.data.stream.base.Stream;
 import in.lib.utils.Debug;
-import in.pnutrob.client.fragment.base.StreamFragment;
+import in.pnutrob.client.alpha.fragment.base.StreamFragment;
 import lombok.Getter;
 import lombok.Setter;
 

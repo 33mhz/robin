@@ -23,10 +23,10 @@ import in.lib.manager.SettingsManager;
 import in.lib.manager.UserManager;
 import in.lib.utils.ViewUtils;
 import in.model.Post;
-import in.pnutrob.client.R;
-import in.pnutrob.client.dialog.DeletePostDialog;
-import in.pnutrob.client.dialog.QuotePostDialog;
-import in.pnutrob.client.dialog.ReplyPostDialog;
+import in.pnutrob.client.alpha.R;
+import in.pnutrob.client.alpha.dialog.DeletePostDialog;
+import in.pnutrob.client.alpha.dialog.QuotePostDialog;
+import in.pnutrob.client.alpha.dialog.ReplyPostDialog;
 import in.view.delegate.base.AdapterDelegate;
 import in.view.holder.PostHolder;
 

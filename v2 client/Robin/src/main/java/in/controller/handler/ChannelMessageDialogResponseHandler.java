@@ -1,6 +1,6 @@
 package in.controller.handler;
 
-import android.app.Notification;
+import android.support.v4.app.NotificationCompat;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.content.Intent;
 
 import in.controller.handler.base.DialogResponseHandler;
 import in.model.ChannelMessage;
-import in.pnutrob.client.R;
+import in.pnutrob.client.alpha.R;
 
 public class ChannelMessageDialogResponseHandler extends DialogResponseHandler<ChannelMessage>
 {
@@ -22,8 +22,8 @@ public class ChannelMessageDialogResponseHandler extends DialogResponseHandler<C
 
 	@Override public void onSend()
 	{
-		Notification.Builder notification;
-		notification = new Notification.Builder(getContext());
+		NotificationCompat.Builder notification;
+		notification = new NotificationCompat.Builder(getContext());
 		notification.setContentTitle(getContext().getString(R.string.sending_message_title));
 		notification.setContentText(getContext().getString(R.string.sending_message));
 		notification.setContentIntent(PendingIntent.getActivity(getContext(), 0, new Intent(), PendingIntent.FLAG_CANCEL_CURRENT));
@@ -49,7 +49,7 @@ public class ChannelMessageDialogResponseHandler extends DialogResponseHandler<C
 		{
 			NotificationManager notificationManager = (NotificationManager)getContext().getSystemService(Context.NOTIFICATION_SERVICE);
 
-			Notification.Builder notification = new Notification.Builder(getContext());
+			NotificationCompat.Builder notification = new NotificationCompat.Builder(getContext());
 			notification.setTicker(getContext().getString(R.string.message_success));
 			notification.setContentIntent(PendingIntent.getActivity(getContext(), 0, new Intent(), PendingIntent.FLAG_CANCEL_CURRENT));
 			notification.setSmallIcon(R.drawable.ic_launcher);

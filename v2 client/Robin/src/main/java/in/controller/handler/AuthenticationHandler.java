@@ -8,7 +8,7 @@ import in.controller.handler.base.ResponseHandler;
 import in.controller.handler.base.ResponseListener;
 import in.lib.utils.Debug;
 import in.model.User;
-import in.pnutrob.client.fragment.AuthenticationFragment;
+import in.pnutrob.client.alpha.fragment.AuthenticationFragment;
 import lombok.Getter;
 
 public class AuthenticationHandler extends ResponseHandler

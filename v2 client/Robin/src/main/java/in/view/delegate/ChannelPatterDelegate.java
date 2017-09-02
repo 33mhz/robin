@@ -2,7 +2,7 @@ package in.view.delegate;
 
 import in.controller.adapter.base.RobinAdapter;
 import in.model.Channel;
-import in.pnutrob.client.R;
+import in.pnutrob.client.alpha.R;
 
 public class ChannelPatterDelegate extends ChannelPmDelegate
 {

@@ -269,7 +269,8 @@
 	<string name="profile_stats" formatted="false">%s following%s followers%s bookmarked%s posts</string>
 	<string name="profile_updated">Profile successfully updated!</string>
 	<string name="ptr_pull">Swipe down to refresh</string>
-	<string name="ptr_refreshing">Refreshing&#8320;</string>
+	<string name="ptr_refreshing">Refreshing&#8230;</string>
+	<string name="postImageDescription">Avatar</string>
 	<string name="quick_post">Quick post</string>
 	<string name="quick_post_desc">Enabled the quick post on-going notification</string>
 	<string name="quiet_header">QUIET MODE</string>
@@ -315,9 +316,9 @@
 	<string name="save_to_drafts">Do you wish to save to drafts?</string>
 	<string name="saved_searches">SAVED SEARCHES</string>
 	<string name="search">Search</string>
-	<string name="search_for_tags">Search #tags, \@users, or keywords (not functional)</string>
+	<string name="search_for_tags">Search #tags, \@users, or keywords</string>
 	<string name="search_users">Search users</string>
-	<string name="searching_for_user">Searching for user (not functional)</string>
+	<string name="searching_for_user">Searching for user</string>
 	<string name="select_account">Select account</string>
 	<string name="select_animation_option">Select animations</string>
 	<string name="select_emphasis_option">Select post emphasis</string>

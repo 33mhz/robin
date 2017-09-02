@@ -19,8 +19,8 @@ import java.util.Set;
 import in.lib.Constants;
 import in.lib.utils.Debug;
 import in.model.User;
-import in.pnutrob.client.R;
-import in.pnutrob.client.dialog.NewPostDialog;
+import in.pnutrob.client.alpha.R;
+import in.pnutrob.client.alpha.dialog.NewPostDialog;
 import lombok.Data;
 
 @Data

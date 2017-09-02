@@ -16,7 +16,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Locale;
 
-import in.pnutrob.client.R;
+import in.pnutrob.client.alpha.R;
 
 /**
  * View injection class which runs at runtime rather than compile time like ButterKnife. The benefit to this is there's no generated code which some IDEs (such as Eclipse) fail to generate properly and can often lead to broken references.

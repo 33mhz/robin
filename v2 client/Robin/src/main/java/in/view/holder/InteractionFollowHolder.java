@@ -9,7 +9,7 @@ import in.lib.utils.Views.Injectable;
 import in.lib.view.AvatarImageView;
 import in.model.Interaction;
 import in.model.User;
-import in.pnutrob.client.R;
+import in.pnutrob.client.alpha.R;
 import lombok.Getter;
 
 @Injectable

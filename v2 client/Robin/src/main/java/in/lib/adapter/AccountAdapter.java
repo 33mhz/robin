@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.List;
 
 import in.model.SimpleUser;
-import in.pnutrob.client.R;
+import in.pnutrob.client.alpha.R;
 import in.view.holder.AccountHolder;
 import lombok.Getter;
 import lombok.NonNull;

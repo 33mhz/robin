@@ -9,6 +9,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import java.text.SimpleDateFormat;
+import java.util.TimeZone;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,10 +17,10 @@ import java.util.Locale;
 
 import in.data.AnnotationList;
 import in.data.Text;
-import in.data.annotation.CheckinAnnotation;
+//import in.data.annotation.CheckinAnnotation;
 import in.data.annotation.CrossPostAnnotation;
 import in.data.annotation.ImageAnnotation;
-import in.data.annotation.LocationAnnotation;
+//import in.data.annotation.LocationAnnotation;
 import in.data.annotation.VideoAnnotation;
 import in.data.entity.LinkEntity;
 import in.data.entity.MentionEntity;
@@ -82,6 +83,7 @@ public class Message extends AdnModel
 			this.poster = new User().createFrom(postObject.get("user"));
 
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault());
+			format.setTimeZone(TimeZone.getTimeZone("UTC"));
             Date postDate = format.parse(postObject.get("created_at").getAsString());
 			this.date = postDate.getTime();
             this.dateStr = android.text.format.DateUtils.getRelativeTimeSpanString(postDate.getTime(), System.currentTimeMillis(), android.text.format.DateUtils.FORMAT_ABBREV_RELATIVE).toString();
@@ -90,11 +92,11 @@ public class Message extends AdnModel
 			this.clientName = postObject.get("source").getAsJsonObject().get("name").getAsString();
 			this.clientLink = postObject.get("source").getAsJsonObject().get("link").getAsString();
 
-			if (postObject.has("canonical_url")) {
+			/*if (postObject.has("canonical_url")) {
 				this.canonicalUrl = postObject.get("canonical_url").getAsString();
-			} else {
-                this.canonicalUrl = "https://posts.pnut.io/"+this.id;
-            }
+			} else {*/
+			this.canonicalUrl = "https://posts.pnut.io/"+this.id;
+            //}
 
 			if (postObject.has("reply_to"))
 			{
@@ -194,7 +196,7 @@ public class Message extends AdnModel
 						}
 					}
 				}
-				else if (type.equals("io.pnut.core.geolocation"))
+				/*else if (type.equals("io.pnut.core.geolocation"))
 				{
 					LocationAnnotation location = new LocationAnnotation().createFrom(value);
 
@@ -211,7 +213,7 @@ public class Message extends AdnModel
 					{
 						map.getLocations().add(location);
 					}
-				}
+				}*/
 				else if (type.equals("io.pnut.core.crosspost"))
 				{
 					CrossPostAnnotation crosspost = new CrossPostAnnotation().createFrom(value);

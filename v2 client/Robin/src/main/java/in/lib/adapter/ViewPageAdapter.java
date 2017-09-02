@@ -23,8 +23,8 @@ import java.util.ArrayList;
 
 import in.lib.Constants;
 import in.lib.utils.Views;
-import in.pnutrob.client.R;
-import in.pnutrob.client.fragment.base.StreamFragment;
+import in.pnutrob.client.alpha.R;
+import in.pnutrob.client.alpha.fragment.base.StreamFragment;
 import lombok.Getter;
 
 public class ViewPageAdapter extends FragmentStatePagerAdapter implements OnPageChangeListener

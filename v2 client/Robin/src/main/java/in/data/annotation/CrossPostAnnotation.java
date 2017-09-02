@@ -104,7 +104,7 @@ public class CrossPostAnnotation extends Annotation
 
 	@Override public String getAnnotationKey()
 	{
-		return "net.app.core.crosspost";
+		return "io.pnut.core.crosspost";
 	}
 
 	public static final Creator<CrossPostAnnotation> CREATOR = new Creator<CrossPostAnnotation>()
