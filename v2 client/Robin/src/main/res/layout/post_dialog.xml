@@ -76,7 +76,7 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_toEndOf="@id/counter_container"
-			android:gravity="right"
+			android:gravity="end"
 		>
 			<in.lib.view.HintedImageButton
 				android:layout_width="@dimen/dialog_ic_width"

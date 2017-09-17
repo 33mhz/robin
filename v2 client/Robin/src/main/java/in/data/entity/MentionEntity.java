@@ -54,7 +54,7 @@ public class MentionEntity extends Entity
 		try
 		{
 			JsonArray mentionsArray = element.getAsJsonArray();
-			ArrayList<MentionEntity> mentions = new ArrayList<MentionEntity>(mentionsArray.size());
+			ArrayList<MentionEntity> mentions = new ArrayList<>(mentionsArray.size());
 
 			for (JsonElement mentionElement : mentionsArray)
 			{

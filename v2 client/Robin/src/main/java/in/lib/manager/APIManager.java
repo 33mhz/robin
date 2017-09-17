@@ -313,7 +313,7 @@ public class APIManager
 			params.addPart("type", "robin.image.photo");
 			params.addPart("kind", "image");
             // TODO use file's actual name for upload
-			params.addPart("name", "robin_file");
+			params.addPart("name", "robin_file_"+System.currentTimeMillis());
 			headers.add(new BasicHeader("Authorization", "BEARER " + accessToken));
 
 			params.addPart("content", getImageBody(context, path));
@@ -422,13 +422,7 @@ public class APIManager
 			JsonEntity postData = new JsonEntity(object);
 
 			AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
-			client.post
-            (
-                Constants.API_POSTS,
-                params,
-                postData,
-                response
-            );
+			client.post(Constants.API_POSTS, params, postData, response);
 
 			return client;
 		}
@@ -455,13 +449,7 @@ public class APIManager
 			JsonEntity postData = new JsonEntity(object);
 
 			AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
-			client.put
-			(
-				String.format(Constants.API_POST_REPOST, postId),
-				params,
-				postData,
-				response
-			);
+			client.put(String.format(Constants.API_POST_REPOST, postId), params, postData, response);
 
 			return client;
 		}
@@ -509,13 +497,7 @@ public class APIManager
             JsonEntity postData = new JsonEntity(object);
 
             AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
-            client.put
-            (
-                String.format(Constants.API_POST_BOOKMARK, postId),
-                params,
-                postData,
-                response
-            );
+            client.put(String.format(Constants.API_POST_BOOKMARK, postId), params, postData, response);
 
             return client;
         }
@@ -633,13 +615,7 @@ public class APIManager
 			JsonEntity postData = new JsonEntity(object);
 
 			AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
-			client.post
-			(
-				String.format(Constants.API_CHANNEL_MESSAGES, message.getChannelId()),
-				params,
-				postData,
-				response
-			);
+			client.post(String.format(Constants.API_CHANNEL_MESSAGES, message.getChannelId()), params, postData, response);
 			return client;
 		}
 		catch (Exception e)
@@ -788,12 +764,7 @@ public class APIManager
         try
         {
             AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
-            client.put
-                (
-                    String.format(Constants.API_USER_FOLLOW, userId),
-                    params,
-                    response
-                );
+            client.put(String.format(Constants.API_USER_FOLLOW, userId), params, response);
 
             return client;
         }
@@ -815,11 +786,7 @@ public class APIManager
         try
         {
             AsyncHttpClient client = new AsyncHttpClient(Constants.API_URL);
-            client.delete(
-                String.format(Constants.API_USER_FOLLOW, userId),
-                params,
-                response
-            );
+            client.delete(String.format(Constants.API_USER_FOLLOW, userId), params, response);
 
             return client;
         }

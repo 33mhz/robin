@@ -26,6 +26,7 @@ public class SimpleUser extends AdnModel
     private String avatarUrl;
     private String formattedMentionNameTitle;
     private String formattedMentionNameSubTitle;
+	public Boolean following;
 
 	public String getFullname()
 	{
@@ -41,6 +42,7 @@ public class SimpleUser extends AdnModel
 		this.avatarUrl = user.getAvatarUrl();
 		this.formattedMentionNameTitle = user.getFormattedMentionNameTitle();
 		this.formattedMentionNameSubTitle = user.getFormattedMentionNameSubTitle();
+		this.following = user.following;
 
 		return this;
 	}
@@ -89,6 +91,7 @@ public class SimpleUser extends AdnModel
 			String[] formattedName = CodeUtils.compileUserTitle(SettingsManager.getInstance().getUserTitle(), this);
 			this.formattedMentionNameTitle = formattedName[0];
 			this.formattedMentionNameSubTitle = formattedName.length > 1 ? formattedName[1] : "";
+			this.following = userObject.has("you_follow") && userObject.get("you_follow").getAsBoolean();
 
 			this.avatarUrl = userObject.get("content").getAsJsonObject().get("avatar_image").getAsJsonObject().get("link").getAsString();
 

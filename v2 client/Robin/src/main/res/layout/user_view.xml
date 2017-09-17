@@ -13,7 +13,6 @@
 		android:id="@+id/user_action"
 		android:layout_alignParentEnd="true"
 		android:layout_centerVertical="true"
-		android:text="@string/follow"
 	/>
 
 	<in.lib.view.AvatarImageView

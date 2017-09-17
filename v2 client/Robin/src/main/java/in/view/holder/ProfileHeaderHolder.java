@@ -66,6 +66,14 @@ public class ProfileHeaderHolder extends Holder<User>
 		else
 		{
 			editButton.setVisibility(View.GONE);
+			if (model.following)
+			{
+				followButton.setText(R.string.unfollow);
+			}
+			else
+			{
+				followButton.setText(R.string.follow);
+			}
 			followButton.setVisibility(View.VISIBLE);
 		}
 

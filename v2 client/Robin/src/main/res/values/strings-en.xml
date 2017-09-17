@@ -11,8 +11,8 @@
 	<string name="about_copy">This app was made by \@scruffyfox and \@simpleline for App.net,\nand reworked by @33MHz for pnut.io!</string>
 	<string name="accounts">Accounts</string>
 	<string name="add_account">Add account</string>
-	<string name="add_at">Add at</string>
-	<string name="add_hash">Add hash</string>
+	<string name="add_at">Add \@</string>
+	<string name="add_hash">Add \#</string>
 	<string name="add_image">Add image</string>
 	<string name="add_link">Add link</string>
 	<string name="add_location">Add location</string>
@@ -59,6 +59,7 @@
 	<string name="copy_text_success">Post text copied to clipboard</string>
 	<string name="copy_url">Copy link to clipboard</string>
 	<string name="copy_url_success">Link saved to clipboard</string>
+	<string name="cover_image">Profile cover image</string>
 	<string name="could_not_read_post">Could not read post</string>
 	<string name="could_not_read_user">Could not read user</string>
 	<string name="create_custom_order">Create custom order</string>

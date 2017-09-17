@@ -37,16 +37,16 @@ public class URLMatcher extends Activity
 			return;
 		}
 
-		if (uri.getHost().equalsIgnoreCase("alpha.app.net") && (uri.getPathSegments() != null && uri.getPathSegments().size() > 0))
+		if (uri.getHost().equalsIgnoreCase("beta.unsweets.net") && (uri.getPathSegments() != null && uri.getPathSegments().size() > 0)) // was alpha.app.net
 		{
 			// intent
 			if (uri.getPathSegments().get(0).equalsIgnoreCase("intent"))
 			{
 				if (uri.getPathSegments().get(1).equalsIgnoreCase("post"))
 				{
-					Intent postIntent = new Intent(this, NewPostDialog.class);
-					postIntent.putExtra(Intent.EXTRA_TEXT, uri.getQueryParameter("text"));
-					startActivity(postIntent);
+//					Intent postIntent = new Intent(this, NewPostDialog.class);
+//					postIntent.putExtra(Intent.EXTRA_TEXT, uri.getQueryParameter("text"));
+//					startActivity(postIntent);
 				}
 			}
 			// user
@@ -59,7 +59,7 @@ public class URLMatcher extends Activity
 			// post
 			else if (uri.getPathSegments().size() > 1)
 			{
-				if (uri.getPathSegments().get(1).equals("post"))
+				if (uri.getPathSegments().get(1).equals("posts"))
 				{
 //					Intent postIntent = new Intent(this, ThreadActivity.class);
 //					postIntent.putExtra(Constants.EXTRA_POST_ID, uri.getPathSegments().get(2));
@@ -67,17 +67,17 @@ public class URLMatcher extends Activity
 				}
 			}
 		}
-		else if (uri.getHost().equalsIgnoreCase("posts.app.net") && (uri.getPathSegments() != null && uri.getPathSegments().size() > 0))
+		else if (uri.getHost().equalsIgnoreCase("posts.pnut.io") && (uri.getPathSegments() != null && uri.getPathSegments().size() > 0))
 		{
 //			Intent postIntent = new Intent(this, ThreadActivity.class);
 //			postIntent.putExtra(Constants.EXTRA_POST_ID, uri.getPathSegments().get(0));
 //			startActivity(postIntent);
 		}
-		else if (uri.getHost().equalsIgnoreCase("patter-app.net"))
+		else if (uri.getHost().equalsIgnoreCase("patter.chat"))
 		{
 			if (uri.getQueryParameter("channel") != null)
 			{
-//				Intent channelIntent = new Intent(this, MessagesActivity.class);
+//				Intent channelIntent = new Intent(this, ChannelMessagesActivity.class);
 //				channelIntent.putExtra(Constants.EXTRA_CHANNEL_ID, uri.getQueryParameter("channel"));
 //				startActivity(channelIntent);
 			}
@@ -93,19 +93,20 @@ public class URLMatcher extends Activity
 		}
 		else
 		{
-			if (BitUtils.contains(SettingsManager.getInstance().getInAppViewerBit(), Constants.BIT_IN_APP_VIEWER_BROWSER))
+			// in-app browser broken
+			/*if (BitUtils.contains(SettingsManager.getInstance().getInAppViewerBit(), Constants.BIT_IN_APP_VIEWER_BROWSER))
 			{
 				Intent intent = new Intent(this, WebBrowserDialog.class);
 				intent.putExtra(Constants.EXTRA_PREVIEW_URL, uri.toString());
 				startActivity(intent);
 			}
 			else
-			{
+			{*/
 				Intent intent = new Intent(Intent.ACTION_VIEW);
 				intent.addCategory("android.intent.category.BROWSABLE");
 				intent.setData(uri);
 				startActivity(intent);
-			}
+			//}
 		}
 
 		finish();

@@ -18,6 +18,8 @@
 			android:layout_height="@dimen/avatar_height"
 			android:id="@+id/avatar"
 			android:layout_marginEnd="10dp"
+			android:clickable="true"
+			android:longClickable="true"
 		/>
 
 		<RelativeLayout

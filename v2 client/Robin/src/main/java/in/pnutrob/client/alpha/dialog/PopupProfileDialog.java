@@ -1,4 +1,4 @@
-package in.pnutrob.client.dialog;
+package in.pnutrob.client.alpha.dialog;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -53,7 +53,7 @@ public class PopupProfileDialog extends Activity
 
 	public void retrieveArguments(Bundle args)
 	{
-		user = (User)args.getParcelable(Constants.EXTRA_USER);
+		user = args.getParcelable(Constants.EXTRA_USER);
 	}
 
 	@Override protected void onSaveInstanceState(Bundle outState)

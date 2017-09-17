@@ -53,13 +53,12 @@ public class ThreadFragment extends StreamFragment
 
 		if (arguments != null && arguments.containsKey(Constants.EXTRA_POST))
 		{
-			thread = (Post)arguments.getParcelable(Constants.EXTRA_POST);
+			thread = arguments.getParcelable(Constants.EXTRA_POST);
 		}
 		else
 		{
 			Toast.makeText(getContext(), R.string.thread_stream_fail, Toast.LENGTH_SHORT).show();
 			getActivity().finish();
-			return;
 		}
 	}
 

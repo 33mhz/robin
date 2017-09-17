@@ -147,7 +147,7 @@ public class SerialReaderUtil
 
 		if (size < 0) return null;
 
-		ArrayList<String> list = new ArrayList<String>(size);
+		ArrayList<String> list = new ArrayList<>(size);
 		for (int index = 0; index < size; index++)
 		{
 			list.add(index, readString());

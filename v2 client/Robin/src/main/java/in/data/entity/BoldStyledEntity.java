@@ -10,7 +10,7 @@ public class BoldStyledEntity extends StyledEntity
 {
 	@Override public List<BoldStyledEntity> createListFrom(String text)
 	{
-		List<BoldStyledEntity> entities = new ArrayList<BoldStyledEntity>();
+		List<BoldStyledEntity> entities = new ArrayList<>();
 
 		Matcher slash = Regex.MATCH_ASTRIX.matcher(text);
 		while (slash.find())

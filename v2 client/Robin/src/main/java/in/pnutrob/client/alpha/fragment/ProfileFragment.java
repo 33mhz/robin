@@ -63,7 +63,7 @@ public class ProfileFragment extends TimelineFragment
 
 		if (arguments != null && arguments.containsKey(Constants.EXTRA_USER))
 		{
-			user = (User)arguments.getParcelable(Constants.EXTRA_USER);
+			user = arguments.getParcelable(Constants.EXTRA_USER);
 		}
 		else
 		{

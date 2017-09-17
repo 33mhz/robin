@@ -53,12 +53,8 @@ public class MainApplication extends Application
 		builder.tasksProcessingOrder(QueueProcessingType.LIFO);
 		builder.discCacheSize(1024 * 1024 * 30);
 		builder.memoryCacheExtraOptions(300, 300);
-
-		if (android.os.Build.VERSION.SDK_INT >= 11)
-		{
-			builder.taskExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-			builder.taskExecutorForCachedImages(AsyncTask.THREAD_POOL_EXECUTOR);
-		}
+		builder.taskExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+		builder.taskExecutorForCachedImages(AsyncTask.THREAD_POOL_EXECUTOR);
 
 		ImageLoaderConfiguration config = builder.build();
 		coverImageLoader.init(config);

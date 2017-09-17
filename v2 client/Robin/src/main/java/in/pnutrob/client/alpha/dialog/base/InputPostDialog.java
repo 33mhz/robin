@@ -101,7 +101,6 @@ public abstract class InputPostDialog extends PostDialog
 	@Override protected void onCreate(Bundle savedInstanceState)
 	{
 		initialiseDraft();
-
 		super.onCreate(savedInstanceState);
 		Views.inject(this);
 
@@ -447,7 +446,7 @@ public abstract class InputPostDialog extends PostDialog
 	protected void addImageToView(final String imageUrl)
 	{
 		View view = LayoutInflater.from(getContext()).inflate(R.layout.post_image_stub, imageContainer, false);
-		ImageView image = (ImageView)view.findViewById(R.id.image);
+		ImageView image = view.findViewById(R.id.image);
 		ImageLoader.getInstance().displayImage(imageUrl, image);
 
 		imageContainer.addView(view);
@@ -710,21 +709,12 @@ public abstract class InputPostDialog extends PostDialog
 				// Gallery
 				else if (which == 1)
 				{
-					if (Build.VERSION.SDK_INT < 19)
-					{
-						Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-						intent.setType("image/jpeg");
-						startActivityForResult(Intent.createChooser(intent, getString(R.string.select_picture)), Constants.REQUEST_GALLERY);
-					}
-					else
-					{
-						Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-						intent.addCategory(Intent.CATEGORY_OPENABLE);
-						intent.setType("image/jpeg");
-						startActivityForResult(Intent.createChooser(intent, getString(R.string.select_picture)), Constants.REQUEST_GALLERY);
-					}
+					Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+					intent.addCategory(Intent.CATEGORY_OPENABLE);
+					intent.setType("image/*");
+					startActivityForResult(Intent.createChooser(intent, getString(R.string.select_picture)), Constants.REQUEST_GALLERY);
 				}
-				// App.net storage
+				// pnut.io storage
 				else if (which == 2)
 				{
 					Intent browser = new Intent(getContext(), StorageBrowserActivity.class);
@@ -736,7 +726,7 @@ public abstract class InputPostDialog extends PostDialog
 					String[] projection = new String[]{MediaStore.Images.ImageColumns.DATA, MediaStore.Images.ImageColumns.DATE_TAKEN};
 					Cursor cursor = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, projection, null, null, MediaStore.Images.ImageColumns.DATE_TAKEN + " DESC");
 
-					if (cursor.moveToFirst())
+					if (cursor != null && cursor.getCount()>0 && cursor.moveToFirst())
 					{
 						String imageLocation = cursor.getString(0);
 						File imageFile = new File(imageLocation);
@@ -773,18 +763,22 @@ public abstract class InputPostDialog extends PostDialog
 				if (data != null)
 				{
 					Uri selectedUri = data.getData();
-					if (Build.VERSION.SDK_INT >= 19)
+					String mimeType = getContentResolver().getType(selectedUri);
+
+					if (mimeType == null || (!mimeType.equals("image/jpeg") && !mimeType.equals("image/png") && !mimeType.equals("image/gif")))
 					{
-						final int takeFlags = data.getFlags() & (Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
-						getContentResolver().takePersistableUriPermission(selectedUri, takeFlags);
+						return;
 					}
+
+					final int takeFlags = data.getFlags() & (Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+					getContentResolver().takePersistableUriPermission(selectedUri, takeFlags);
 
 					addImage(selectedUri);
 				}
 			}
 			else if (requestCode == Constants.REQUEST_STORAGE)
 			{
-				FileAnnotation file = (FileAnnotation)data.getParcelableExtra(Constants.EXTRA_FILE);
+				FileAnnotation file = data.getParcelableExtra(Constants.EXTRA_FILE);
 				getDraft().getAnnotations().add(file);
 
 				addImageToView(file.getThumbUrl());

@@ -20,7 +20,6 @@ public abstract class PostDialog extends Activity
 	@Override protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-
 		setContentView(getContentView());
 		Views.inject(this);
 		retrieveArguments(savedInstanceState == null ? getIntent().getExtras() : savedInstanceState);

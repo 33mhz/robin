@@ -145,7 +145,7 @@ public class PostDelegate extends AdapterDelegate<Post> implements OnClickListen
 				{
 					String originalText = item.getPostText().getText();
 					Intent intent = new Intent(Intent.ACTION_VIEW);
-					intent.setData(Uri.parse("http://translate.google.com/?q=" + Uri.encode(originalText)));
+					intent.setData(Uri.parse("https://translate.google.com/?q=" + Uri.encode(originalText)));
 					view.getContext().startActivity(intent);
 				}
 				else if (menuItem.getItemId() == R.id.menu_copy_text)

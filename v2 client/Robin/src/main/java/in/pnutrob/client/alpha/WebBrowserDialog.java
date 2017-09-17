@@ -1,6 +1,5 @@
 package in.pnutrob.client.alpha;
 
-import in.pnutrob.client.alpha.R;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -66,7 +65,7 @@ public class WebBrowserDialog extends Activity
 		}
 
 		WebSettings settings = webView.getSettings();
-		settings.setJavaScriptEnabled(true);
+		settings.setJavaScriptEnabled(false);
 		settings.setBuiltInZoomControls(true);
 		settings.setLoadWithOverviewMode(true);
 		settings.setUseWideViewPort(true);

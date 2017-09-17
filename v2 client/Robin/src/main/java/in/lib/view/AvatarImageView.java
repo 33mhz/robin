@@ -19,7 +19,7 @@ import in.model.SimpleUser;
 import in.model.User;
 import in.pnutrob.client.alpha.ProfileActivity;
 import in.pnutrob.client.alpha.R;
-import in.pnutrob.client.dialog.PopupProfileDialog;
+import in.pnutrob.client.alpha.dialog.PopupProfileDialog;
 import lombok.Getter;
 
 public class AvatarImageView extends ImageView implements OnClickListener, OnLongClickListener

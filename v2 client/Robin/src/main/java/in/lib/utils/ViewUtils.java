@@ -24,7 +24,7 @@ public class ViewUtils
 	 */
 	public static ArrayList<View> getAllChildrenByInstance(ViewGroup parent, Class instance)
 	{
-		ArrayList<View> views = new ArrayList<View>();
+		ArrayList<View> views = new ArrayList<>();
 		int childCount = parent.getChildCount();
 
 		for (int childIndex = 0; childIndex < childCount; childIndex++)

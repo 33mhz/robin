@@ -22,6 +22,7 @@
 				android:layout_gravity="top"
 				android:scaleType="centerCrop"
 				android:src="@drawable/default_cover"
+				android:contentDescription="@string/cover_image"
 			/>
 
 			<RelativeLayout

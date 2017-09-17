@@ -10,7 +10,7 @@ public class ItalicStyledEntity extends StyledEntity
 {
 	@Override public List<ItalicStyledEntity> createListFrom(String text)
 	{
-		List<ItalicStyledEntity> entities = new ArrayList<ItalicStyledEntity>();
+		List<ItalicStyledEntity> entities = new ArrayList<>();
 
 		Matcher slash = Regex.MATCH_SLASH.matcher(text);
 		while (slash.find())

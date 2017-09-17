@@ -20,7 +20,7 @@ public class ChannelMessagesActivity extends BaseActivity
 
 		if (getIntent().getExtras().containsKey(Constants.EXTRA_CHANNEL))
 		{
-			channel = (Channel)getIntent().getExtras().getParcelable(Constants.EXTRA_CHANNEL);
+			channel = getIntent().getExtras().getParcelable(Constants.EXTRA_CHANNEL);
 		}
 		else
 		{

@@ -44,12 +44,12 @@ public class NewPostDialog extends InputPostDialog
 
 				if (stream instanceof String)
 				{
-					uris = new ArrayList<Uri>();
+					uris = new ArrayList<>();
 					uris.add(Uri.parse(String.valueOf(stream)));
 				}
 				else if (stream instanceof Uri)
 				{
-					uris = new ArrayList<Uri>();
+					uris = new ArrayList<>();
 					uris.add((Uri)stream);
 				}
 				else if (stream instanceof ArrayList)

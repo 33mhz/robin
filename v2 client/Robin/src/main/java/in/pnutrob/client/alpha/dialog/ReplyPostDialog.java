@@ -28,6 +28,7 @@ public class ReplyPostDialog extends NewPostDialog
 
 		if (instances != null)
 		{
+			String username = UserManager.getInstance().getUser().getUsername().toLowerCase();
 			if (instances.containsKey(Constants.EXTRA_POST))
 			{
 				Post post = instances.getParcelable(Constants.EXTRA_POST);
@@ -35,9 +36,8 @@ public class ReplyPostDialog extends NewPostDialog
 
 				StringBuilder postText = new StringBuilder();
 
-                String username = UserManager.getInstance().getUser().getUsername().toLowerCase();
                 if (!post.getPoster().getUsername().equalsIgnoreCase(username)) {
-                    postText.append("@").append(post.getPoster().getUsername());
+                    postText.append("@"+post.getPoster().getUsername()+" ");
                 }
 
 				if (instances.getBoolean(Constants.EXTRA_REPLY_ALL, false))
@@ -45,25 +45,25 @@ public class ReplyPostDialog extends NewPostDialog
 					for (MentionEntity mention : post.getPostText().getMentions())
 					{
 						if (!mention.getName().equalsIgnoreCase(username) && !mention.getName().equalsIgnoreCase(post.getPoster().getUsername())) {
-                        	postText.append(" @").append(mention.getName());
+                        	postText.append("@"+mention.getName()+" ");
                         }
 					}
 				}
 
 				if (instances.containsKey(Constants.EXTRA_REPLY_EXTRA))
 				{
-					postText.append(" ").append(instances.getString(Constants.EXTRA_REPLY_EXTRA));
+					postText.append(instances.getString(Constants.EXTRA_REPLY_EXTRA)).append(" ");
 				}
 
-				postText.append(" ");
+				//postText.append(" ");
 				((DraftPost)getDraft()).setPostText(postText.toString());
 				((DraftPost)getDraft()).setReplyId(post.getId());
 			}
-		}
 
-		if (instances.containsKey(Constants.EXTRA_TITLE))
-		{
-			tempTitle = instances.getString(Constants.EXTRA_TITLE);
+			if (instances.containsKey(Constants.EXTRA_TITLE))
+			{
+				tempTitle = instances.getString(Constants.EXTRA_TITLE);
+			}
 		}
 
 		setTitle(tempTitle);

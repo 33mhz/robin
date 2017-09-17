@@ -28,7 +28,7 @@ public class AutoCompleteAdapter extends BaseAdapter implements Filterable
 	@Getter private final Context context;
 	@Getter private final List<? extends AdnModel> items;
 	@Getter private List<? extends AdnModel> originalItems;
-	@Getter private SparseArray<AdapterDelegate<?>> itemTypes = new SparseArray<AdapterDelegate<?>>();
+	@Getter private SparseArray<AdapterDelegate<?>> itemTypes = new SparseArray<>();
 	private String typedConstraint = "";
 
 	private static final int TYPE_USERNAMES = 0;

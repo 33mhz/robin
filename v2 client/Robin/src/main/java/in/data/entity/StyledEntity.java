@@ -18,7 +18,7 @@ public class StyledEntity extends Entity
 	{
 		ITALIC,
 		BOLD,
-		UNDERLINE;
+		UNDERLINE
 	}
 
 	private Type type;

@@ -23,7 +23,7 @@ public class ThreadAdapter extends RobinAdapter<Post>
 	public enum Mode
 	{
 		STANDARD,
-		NESTED; // TODO: Add support for replies to deleted posts
+		NESTED // TODO: Add support for replies to deleted posts
 	}
 
 	public static final int TYPE_POST = 0;
@@ -87,7 +87,7 @@ public class ThreadAdapter extends RobinAdapter<Post>
 				if (post.getReplyCount() > 0)
 				{
 					// Loop through each post in our list and find that post's replies
-					ArrayList<Post> replies = new ArrayList<Post>();
+					ArrayList<Post> replies = new ArrayList<>();
 					for (int i = stream.getItems().size() - 1; i > -1; i--)
 					{
 						Post toMatch = stream.getItems().get(i);

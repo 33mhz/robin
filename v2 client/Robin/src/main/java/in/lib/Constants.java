@@ -3,7 +3,7 @@ package in.lib;
 public class Constants
 {
 	// API Constants //
-	public static final String API_URL = "https://api.pnut.io/v0";
+	public static final String API_URL = "https://api.pnut.io/v0/";
 	public static final String API_AUTH = "https://api.pnut.io/v0/oauth/access_token";
 
 	public static final String API_POSTS = "posts";
@@ -123,6 +123,8 @@ public class Constants
 	public static final String EXTRA_FILE = "file";
 	public static final String EXTRA_CHANNEL = "channel";
 	public static final String EXTRA_CHANNEL_ID = "channel_id";
+	public static final String EXTRA_POST_ID = "post_id";
+	public static final String EXTRA_USER_ID = "user_id";
 	public static final String EXTRA_START_PAGE = "start_page";
 	public static final String EXTRA_SEARCH_TERM = "search_term";
 	public static final String EXTRA_DRAFT_POST = "draft_post";

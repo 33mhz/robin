@@ -4,6 +4,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import in.controller.handler.UserResponseHandler;
+import in.lib.manager.APIManager;
+import in.lib.utils.ViewUtils;
+
 import in.controller.adapter.base.RobinAdapter;
 import in.model.User;
 import in.pnutrob.client.alpha.R;
@@ -34,4 +38,27 @@ public class UserDelegate extends AdapterDelegate<User>
 		holder.populate(item);
 		return convertView;
 	}
+
+	/*@Override public void onClick(final View v)
+	{
+		final int position = (Integer) ViewUtils.getParentWithId(R.id.root_view, v).getTag(R.id.TAG_POSITION);
+		final User item = getAdapter().getItem(position);
+		if (v.getId() == R.id.user_action)
+		{
+			onFollowClick(v, item);
+		}
+	}
+
+	private void onFollowClick(final View v, final User item)
+	{
+		if (!item.following) {
+			APIManager.getInstance().userFollow(item.getId(), new UserResponseHandler() {
+				// TODO change text on button
+			});
+		} else {
+			APIManager.getInstance().userUnfollow(item.getId(), new UserResponseHandler() {
+				// TODO change text on button
+			});
+		}
+	}*/
 }

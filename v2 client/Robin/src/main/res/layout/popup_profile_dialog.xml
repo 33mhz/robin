@@ -18,6 +18,7 @@
 			android:adjustViewBounds="true"
 			android:scaleType="centerCrop"
 			android:src="@drawable/default_cover"
+			android:contentDescription="@string/cover_image"
 		/>
 		
 		<in.lib.view.AvatarImageView
