@@ -314,7 +314,7 @@
 	<string name="save">Save</string>
 	<string name="save_hashtag">Save hashtag</string>
 	<string name="save_image">Save Image</string>
-	<string name="save_to_drafts">Do you wish to save to drafts?</string>
+	<string name="save_to_drafts">Save draft</string>
 	<string name="saved_searches">SAVED SEARCHES</string>
 	<string name="search">Search</string>
 	<string name="search_for_tags">Search #tags, \@users, or keywords</string>

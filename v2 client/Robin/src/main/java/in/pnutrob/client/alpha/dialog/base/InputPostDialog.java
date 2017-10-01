@@ -199,7 +199,7 @@ public abstract class InputPostDialog extends PostDialog
 
 		if (getPostInput() instanceof AutoSuggestView)
 		{
-			List<SimpleUser> items = new ArrayList<SimpleUser>();
+			List<SimpleUser> items = new ArrayList<>();
 
 			adapter = new AutoCompleteAdapter(getContext(), items);
 			((AutoSuggestView)getPostInput()).setAdapter(adapter);
@@ -505,21 +505,21 @@ public abstract class InputPostDialog extends PostDialog
 
 		AlertDialog.Builder builder = DialogBuilder.create(getContext());
 		builder.setTitle(R.string.confirm);
-		builder.setMessage(R.string.save_to_drafts);
+		builder.setMessage(R.string.discard_changes);
 		builder.setPositiveButton(R.string.yes, new OnClickListener()
 		{
 			@Override public void onClick(DialogInterface dialog, int which)
 			{
 				finish = true;
-				getDraft().save();
 				onNegativeButtonClick(null);
 			}
 		});
-		builder.setNegativeButton(R.string.no, new OnClickListener()
+		builder.setNegativeButton(R.string.save_to_drafts, new OnClickListener()
 		{
 			@Override public void onClick(DialogInterface dialog, int which)
 			{
 				finish = true;
+				getDraft().save();
 				onNegativeButtonClick(null);
 			}
 		});

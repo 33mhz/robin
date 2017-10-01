@@ -92,7 +92,7 @@ public class NewMessageDialog extends InputPostDialog
 				onNegativeButtonClick(null);
 			}
 		});
-		builder.setNegativeButton(R.string.no, null);
+		builder.setNegativeButton(R.string.cancel, null);
 		builder.show();
 	}
 }
