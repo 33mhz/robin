@@ -8,7 +8,7 @@
 	<string name="abbr_weeks">w</string>
 	<string name="abbr_years">y</string>
 	<string name="about">About</string>
-	<string name="about_copy">This app was made by \@scruffyfox and \@simpleline for App.net,\nand reworked by @33MHz for pnut.io!</string>
+	<string name="about_copy">This app was made by \@scruffyfox and \@simpleline for App.net,\nand reworked by @33MHz for Pnut.io!</string>
 	<string name="accounts">Accounts</string>
 	<string name="add_account">Add account</string>
 	<string name="add_at">Add \@</string>
@@ -40,8 +40,7 @@
 	<string name="cache_header">CACHE/REQUEST</string>
 	<string name="camera_failed">Failed to start camera</string>
 	<string name="cancel">Cancel</string>
-	<string name="change_log_title">Change Log</string>
-	<string name="changelog">Change log</string>
+	<string name="change_log_title"><a href="https://github.com/33mhz/robin/releases">Change Log</a></string>
 	<string name="channels">Channels</string>
 	<string name="channels_stream_fail">Failed to load channels</string>
 	<string name="check_updates">Check for updates</string>
@@ -133,8 +132,6 @@
 	<string name="image_download_generic_failure">Error downloading image</string>
 	<string name="image_fail_message">Image failed to load.\nTap to retry.</string>
 	<string name="image_not_found">Selected image was not found</string>
-	<string name="image_provider">Image provider</string>
-	<string name="image_provider_desc">Change provider for image uploads</string>
 	<string name="in_app_viewer_desc">Show in-app viewer</string>
 	<string name="in_app_viewer_title">Show what using the in-app viewer</string>
 	<string name="information">Information</string>
@@ -329,11 +326,6 @@
 	<string name="select_picture_error">Could not select image</string>
 	<string name="select_tone">Select Tone</string>
 	<string name="select_user">Select user</string>
-	<string name="send_analytics_title">Send analytics</string>
-	<string name="send_analytics_desc">Send anonymous analytics to make Robin even better</string>
-	<string name="send_crash_title">Send crash reports</string>
-	<string name="send_crash_desc">Send reports when crashes happen so they can get fixed (please leave on)</string>
-	<string name="send_developer">Send developer info</string>
 	<string name="send_message_fail">Sending message failed</string>
 	<string name="send_post_fail">Sending post failed</string>
 	<string name="sending">Sending post&#8230;</string>
@@ -345,8 +337,6 @@
 	<string name="set_to_time">Set to time</string>
 	<string name="setting_restart_message">This setting will be applied next time the app is restarted</string>
 	<string name="settings">Settings</string>
-	<string name="shake_refresh">Shake to refresh</string>
-	<string name="shake_refresh_desc">Shake it baby. Refreshes the current screen on shake.</string>
 	<string name="share">Share</string>
 	<string name="share_image">Share Image</string>
 	<string name="share_post">Share Post</string>

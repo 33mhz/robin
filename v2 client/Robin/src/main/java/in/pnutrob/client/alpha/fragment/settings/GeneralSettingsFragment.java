@@ -33,11 +33,6 @@ public class GeneralSettingsFragment extends BaseFragment
 		quickPost.getCheckableView().setChecked(SettingsManager.getInstance().isQuickPostEnabled());
 	}
 
-	@OnClick public void onImageProviderClick(SettingContainerView v)
-	{
-
-	}
-
 	@OnClick public void onShakeRefreshClick(SettingContainerView v)
 	{
 

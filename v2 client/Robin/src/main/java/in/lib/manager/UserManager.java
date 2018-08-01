@@ -71,7 +71,7 @@ public class UserManager
 		Map<String, ?> prefMap = authPrefs.getAll();
 		Iterator<String> keys = prefMap.keySet ().iterator();
 
-		List<String> users = new ArrayList<String>(prefMap.size());
+		List<String> users = new ArrayList<>(prefMap.size());
 
 		String[] parts = String.format(Constants.PREFS_AUTH_USER_ACCESS_TOKEN, ":").split(":");
 		while (keys.hasNext())

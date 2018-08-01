@@ -40,6 +40,7 @@ public class AppearanceSettingsFragment extends BaseFragment
 
 		((SettingContainerView)getView().findViewById(R.id.web_readability_mode)).getCheckableView().setChecked(SettingsManager.getInstance().isWebReadabilityModeEnabled());
 		((SettingContainerView)getView().findViewById(R.id.non_following)).getCheckableView().setChecked(SettingsManager.getInstance().isNonFollowingMentionEnabled());
+		((SettingContainerView)getView().findViewById(R.id.unified)).getCheckableView().setChecked(SettingsManager.getInstance().isUnifiedTimelineEnabled());
 	}
 
 	private void createMultiChoiceDialog(int valuesRes, int optionsRes, int settingBit, final OnMultiChoiceDialogDismissed listener)
@@ -85,6 +86,11 @@ public class AppearanceSettingsFragment extends BaseFragment
 	{
 		SettingsManager.getInstance().setNonFollowingMentionEnabled(view.getCheckableView().isChecked());
 	}
+
+    @OnClick public void onUnifiedClick(SettingContainerView view)
+    {
+        SettingsManager.getInstance().setUnifiedTimelineEnabled(view.getCheckableView().isChecked());
+    }
 
 	@OnClick public void onSingleClickLinksClick(SettingContainerView view)
 	{

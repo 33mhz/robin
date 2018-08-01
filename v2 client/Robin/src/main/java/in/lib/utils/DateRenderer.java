@@ -1,6 +1,8 @@
 package in.lib.utils;
 
 import android.content.Context;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import in.pnutrob.client.alpha.R;
 
@@ -55,6 +57,13 @@ public class DateRenderer
 		if (difference < 5)
 		{
 			return new TimeAgo(units[0], now);
+		}
+
+		// above one week, give absolute date
+		if (difference > 86400)
+		{
+			SimpleDateFormat formatter = new SimpleDateFormat("y/M/d H:m");
+			return new TimeAgo(units[0], formatter.format(new Date((long)time)));
 		}
 
 		String formattedDate = null;

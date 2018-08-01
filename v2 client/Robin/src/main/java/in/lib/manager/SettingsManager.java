@@ -47,6 +47,7 @@ public class SettingsManager
 	@Key(Constants.PREFS_INLINE_WIFI_ENABLED) private boolean inlineWifiEnabled;
 	@Key(Constants.PREFS_WEB_READABILITY_MODE_ENABLED) private boolean webReadabilityModeEnabled;
 	@Key(Constants.PREFS_NON_FOLLOWING_MENTIONS_ENABLED) private boolean nonFollowingMentionEnabled;
+	@Key(Constants.PREFS_UNIFIED_TIMELINE_ENABLED) private boolean unifiedTimelineEnabled;
 	@Key(Constants.PREFS_STREAM_MARKERS) private int streamMarkerBit = Constants.BIT_STREAM_MARKER_ENABLED | Constants.BIT_STREAM_MARKER_PAST;
 	@Key(Constants.PREFS_SINGLE_CLICK_OPTIONS) private int singleClickBit = 0;
 	@Key(Constants.PREFS_SHOWHIDE_OPTIONS) private int showHideBit = Constants.BIT_SHOWHIDE_AVATARS | Constants.BIT_SHOWHIDE_INLINE_IMAGES | Constants.BIT_SHOWHIDE_TIMELINE_COVER;

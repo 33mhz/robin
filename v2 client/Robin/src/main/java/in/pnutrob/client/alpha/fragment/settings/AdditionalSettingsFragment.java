@@ -100,7 +100,7 @@ public class AdditionalSettingsFragment extends BaseFragment
 				size += file.length();
 			}
 
-			return Math.floor((size / 1024.0d / 1024.0d) * 100.0d) / 100.0d + "MB";
+			return Math.floor((size / 1024.0d / 1024.0d) * 100.0d) / 100.0d + "MiB";
 		}
 		catch (Exception e)
 		{

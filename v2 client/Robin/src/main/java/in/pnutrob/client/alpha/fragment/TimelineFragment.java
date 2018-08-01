@@ -55,7 +55,7 @@ public class TimelineFragment extends StreamFragment
 	{
 		PostStreamResponseHandler response = new PostStreamResponseHandler(append);
 		ResponseManager.getInstance().addResponse(getResponseKeys()[0], response, this);
-		APIManager.getInstance().getUnifiedTimeLine(lastId, 60, response);
+		APIManager.getInstance().getTimeLine(lastId, response);
 	}
 
 	@Override public void onListItemClick(AdnModel model)

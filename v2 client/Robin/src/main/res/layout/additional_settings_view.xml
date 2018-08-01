@@ -37,7 +37,7 @@
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:id="@+id/image_cache_text"
+				android:id="@+id/text"
 				android:layout_below="@id/title"
 				style="?attr/rbn_settings_description"
 			/>
@@ -64,7 +64,7 @@
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:id="@+id/image_cache_memory_text"
+				android:id="@+id/text"
 				android:layout_below="@id/title"
 				style="?attr/rbn_settings_description"
 			/>
@@ -91,7 +91,7 @@
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:id="@+id/file_cache_text"
+				android:id="@+id/text"
 				android:layout_below="@id/title"
 				style="?attr/rbn_settings_description"
 			/>
@@ -118,7 +118,7 @@
 			<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:id="@+id/max_image_cache_ticker"
+				android:id="@+id/ticker"
 				android:gravity="end"
 				android:layout_alignParentEnd="true"
 			/>
@@ -181,81 +181,9 @@
 			style="?android:attr/listSeparatorTextViewStyle"
 		/>
 
-		<in.lib.view.SettingContainerView
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/analytics"
-			android:padding="8dp"
-		>
-			<CheckBox
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:id="@+id/checkbox"
-				android:clickable="false"
-				android:layout_centerVertical="true"
-				android:layout_alignParentEnd="true"
-				style="?attr/rbn_settings_checkbox"
-			/>
-
-			<TextView
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:id="@+id/title"
-				android:layout_toStartOf="@id/checkbox"
-				android:text="@string/send_analytics_title"
-				style="?attr/rbn_settings_title"
-			/>
-
-			<TextView
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:id="@+id/description"
-				android:layout_toStartOf="@id/checkbox"
-				android:layout_below="@id/title"
-				android:text="@string/send_analytics_desc"
-				style="?attr/rbn_settings_description"
-			/>
-		</in.lib.view.SettingContainerView>
-
 		<View style="?attr/rbn_divider"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content" />
-
-		<in.lib.view.SettingContainerView
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/crash_report"
-			android:padding="8dp"
-		>
-			<CheckBox
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:id="@+id/checkbox"
-				android:clickable="false"
-				android:layout_centerVertical="true"
-				android:layout_alignParentEnd="true"
-				style="?attr/rbn_settings_checkbox"
-			/>
-
-			<TextView
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:id="@+id/title"
-				android:layout_toStartOf="@id/checkbox"
-				android:text="@string/send_crash_title"
-				style="?attr/rbn_settings_title"
-			/>
-
-			<TextView
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:id="@+id/description"
-				android:layout_toStartOf="@id/checkbox"
-				android:layout_below="@id/title"
-				android:text="@string/send_crash_desc"
-				style="?attr/rbn_settings_description"
-			/>
-		</in.lib.view.SettingContainerView>
 
 		<View style="?attr/rbn_divider"
 			android:layout_width="wrap_content"
@@ -280,21 +208,6 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content" />
 
-		<in.lib.view.SettingContainerView
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/send_developer"
-			android:padding="8dp"
-		>
-			<TextView
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:id="@+id/title"
-				android:text="@string/send_developer"
-				style="?attr/rbn_settings_title"
-			/>
-		</in.lib.view.SettingContainerView>
-
 		<View style="?attr/rbn_divider"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content" />
@@ -308,7 +221,7 @@
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:id="@+id/title"
+				android:id="@+id/licenses_title"
 				android:text="@string/licenses"
 				style="?attr/rbn_settings_title"
 			/>

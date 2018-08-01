@@ -7,7 +7,7 @@ public class Constants
 	public static final String API_AUTH = "https://api.pnut.io/v0/oauth/access_token";
 
 	public static final String API_POSTS = "posts";
-	//public static final String API_TIMELINE_STREAM = "posts/streams/me";
+	public static final String API_TIMELINE_STREAM = "posts/streams/me";
 	public static final String API_UNIFIED_TIMELINE_STREAM = "posts/streams/unified";
 	public static final String API_POST_THREAD = "posts/%s/thread";
 	public static final String API_POST_REPOST = "posts/%s/repost";
@@ -40,7 +40,9 @@ public class Constants
 	public static final String API_ACCESS_TOKEN = "access_token";
 	public static final String API_INCLUDE_DELETED = "include_deleted";
 	public static final String API_INCLUDE_RAW = "include_raw";
-	//public static final String API_INCLUDE_POST_RAW = "include_post_raw";
+	public static final String API_INCLUDE_POST_RAW = "include_post_raw";
+	public static final String API_INCLUDE_CHANNEL_RAW = "include_channel_raw";
+    public static final String API_INCLUDE_MESSAGE_RAW = "include_channel_raw";
 	public static final String API_INCLUDE_DIRECTED_POSTS = "include_directed_posts";
 	public static final String API_INCLUDE_BOOKMARKED = "include_bookmarked_by";
 	public static final String API_INCLUDE_REPOSTERS = "include_reposted_by";
@@ -78,6 +80,7 @@ public class Constants
 	public static final String PREFS_IN_APP_VIEWER_OPTIONS = "in_app_viewer_options";
 	public static final String PREFS_WEB_READABILITY_MODE_ENABLED = "web_readbility_mode_enabled";
 	public static final String PREFS_NON_FOLLOWING_MENTIONS_ENABLED = "non_following_mentions_enabled";
+    public static final String PREFS_UNIFIED_TIMELINE_ENABLED = "unified_timeline_enabled";
 	public static final String PREFS_EMPHASIS_OPTIONS = "emphasis_options";
 
 	// Response constants //
