@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 
-import in.data.annotation.CheckinAnnotation;
+//import in.data.annotation.CheckinAnnotation;
 import in.data.annotation.ImageAnnotation;
 import in.lib.Constants;
 import in.lib.manager.ImageOptionsManager;

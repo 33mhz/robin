@@ -14,7 +14,7 @@ import in.pnutrob.client.alpha.R;
 import in.view.delegate.base.AdapterDelegate;
 import in.view.holder.UserHolder;
 
-public class UserDelegate extends AdapterDelegate<User>
+public class UserDelegate extends AdapterDelegate<User> implements View.OnClickListener
 {
 	public UserDelegate(RobinAdapter<User> adapter)
 	{
@@ -28,6 +28,7 @@ public class UserDelegate extends AdapterDelegate<User>
 		{
 			convertView = inflater.inflate(R.layout.user_view, parent, false);
 			holder = new UserHolder(convertView);
+            holder.getUserAction().setOnClickListener(this);
 			convertView.setTag(holder);
 		}
 		else
@@ -35,13 +36,19 @@ public class UserDelegate extends AdapterDelegate<User>
 			holder = (UserHolder)convertView.getTag();
 		}
 
+        convertView.setTag(R.id.TAG_POSITION, position);
 		holder.populate(item);
 		return convertView;
 	}
 
-	/*@Override public void onClick(final View v)
+	@Override public void onClick(final View v)
 	{
-		final int position = (Integer) ViewUtils.getParentWithId(R.id.root_view, v).getTag(R.id.TAG_POSITION);
+        View thing = ViewUtils.getParentWithTag(R.id.TAG_POSITION, v);
+        if (thing == null) {
+            return;
+        }
+
+        final int position = (Integer)thing.getTag(R.id.TAG_POSITION);
 		final User item = getAdapter().getItem(position);
 		if (v.getId() == R.id.user_action)
 		{
@@ -53,12 +60,12 @@ public class UserDelegate extends AdapterDelegate<User>
 	{
 		if (!item.following) {
 			APIManager.getInstance().userFollow(item.getId(), new UserResponseHandler() {
-				// TODO change text on button
-			});
+                // TODO change text on button
+            });
 		} else {
 			APIManager.getInstance().userUnfollow(item.getId(), new UserResponseHandler() {
 				// TODO change text on button
 			});
 		}
-	}*/
+	}
 }

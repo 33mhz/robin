@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Libraries/AsyncHttpClient/AsyncHttpClient.iml" filepath="$PROJECT_DIR$/Libraries/AsyncHttpClient/AsyncHttpClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Libraries/GridListView/GridListView.iml" filepath="$PROJECT_DIR$/Libraries/GridListView/GridListView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Libraries/Libraries.iml" filepath="$PROJECT_DIR$/Libraries/Libraries.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Robin/Robin.iml" filepath="$PROJECT_DIR$/Robin/Robin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Libraries/SlidingMenu/SlidingMenu.iml" filepath="$PROJECT_DIR$/Libraries/SlidingMenu/SlidingMenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Libraries/SwipeToRefresh/SwipeToRefresh.iml" filepath="$PROJECT_DIR$/Libraries/SwipeToRefresh/SwipeToRefresh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v2 client.iml" filepath="$PROJECT_DIR$/v2 client.iml" />
+    </modules>
+  </component>
+</project>

@@ -24,7 +24,7 @@ public abstract class RobinAdapter<T extends AdnModel> extends BaseAdapter imple
 	@Getter protected Stream<T> stream;
 	@Setter protected PageListener pageListener;
 	@Getter private ListView listView;
-	@Getter private int pageCount = 60;
+	@Getter private int pageCount = 20;
 
 	public interface PageListener
 	{
